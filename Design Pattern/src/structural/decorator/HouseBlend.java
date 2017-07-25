@@ -1,0 +1,17 @@
+package structural.decorator;
+
+/**
+ * 综合咖啡, 被装饰的组件
+ */
+public class HouseBlend extends Beverage {
+	public HouseBlend() {
+		description = "综合咖啡";
+	}
+
+	@Override
+	public double cost() {
+
+		return 0.89;
+	}
+
+}
