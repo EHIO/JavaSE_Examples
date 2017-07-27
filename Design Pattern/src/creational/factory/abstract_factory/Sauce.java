@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ½´ÁÏ
+ * é…±æ–™
  */
 public class Sauce {
 

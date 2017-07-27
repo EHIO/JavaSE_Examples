@@ -1,5 +1,8 @@
 package structural.proxy.dynamicproxy.compiler.test;
 
+import structural.proxy.dynamicproxy.Moveable;
+import structural.proxy.dynamicproxy.Tank;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Constructor;
@@ -10,8 +13,6 @@ import javax.tools.JavaCompiler;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
-import proxy.dynamicproxy.Moveable;
-import proxy.dynamicproxy.Tank;
 
 import javax.tools.JavaCompiler.CompilationTask;
 

@@ -1,12 +1,15 @@
 package behavior.chainofresponsibility;
 
-import chainofresponsibility_责任链.impl.FilterChain;
+
+import behavior.chainofresponsibility.impl.FilterChain;
 
 /**
  * 过滤器
- * @author Administrator
  *
+ * @author wg
  */
 public interface Filter {
-	void doFilter(Request request, Response response, FilterChain chain);
+
+    void doFilter(Request request, Response response, FilterChain chain);
+
 }

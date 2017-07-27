@@ -1,8 +1,9 @@
 package structural.proxy.dynamicproxy.compiler.test;
 
+import structural.proxy.dynamicproxy.Moveable;
+
 import java.lang.reflect.Method;
 
-import proxy.dynamicproxy.Moveable;
 
 public class Test2 {
 	public static void main(String[] args) {
