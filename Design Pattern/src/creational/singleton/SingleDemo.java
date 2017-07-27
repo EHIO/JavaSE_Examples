@@ -1,39 +1,39 @@
 package creational.singleton;
 
 /*
-1,µ¥ÀýÉè¼ÆÄ£Ê½:
-		¶öººÊ½£ºÀàÒ»¼ÓÔØ¾Í´´½¨¶ÔÏó   
-		ÀÁººÊ½£ºÓÃµÄÊ±ºò£¬²ÅÈ¥´´½¨¶ÔÏó 
-		½â¾öµÄÎÊÌâ£º¾ÍÊÇ¿ÉÒÔ±£Ö¤Ò»¸öÀàÔÚÄÚ´æÖÐµÄ¶ÔÏóÎ¨Ò»ÐÔ¡£
+1,å•ä¾‹è®¾è®¡æ¨¡å¼:
+		é¥¿æ±‰å¼ï¼šç±»ä¸€åŠ è½½å°±åˆ›å»ºå¯¹è±¡
+		æ‡’æ±‰å¼ï¼šç”¨çš„æ—¶å€™ï¼Œæ‰åŽ»åˆ›å»ºå¯¹è±¡
+		è§£å†³çš„é—®é¢˜ï¼šå°±æ˜¯å¯ä»¥ä¿è¯ä¸€ä¸ªç±»åœ¨å†…å­˜ä¸­çš„å¯¹è±¡å”¯ä¸€æ€§ã€‚
 
-	±ØÐë¶ÔÓÚ¶à¸ö³ÌÐòÊ¹ÓÃÍ¬Ò»¸öÅäÖÃÐÅÏ¢¶ÔÏóÊ±£¬¾ÍÐèÒª±£Ö¤¸Ã¶ÔÏóµÄÎ¨Ò»ÐÔ¡£
+	å¿…é¡»å¯¹äºŽå¤šä¸ªç¨‹åºä½¿ç”¨åŒä¸€ä¸ªé…ç½®ä¿¡æ¯å¯¹è±¡æ—¶ï¼Œå°±éœ€è¦ä¿è¯è¯¥å¯¹è±¡çš„å”¯ä¸€æ€§ã€‚
 
-ÈçºÎ±£Ö¤¶ÔÏóÎ¨Ò»ÐÔÄØ£¿
-1£¬²»ÔÊÐíÆäËû³ÌÐòÓÃnew´´½¨¸ÃÀà¶ÔÏó¡£
-2£¬ÔÚ¸ÃÀà´´½¨Ò»¸ö±¾ÀàÊµÀý¡£
-3£¬¶ÔÍâÌá¹©Ò»¸ö·½·¨ÈÃÆäËû³ÌÐò¿ÉÒÔ»ñÈ¡¸Ã¶ÔÏó¡£
+å¦‚ä½•ä¿è¯å¯¹è±¡å”¯ä¸€æ€§å‘¢ï¼Ÿ
+1ï¼Œä¸å…è®¸å…¶ä»–ç¨‹åºç”¨newåˆ›å»ºè¯¥ç±»å¯¹è±¡ã€‚
+2ï¼Œåœ¨è¯¥ç±»åˆ›å»ºä¸€ä¸ªæœ¬ç±»å®žä¾‹ã€‚
+3ï¼Œå¯¹å¤–æä¾›ä¸€ä¸ªæ–¹æ³•è®©å…¶ä»–ç¨‹åºå¯ä»¥èŽ·å–è¯¥å¯¹è±¡ã€‚
 
-²½Öè£º
-1£¬Ë½ÓÐ»¯¸ÃÀà¹¹Ôìº¯Êý¡£
-2£¬Í¨¹ýnewÔÚ±¾ÀàÖÐ´´½¨Ò»¸ö±¾Àà¶ÔÏó¡£
-3£¬¶¨ÒåÒ»¸ö¹«ÓÐµÄ·½·¨£¬½«´´½¨µÄ¶ÔÏó·µ»Ø¡£
+æ­¥éª¤ï¼š
+1ï¼Œç§æœ‰åŒ–è¯¥ç±»æž„é€ å‡½æ•°ã€‚
+2ï¼Œé€šè¿‡newåœ¨æœ¬ç±»ä¸­åˆ›å»ºä¸€ä¸ªæœ¬ç±»å¯¹è±¡ã€‚
+3ï¼Œå®šä¹‰ä¸€ä¸ªå…¬æœ‰çš„æ–¹æ³•ï¼Œå°†åˆ›å»ºçš„å¯¹è±¡è¿”å›žã€‚
 
 */
 /*
- * 
- * ÃæÊÔÌâ£ºµ¥ÀýÄ£Ê½µÄË¼ÏëÊÇÊ²Ã´?ÇëÐ´Ò»¸ö´úÂëÌåÏÖ¡£
- * 
- * 		¿ª·¢£º¶öººÊ½(ÊÇ²»»á³öÎÊÌâµÄµ¥ÀýÄ£Ê½)
- * 		ÃæÊÔ£ºÀÁººÊ½(¿ÉÄÜ»á³öÎÊÌâµÄµ¥ÀýÄ£Ê½)
- * 			A:ÀÁ¼ÓÔØ(ÑÓ³Ù¼ÓÔØ)	
- * 			B:Ïß³Ì°²È«ÎÊÌâ
- * 				a:ÊÇ·ñ¶àÏß³Ì»·¾³	ÊÇ
- * 				b:ÊÇ·ñÓÐ¹²ÏíÊý¾Ý	ÊÇ
- * 				c:ÊÇ·ñÓÐ¶àÌõÓï¾ä²Ù×÷¹²ÏíÊý¾Ý 	ÊÇ
+ *
+ * é¢è¯•é¢˜ï¼šå•ä¾‹æ¨¡å¼çš„æ€æƒ³æ˜¯ä»€ä¹ˆ?è¯·å†™ä¸€ä¸ªä»£ç ä½“çŽ°ã€‚
+ *
+ * 		å¼€å‘ï¼šé¥¿æ±‰å¼(æ˜¯ä¸ä¼šå‡ºé—®é¢˜çš„å•ä¾‹æ¨¡å¼)
+ * 		é¢è¯•ï¼šæ‡’æ±‰å¼(å¯èƒ½ä¼šå‡ºé—®é¢˜çš„å•ä¾‹æ¨¡å¼)
+ * 			A:æ‡’åŠ è½½(å»¶è¿ŸåŠ è½½)
+ * 			B:çº¿ç¨‹å®‰å…¨é—®é¢˜
+ * 				a:æ˜¯å¦å¤šçº¿ç¨‹çŽ¯å¢ƒ	æ˜¯
+ * 				b:æ˜¯å¦æœ‰å…±äº«æ•°æ®	æ˜¯
+ * 				c:æ˜¯å¦æœ‰å¤šæ¡è¯­å¥æ“ä½œå…±äº«æ•°æ® 	æ˜¯
  */
 
-//¶öººÊ½
-class Single { // ÀàÒ»¼ÓÔØ£¬¶ÔÏó¾ÍÒÑ¾­´æÔÚÁË¡£
+//é¥¿æ±‰å¼
+class Single { // ç±»ä¸€åŠ è½½ï¼Œå¯¹è±¡å°±å·²ç»å­˜åœ¨äº†ã€‚
 	private static Single s = new Single();
 
 	private Single() {
@@ -44,9 +44,9 @@ class Single { // ÀàÒ»¼ÓÔØ£¬¶ÔÏó¾ÍÒÑ¾­´æÔÚÁË¡£
 	}
 }
 
-// ÀÁººÊ½
-class Single2 {// Àà¼ÓÔØ½øÀ´£¬Ã»ÓÐ¶ÔÏó£¬Ö»ÓÐµ÷ÓÃÁËgetInstance·½·¨Ê±£¬²Å»á´´½¨¶ÔÏó¡£
-// ÑÓ³Ù¼ÓÔØÐÎÊ½¡£
+// æ‡’æ±‰å¼
+class Single2 {// ç±»åŠ è½½è¿›æ¥ï¼Œæ²¡æœ‰å¯¹è±¡ï¼Œåªæœ‰è°ƒç”¨äº†getInstanceæ–¹æ³•æ—¶ï¼Œæ‰ä¼šåˆ›å»ºå¯¹è±¡ã€‚
+// å»¶è¿ŸåŠ è½½å½¢å¼ã€‚
 
 	private static Single2 s = null;
 
@@ -54,16 +54,16 @@ class Single2 {// Àà¼ÓÔØ½øÀ´£¬Ã»ÓÐ¶ÔÏó£¬Ö»ÓÐµ÷ÓÃÁËgetInstance·½·¨Ê±£¬²Å»á´´½¨¶ÔÏ
 	}
 
 	/*
-	 * public synchronized static Single2 getInstance() { 
-	 * 	if (s == null) { 
-	 * 		s = new Single2(); 
-	 * 	} 
-	 * 	return s; 
+	 * public synchronized static Single2 getInstance() {
+	 * 	if (s == null) {
+	 * 		s = new Single2();
+	 * 	}
+	 * 	return s;
 	 * }
-	 * 
+	 *
 	 */
 	/*
-	 * ¼ÓÈëË«ÖØÅÐ¶Ï¿ÉÒÔ½â¾öÐ§ÂÊÎÊÌâ
+	 * åŠ å…¥åŒé‡åˆ¤æ–­å¯ä»¥è§£å†³æ•ˆçŽ‡é—®é¢˜
 	 */
 	public static Single2 getInstance() {
 		if (s == null) {
