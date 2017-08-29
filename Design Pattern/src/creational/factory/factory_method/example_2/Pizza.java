@@ -56,7 +56,7 @@ public abstract class Pizza {
      * 装盒
      */
     public void box() {
-        System.out.println("披萨在官方匹萨商店盒子里");
+        System.out.println("披萨装进官方匹萨商店盒子里");
     }
 
 }
