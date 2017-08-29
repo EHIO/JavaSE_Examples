@@ -1,17 +1,17 @@
 package creational.factory.simple_factory;
 
 public class PizzaTestDrive {
- 
-	public static void main(String[] args) {
-		SimplePizzaFactory factory = new SimplePizzaFactory();
-		PizzaStore store = new PizzaStore(factory);
 
-		Pizza pizza = store.orderPizza("cheese");
-		System.out.println("ÎÒµãÁËÒ»¸ö " + pizza.getName() + "\n");
-		System.out.println(pizza);
+    public static void main(String[] args) {
+        SimplePizzaFactory factory = new SimplePizzaFactory();
+        PizzaStore store = new PizzaStore(factory);
+
+        Pizza pizza = store.orderPizza("cheese");
+        System.out.println("æˆ‘ç‚¹äº†ä¸€ä¸ª " + pizza.getName() + "\n");
+        System.out.println(pizza);
  
 		/*pizza = store.orderPizza("veggie");
-		System.out.println("We ordered a " + pizza.getName() + "\n");
+        System.out.println("We ordered a " + pizza.getName() + "\n");
 		System.out.println(pizza);*/
-	}
+    }
 }
