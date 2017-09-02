@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ±ÈÈøÉÌµê
+ * æ¯”è¨å•†åº—
  */
 public abstract class PizzaStore {
 	public Pizza orderPizza(String type) {

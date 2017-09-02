@@ -1,48 +1,48 @@
 package creational.factory.abstract_factory;
 
 /**
- * Ô­ÁÏ¹¤S£¬ÓÃì¶Éú®aÑu×÷±ÈË_µÄÔ­ÁÏ¡£ÀıÈç£ºüIˆF¡¢áuÁÏ¡¢Ö¥Ê¿¡¢ÈâºÍÊß²Ë
+ * åŸæ–™å·¥å» ï¼Œç”¨æ–¼ç”Ÿç”¢è£½ä½œæ¯”è–©çš„åŸæ–™ã€‚ä¾‹å¦‚ï¼šéºµåœ˜ã€é†¬æ–™ã€èŠå£«ã€è‚‰å’Œè”¬èœ
  */
 public interface PizzaIngredientFactory {
 	/**
-	 * Éú®aüIˆFÔ­ÁÏ
-	 * 
-	 * @return ÃæÍÅÔ­ÁÏ
+	 * ç”Ÿç”¢éºµåœ˜åŸæ–™
+	 *
+	 * @return é¢å›¢åŸæ–™
 	 */
 	public Dough createDough();
 
 	/**
-	 * Éú®aáuÁÏÔ­ÁÏ
-	 * 
-	 * @return áuÁÏÔ­ÁÏ
+	 * ç”Ÿç”¢é†¬æ–™åŸæ–™
+	 *
+	 * @return é†¬æ–™åŸæ–™
 	 */
 	public Sauce createSauce();
 
 	/**
-	 * Éú®aÖ¥Ê¿Ô­ÁÏ
-	 * 
-	 * @return Ö¥Ê¿Ô­ÁÏ
+	 * ç”Ÿç”¢èŠå£«åŸæ–™
+	 *
+	 * @return èŠå£«åŸæ–™
 	 */
 	public Cheese createCheese();
 
 	/**
-	 * Éú®aÊß²ËÔ­ÁÏ
-	 * 
-	 * @return Êß²ËÔ­ÁÏ
+	 * ç”Ÿç”¢è”¬èœåŸæ–™
+	 *
+	 * @return è”¬èœåŸæ–™
 	 */
 	public Veggies[] createVeggies();
 
 	/**
-	 * Éú®aÒâ´óÀûÏãÄcÔ­ÁÏ
-	 * 
-	 * @return Òâ´óÀûÏãÄcÔ­ÁÏ
+	 * ç”Ÿç”¢æ„å¤§åˆ©é¦™è…¸åŸæ–™
+	 *
+	 * @return æ„å¤§åˆ©é¦™è…¸åŸæ–™
 	 */
 	public Pepperoni createPepperoni();
 
 	/**
-	 * Éú®a¸òòÛÔ­ÁÏ
-	 * 
-	 * @return ¸òòÛÔ­ÁÏ
+	 * ç”Ÿç”¢è›¤èœŠåŸæ–™
+	 *
+	 * @return è›¤èœŠåŸæ–™
 	 */
 	public Clams createClam();
 }

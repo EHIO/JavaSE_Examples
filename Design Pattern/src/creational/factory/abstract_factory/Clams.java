@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ¸òòÛ
+ * è›¤èœŠ
  *
  */
 public class Clams {

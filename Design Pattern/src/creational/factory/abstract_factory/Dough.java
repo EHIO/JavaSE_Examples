@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ÃæÍÅ
+ * é¢å›¢
  */
 public class Dough {
 

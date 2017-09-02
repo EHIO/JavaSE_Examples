@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * Òâ´óÀûÏãÄc
+ * æ„å¤§åˆ©é¦™è…¸
  *
  */
 public class PepperoniPizza extends Pizza {

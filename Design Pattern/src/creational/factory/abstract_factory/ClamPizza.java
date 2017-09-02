@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ¸òòÛ±ÈË_
+ * è›¤èœŠæ¯”è–©
  */
 public class ClamPizza extends Pizza {
 	PizzaIngredientFactory ingredientFactory;
