@@ -4,59 +4,59 @@ import org.junit.Test;
 import org.wg.bean.Person;
 
 /*
- * ·´Éä£º¾ÍÊÇÍ¨¹ıclassÎÄ¼ş¶ÔÏó£¬È¥Ê¹ÓÃ¸ÃÎÄ¼şÖĞµÄ³ÉÔ±±äÁ¿£¬¹¹Ôì·½·¨£¬³ÉÔ±·½·¨¡£
- * 
+ * åå°„ï¼šå°±æ˜¯é€šè¿‡classæ–‡ä»¶å¯¹è±¡ï¼Œå»ä½¿ç”¨è¯¥æ–‡ä»¶ä¸­çš„æˆå‘˜å˜é‡ï¼Œæ„é€ æ–¹æ³•ï¼Œæˆå‘˜æ–¹æ³•ã€‚
+ *
  * Person p = new Person();
- * p.Ê¹ÓÃ
- * 
- * ÒªÏëÕâÑùÊ¹ÓÃ£¬Ê×ÏÈÄã±ØĞëµÃµ½classÎÄ¼ş¶ÔÏó£¬ÆäÊµÒ²¾ÍÊÇµÃµ½ClassÀàµÄ¶ÔÏó¡£
- * ClassÀà£º
- * 		³ÉÔ±±äÁ¿	Field
- * 		¹¹Ôì·½·¨	Constructor
- * 		³ÉÔ±·½·¨	Method
- * 
- * »ñÈ¡classÎÄ¼ş¶ÔÏóµÄ·½Ê½£º
- * A:ObjectÀàµÄgetClass()·½·¨
- * B:Êı¾İÀàĞÍµÄ¾²Ì¬ÊôĞÔclass
- * C:ClassÀàÖĞµÄ¾²Ì¬·½·¨
+ * p.ä½¿ç”¨
+ *
+ * è¦æƒ³è¿™æ ·ä½¿ç”¨ï¼Œé¦–å…ˆä½ å¿…é¡»å¾—åˆ°classæ–‡ä»¶å¯¹è±¡ï¼Œå…¶å®ä¹Ÿå°±æ˜¯å¾—åˆ°Classç±»çš„å¯¹è±¡ã€‚
+ * Classç±»ï¼š
+ * 		æˆå‘˜å˜é‡	Field
+ * 		æ„é€ æ–¹æ³•	Constructor
+ * 		æˆå‘˜æ–¹æ³•	Method
+ *
+ * è·å–classæ–‡ä»¶å¯¹è±¡çš„æ–¹å¼ï¼š
+ * A:Objectç±»çš„getClass()æ–¹æ³•
+ * B:æ•°æ®ç±»å‹çš„é™æ€å±æ€§class
+ * C:Classç±»ä¸­çš„é™æ€æ–¹æ³•
  * 		public static Class forName(String className)
- * 
- * Ò»°ãÎÒÃÇµ½µ×Ê¹ÓÃË­ÄØ?
- * 		A:×Ô¼ºÍæ	ÈÎÑ¡Ò»ÖÖ£¬µÚ¶şÖÖ±È½Ï·½±ã
- * 		B:¿ª·¢	µÚÈıÖÖ
- * 			ÎªÊ²Ã´ÄØ?ÒòÎªµÚÈıÖÖÊÇÒ»¸ö×Ö·û´®£¬¶ø²»ÊÇÒ»¸ö¾ßÌåµÄÀàÃû¡£ÕâÑùÎÒÃÇ¾Í¿ÉÒÔ°ÑÕâÑùµÄ×Ö·û´®ÅäÖÃµ½ÅäÖÃÎÄ¼şÖĞ¡£
+ *
+ * ä¸€èˆ¬æˆ‘ä»¬åˆ°åº•ä½¿ç”¨è°å‘¢?
+ * 		A:è‡ªå·±ç©	ä»»é€‰ä¸€ç§ï¼Œç¬¬äºŒç§æ¯”è¾ƒæ–¹ä¾¿
+ * 		B:å¼€å‘	ç¬¬ä¸‰ç§
+ * 			ä¸ºä»€ä¹ˆå‘¢?å› ä¸ºç¬¬ä¸‰ç§æ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œè€Œä¸æ˜¯ä¸€ä¸ªå…·ä½“çš„ç±»åã€‚è¿™æ ·æˆ‘ä»¬å°±å¯ä»¥æŠŠè¿™æ ·çš„å­—ç¬¦ä¸²é…ç½®åˆ°é…ç½®æ–‡ä»¶ä¸­ã€‚
  */
 public class ReflectDemo {
 
-	/**
-	 * @throws ClassNotFoundException
-	 */
-	@Test
-	public void getClassObject_3() throws ClassNotFoundException {
-		Class clazz = Class.forName("org.wg.bean.Person");
-		System.out.println(clazz);
-	}
+    /**
+     * @throws ClassNotFoundException
+     */
+    @Test
+    public void getClassObject_3() throws ClassNotFoundException {
+        Class clazz = Class.forName("org.wg.bean.Person");
+        System.out.println(clazz);
+    }
 
-	/**
-	 * @return
-	 */
-	@Test
-	public void getClassObject_2() {
-		Class clazz = Person.class;
-		Class clazz2 = Person.class;
-		System.err.println(clazz == clazz2);
-	}
+    /**
+     * @return
+     */
+    @Test
+    public void getClassObject_2() {
+        Class clazz = Person.class;
+        Class clazz2 = Person.class;
+        System.err.println(clazz == clazz2);
+    }
 
-	@Test
-	public void getClassObject_1() {
-		// ·½Ê½1
-		Person p = new Person();
-		Class c = p.getClass();
+    @Test
+    public void getClassObject_1() {
+        // æ–¹å¼1
+        Person p = new Person();
+        Class c = p.getClass();
 
-		Person p2 = new Person();
-		Class c2 = p2.getClass();
+        Person p2 = new Person();
+        Class c2 = p2.getClass();
 
-		System.out.println(p == p2);// false
-		System.out.println(c == c2);// true
-	}
+        System.out.println(p == p2);// false
+        System.out.println(c == c2);// true
+    }
 }

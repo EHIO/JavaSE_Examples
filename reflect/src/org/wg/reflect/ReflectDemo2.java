@@ -1,75 +1,77 @@
 package org.wg.reflect;
 
-import java.lang.reflect.Constructor;
-
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 /*
- * 	»ñÈ¡¹¹Ôì·½·¨
-		public Constructor[] getConstructors():ËùÓĞ¹«¹²¹¹Ôì·½·¨
-		public Constructor[] getDeclaredConstructors():ËùÓĞ¹¹Ôì·½·¨
+ * 	è·å–æ„é€ æ–¹æ³•
+		public Constructor[] getConstructors():æ‰€æœ‰å…¬å…±æ„é€ æ–¹æ³•
+		public Constructor[] getDeclaredConstructors():æ‰€æœ‰æ„é€ æ–¹æ³•
  */
 public class ReflectDemo2 {
-	/*
-	 * Í¨¹ı·´Éä»ñÈ¡¹¹Ôì·½·¨²¢Ê¹ÓÃ¡£
-	 */
-	@Test
-	public void demo() throws Exception {
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Class c = Class.forName("org.wg.bean.Person");
-		// »ñÈ¡µ¥¸ö¹¹Ôì·½·¨
-		// public Constructor<T> getConstructor(Class<?>... parameterTypes)
-		// ²ÎÊı±íÊ¾µÄÊÇ£ºÄãÒª»ñÈ¡µÄ¹¹Ôì·½·¨µÄ¹¹Ôì²ÎÊı¸öÊı¼°Êı¾İÀàĞÍµÄclass×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Constructor con = c.getConstructor();// ·µ»ØµÄÊÇ¹¹Ôì·½·¨¶ÔÏó
-		// Ê¹ÓÃ´Ë Constructor ¶ÔÏó±íÊ¾µÄ¹¹Ôì·½·¨À´´´½¨¸Ã¹¹Ôì·½·¨µÄÉùÃ÷ÀàµÄĞÂÊµÀı£¬²¢ÓÃÖ¸¶¨µÄ³õÊ¼»¯²ÎÊı³õÊ¼»¯¸ÃÊµÀı¡£
-		Object obj = con.newInstance();
-		System.out.println(obj);
-		// Person p = (Person)obj;
-		// p.show();
-	}
-	/*
-	 *Í¨¹ı·´Éä»ñÈ¡¸Ã¹¹Ôì·½·¨
-	 * public Person(String name, int age, String address)
-	 */
-	@Test
-	public void demo2() throws Exception {
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Class c = Class.forName("org.wg.bean.Person");
+    /*
+     * é€šè¿‡åå°„è·å–æ„é€ æ–¹æ³•å¹¶ä½¿ç”¨ã€‚
+     */
+    @Test
+    public void demo() throws Exception {
+        // è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Class c = Class.forName("org.wg.bean.Person");
+        // è·å–å•ä¸ªæ„é€ æ–¹æ³•
+        // public Constructor<T> getConstructor(Class<?>... parameterTypes)
+        // å‚æ•°è¡¨ç¤ºçš„æ˜¯ï¼šä½ è¦è·å–çš„æ„é€ æ–¹æ³•çš„æ„é€ å‚æ•°ä¸ªæ•°åŠæ•°æ®ç±»å‹çš„classå­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Constructor con = c.getConstructor();// è¿”å›çš„æ˜¯æ„é€ æ–¹æ³•å¯¹è±¡
+        // ä½¿ç”¨æ­¤ Constructor å¯¹è±¡è¡¨ç¤ºçš„æ„é€ æ–¹æ³•æ¥åˆ›å»ºè¯¥æ„é€ æ–¹æ³•çš„å£°æ˜ç±»çš„æ–°å®ä¾‹ï¼Œå¹¶ç”¨æŒ‡å®šçš„åˆå§‹åŒ–å‚æ•°åˆå§‹åŒ–è¯¥å®ä¾‹ã€‚
+        Object obj = con.newInstance();
+        System.out.println(obj);
+        // Person p = (Person)obj;
+        // p.show();
+    }
 
-		// »ñÈ¡´ø²Î¹¹Ôì·½·¨¶ÔÏó
-		// public Constructor<T> getConstructor(Class<?>... parameterTypes)
-		Constructor con = c.getConstructor(String.class, int.class,
-				String.class);
+    /*
+     *é€šè¿‡åå°„è·å–è¯¥æ„é€ æ–¹æ³•
+     * public Person(String name, int age, String address)
+     */
+    @Test
+    public void demo2() throws Exception {
+        // è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Class c = Class.forName("org.wg.bean.Person");
 
-		// Í¨¹ı´ø²Î¹¹Ôì·½·¨¶ÔÏó´´½¨¶ÔÏó
-		// public T newInstance(Object... initargs)
-		Object obj = con.newInstance("ÁÖÇàÏ¼", 27, "±±¾©");
-		
-		System.out.println(obj);
-	}
-	/*
-	 * ĞèÇó£ºÍ¨¹ı·´Éä»ñÈ¡Ë½ÓĞ¹¹Ôì·½·¨²¢Ê¹ÓÃ
-	 * private Person(String name){}
-	 * 
-	 * Person p = new Person("·çÇåÑï");
-	 * System.out.println(p);
-	 */
-	@Test
-	public void demo3() throws Exception {
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Class c = Class.forName("org.wg.bean.Person");
+        // è·å–å¸¦å‚æ„é€ æ–¹æ³•å¯¹è±¡
+        // public Constructor<T> getConstructor(Class<?>... parameterTypes)
+        Constructor con = c.getConstructor(String.class, int.class,
+                String.class);
 
-		// »ñÈ¡Ë½ÓĞ¹¹Ôì·½·¨¶ÔÏó
-		// NoSuchMethodException£ºÃ¿¸öÕâ¸ö·½·¨Òì³£
-		// Ô­ÒòÊÇÒ»¿ªÊ¼ÎÒÃÇÊ¹ÓÃµÄ·½·¨Ö»ÄÜ»ñÈ¡¹«¹²µÄ£¬ÏÂÃæÕâÖÖ·½Ê½¾Í¿ÉÒÔÁË¡£
-		Constructor con = c.getDeclaredConstructor(String.class);
+        // é€šè¿‡å¸¦å‚æ„é€ æ–¹æ³•å¯¹è±¡åˆ›å»ºå¯¹è±¡
+        // public T newInstance(Object... initargs)
+        Object obj = con.newInstance("æ—é’éœ", 27, "åŒ—äº¬");
 
-		// ÓÃ¸ÃË½ÓĞ¹¹Ôì·½·¨´´½¨¶ÔÏó
-		// IllegalAccessException:·Ç·¨µÄ·ÃÎÊÒì³£¡£
-		// ±©Á¦·ÃÎÊ
-		con.setAccessible(true);// ÖµÎªtrueÔòÖ¸Ê¾·´ÉäµÄ¶ÔÏóÔÚÊ¹ÓÃÊ±Ó¦¸ÃÈ¡ÏûJavaÓïÑÔ·ÃÎÊ¼ì²é¡£
-		Object obj = con.newInstance("·çÇåÑï");
+        System.out.println(obj);
+    }
 
-		System.out.println(obj);
-	}
+    /*
+     * éœ€æ±‚ï¼šé€šè¿‡åå°„è·å–ç§æœ‰æ„é€ æ–¹æ³•å¹¶ä½¿ç”¨
+     * private Person(String name){}
+     *
+     * Person p = new Person("é£æ¸…æ‰¬");
+     * System.out.println(p);
+     */
+    @Test
+    public void demo3() throws Exception {
+        // è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Class c = Class.forName("org.wg.bean.Person");
+
+        // è·å–ç§æœ‰æ„é€ æ–¹æ³•å¯¹è±¡
+        // NoSuchMethodExceptionï¼šæ¯ä¸ªè¿™ä¸ªæ–¹æ³•å¼‚å¸¸
+        // åŸå› æ˜¯ä¸€å¼€å§‹æˆ‘ä»¬ä½¿ç”¨çš„æ–¹æ³•åªèƒ½è·å–å…¬å…±çš„ï¼Œä¸‹é¢è¿™ç§æ–¹å¼å°±å¯ä»¥äº†ã€‚
+        Constructor con = c.getDeclaredConstructor(String.class);
+
+        // ç”¨è¯¥ç§æœ‰æ„é€ æ–¹æ³•åˆ›å»ºå¯¹è±¡
+        // IllegalAccessException:éæ³•çš„è®¿é—®å¼‚å¸¸ã€‚
+        // æš´åŠ›è®¿é—®
+        con.setAccessible(true);// å€¼ä¸ºtrueåˆ™æŒ‡ç¤ºåå°„çš„å¯¹è±¡åœ¨ä½¿ç”¨æ—¶åº”è¯¥å–æ¶ˆJavaè¯­è¨€è®¿é—®æ£€æŸ¥ã€‚
+        Object obj = con.newInstance("é£æ¸…æ‰¬");
+
+        System.out.println(obj);
+    }
 }

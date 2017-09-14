@@ -1,61 +1,61 @@
 package org.wg.reflect;
 
+import org.junit.Test;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-import org.junit.Test;
-
 public class ReflectDemo4 {
-	
-	@Test
-	public void demo() throws Exception {
-		Class c = Class.forName("org.wg.bean.Person");
-		// »ñÈ¡×Ô¼ºµÄ°üÀ¨¸¸Ç×µÄËùÓĞ¹«¹²·½·¨
-		Method[] methods = c.getMethods();
-		//»ñÈ¡±¾ÀàµÄËùÓĞ·½·¨£¬°üº¬Ë½ÓĞ
-		methods = c.getDeclaredMethods();
-		for (Method m : methods) {
-			System.err.println(m);
-		}
-		System.out.println("----------------------------------");
-		Method method = c.getMethod("notify", null);
-//		method = c.getDeclaredMethod("getString", String.class,int.class);
-		System.out.println(method);
-	}
-	
-	@Test
-	public void demo2() throws Exception {
-		Class c = Class.forName("org.wg.bean.Person");
-		
-		Constructor constructor = c.getConstructor();
-		Object obj = constructor.newInstance();
-//		Object obj = c.newInstance();
-		
-		Method m = c.getMethod("show");
-		m.invoke(obj, null);//·µ»ØÖµ£ºÊ¹ÓÃ²ÎÊı args ÔÚ obj ÉÏÖ¸ÅÉ¸Ã¶ÔÏóËù±íÊ¾·½·¨µÄ½á¹û 
 
-	}
-	
-	@Test
-	public void demo3() throws Exception {
-		Class c = Class.forName("org.wg.bean.Person");
-		
-		Object obj = c.newInstance();
-		
-		Method m = c.getMethod("getString", String.class, int.class);
-		System.out.println(m.invoke(obj, "Ğ¡Ç¿", 9527));
-		
-	}
-	
-	@Test
-	public void demo4() throws Exception {
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Class c = Class.forName("org.wg.bean.Person");
-		Object obj = c.newInstance();
-		// private void function()
-		Method m4 = c.getDeclaredMethod("function");
-		m4.setAccessible(true);
-		m4.invoke(obj);
-	}
-	
+    @Test
+    public void demo() throws Exception {
+        Class c = Class.forName("org.wg.bean.Person");
+        // è·å–è‡ªå·±çš„åŒ…æ‹¬çˆ¶äº²çš„æ‰€æœ‰å…¬å…±æ–¹æ³•
+        Method[] methods = c.getMethods();
+        //è·å–æœ¬ç±»çš„æ‰€æœ‰æ–¹æ³•ï¼ŒåŒ…å«ç§æœ‰
+        methods = c.getDeclaredMethods();
+        for (Method m : methods) {
+            System.err.println(m);
+        }
+        System.out.println("----------------------------------");
+        Method method = c.getMethod("notify", null);
+//		method = c.getDeclaredMethod("getString", String.class,int.class);
+        System.out.println(method);
+    }
+
+    @Test
+    public void demo2() throws Exception {
+        Class c = Class.forName("org.wg.bean.Person");
+
+        Constructor constructor = c.getConstructor();
+        Object obj = constructor.newInstance();
+//		Object obj = c.newInstance();
+
+        Method m = c.getMethod("show");
+        m.invoke(obj, null);//è¿”å›å€¼ï¼šä½¿ç”¨å‚æ•° args åœ¨ obj ä¸ŠæŒ‡æ´¾è¯¥å¯¹è±¡æ‰€è¡¨ç¤ºæ–¹æ³•çš„ç»“æœ
+
+    }
+
+    @Test
+    public void demo3() throws Exception {
+        Class c = Class.forName("org.wg.bean.Person");
+
+        Object obj = c.newInstance();
+
+        Method m = c.getMethod("getString", String.class, int.class);
+        System.out.println(m.invoke(obj, "å°å¼º", 9527));
+
+    }
+
+    @Test
+    public void demo4() throws Exception {
+        // è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Class c = Class.forName("org.wg.bean.Person");
+        Object obj = c.newInstance();
+        // private void function()
+        Method m4 = c.getDeclaredMethod("function");
+        m4.setAccessible(true);
+        m4.invoke(obj);
+    }
+
 }

@@ -4,49 +4,49 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
 /*
- * Í¨¹ı·´Éä»ñÈ¡³ÉÔ±±äÁ¿²¢Ê¹ÓÃ
+ * é€šè¿‡åå°„è·å–æˆå‘˜å˜é‡å¹¶ä½¿ç”¨
  */
 public class ReflectDemo3 {
-	public static void main(String[] args) throws Exception {
-		// »ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó
-		Class c = Class.forName("org.wg.bean.Person");
+    public static void main(String[] args) throws Exception {
+        // è·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡
+        Class c = Class.forName("org.wg.bean.Person");
 
-		// »ñÈ¡ËùÓĞµÄ³ÉÔ±±äÁ¿
-		// Field[] fields = c.getFields();
-		// Field[] fields = c.getDeclaredFields();
-		// for (Field field : fields) {
-		// System.out.println(field);
-		// }
+        // è·å–æ‰€æœ‰çš„æˆå‘˜å˜é‡
+        // Field[] fields = c.getFields();
+        // Field[] fields = c.getDeclaredFields();
+        // for (Field field : fields) {
+        // System.out.println(field);
+        // }
 
 		/*
-		 * Person p = new Person(); p.address = "±±¾©"; System.out.println(p);
+         * Person p = new Person(); p.address = "åŒ—äº¬"; System.out.println(p);
 		 */
 
-		// Í¨¹ıÎŞ²Î¹¹Ôì·½·¨´´½¨¶ÔÏó
-		Constructor con = c.getConstructor();
-		Object obj = con.newInstance();
-		System.out.println(obj);
+        // é€šè¿‡æ— å‚æ„é€ æ–¹æ³•åˆ›å»ºå¯¹è±¡
+        Constructor con = c.getConstructor();
+        Object obj = con.newInstance();
+        System.out.println(obj);
 
-		// »ñÈ¡µ¥¸öµÄ³ÉÔ±±äÁ¿
-		// »ñÈ¡address²¢¶ÔÆä¸³Öµ
-		Field addressField = c.getField("address");
-		// public void set(Object obj,Object value)
-		// ½«Ö¸¶¨¶ÔÏó±äÁ¿ÉÏ´Ë Field ¶ÔÏó±íÊ¾µÄ×Ö¶ÎÉèÖÃÎªÖ¸¶¨µÄĞÂÖµ¡£
-		addressField.set(obj, "±±¾©"); // ¸øobj¶ÔÏóµÄaddressField×Ö¶ÎÉèÖÃÖµÎª"±±¾©"
-		System.out.println(obj);
+        // è·å–å•ä¸ªçš„æˆå‘˜å˜é‡
+        // è·å–addresså¹¶å¯¹å…¶èµ‹å€¼
+        Field addressField = c.getField("address");
+        // public void set(Object obj,Object value)
+        // å°†æŒ‡å®šå¯¹è±¡å˜é‡ä¸Šæ­¤ Field å¯¹è±¡è¡¨ç¤ºçš„å­—æ®µè®¾ç½®ä¸ºæŒ‡å®šçš„æ–°å€¼ã€‚
+        addressField.set(obj, "åŒ—äº¬"); // ç»™objå¯¹è±¡çš„addressFieldå­—æ®µè®¾ç½®å€¼ä¸º"åŒ—äº¬"
+        System.out.println(obj);
 
-		// »ñÈ¡name²¢¶ÔÆä¸³Öµ
-		// NoSuchFieldException
-		Field nameField = c.getDeclaredField("name");
-		// IllegalAccessException
-		nameField.setAccessible(true);
-		nameField.set(obj, "ÁÖÇàÏ¼");
-		System.out.println(obj);
+        // è·å–nameå¹¶å¯¹å…¶èµ‹å€¼
+        // NoSuchFieldException
+        Field nameField = c.getDeclaredField("name");
+        // IllegalAccessException
+        nameField.setAccessible(true);
+        nameField.set(obj, "æ—é’éœ");
+        System.out.println(obj);
 
-		// »ñÈ¡age²¢¶ÔÆä¸³Öµ
-		Field ageField = c.getDeclaredField("age");
-		ageField.setAccessible(true);
-		ageField.set(obj, 27);
-		System.out.println(obj);
-	}
+        // è·å–ageå¹¶å¯¹å…¶èµ‹å€¼
+        Field ageField = c.getDeclaredField("age");
+        ageField.setAccessible(true);
+        ageField.set(obj, 27);
+        System.out.println(obj);
+    }
 }
