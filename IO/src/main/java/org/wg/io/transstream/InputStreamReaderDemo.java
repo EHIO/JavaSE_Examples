@@ -1,4 +1,4 @@
-package org.wg.io.charstream;
+package org.wg.io.transstream;
 
 import org.junit.Test;
 
