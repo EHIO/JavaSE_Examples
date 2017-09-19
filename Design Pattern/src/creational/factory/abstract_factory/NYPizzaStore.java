@@ -1,8 +1,8 @@
 package creational.factory.abstract_factory;
 
 /**
- * ¼~¼sïLÎ¶µÄ±ÈË_ÉÌµê
- * 
+ * ç´ç´„é¢¨å‘³çš„æ¯”è–©å•†åº—
+ *
  * @author wang.gang
  *
  */
@@ -14,16 +14,16 @@ public class NYPizzaStore extends PizzaStore {
 		PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
 		if (type.equals("cheese")) {
 			pizza = new CheesePizza(ingredientFactory);
-			pizza.setName("¼~¼s˜ÓÊ½µÄÖ¥Ê¿±ÈË_£¡ ");
+			pizza.setName("ç´ç´„æ¨£å¼çš„èŠå£«æ¯”è–©ï¼ ");
 		} else if (type.equals("pepperoniPizza")) {
 			pizza = new PepperoniPizza(ingredientFactory);
-			pizza.setName("¼~¼s˜ÓÊ½µÄÒâ´óÀûÏã³¦±ÈË_£¡ ");
+			pizza.setName("ç´ç´„æ¨£å¼çš„æ„å¤§åˆ©é¦™è‚ æ¯”è–©ï¼ ");
 		} else if (type.equals("clam")) {
 			pizza = new ClamPizza(ingredientFactory);
-			pizza.setName("¼~¼s˜ÓÊ½µÄ¸òòÛ±ÈË_£¡ ");
+			pizza.setName("ç´ç´„æ¨£å¼çš„è›¤èœŠæ¯”è–©ï¼ ");
 		} else if (type.equals("veggie")) {
 			pizza = new VeggiePizza(ingredientFactory);
-			pizza.setName("¼~¼s˜ÓÊ½µÄËØÊ³±ÈË_£¡ ");
+			pizza.setName("ç´ç´„æ¨£å¼çš„ç´ é£Ÿæ¯”è–©ï¼ ");
 		}
 		return pizza;
 	}

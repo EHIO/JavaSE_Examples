@@ -1,3 +1,5 @@
+package org.wg.exception;
+
 import java.util.ArrayList;
 import java.util.List;
 

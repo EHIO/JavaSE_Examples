@@ -1,3 +1,5 @@
+package org.wg.exception;
+
 /**
  * Created by run on 2017/8/3.
  */

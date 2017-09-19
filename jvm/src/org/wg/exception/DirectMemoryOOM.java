@@ -1,3 +1,5 @@
+package org.wg.exception;
+
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;

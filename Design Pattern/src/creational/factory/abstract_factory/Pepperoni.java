@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * Òâ´óÀûÀ±Ïã³¦
+ * æ„å¤§åˆ©è¾£é¦™è‚ 
  *
  */
 public class Pepperoni {

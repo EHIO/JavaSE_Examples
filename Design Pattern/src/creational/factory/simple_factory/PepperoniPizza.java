@@ -1,8 +1,9 @@
 package creational.factory.simple_factory;
+
 /**
- * Òâ´óÀûÆ¥Èø
- * @author wang.gang
+ * æ„å¤§åˆ©åŒ¹è¨
  *
+ * @author wang.gang
  */
 
 

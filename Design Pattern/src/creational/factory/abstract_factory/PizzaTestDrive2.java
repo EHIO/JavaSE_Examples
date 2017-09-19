@@ -2,9 +2,9 @@ package creational.factory.abstract_factory;
 
 public class PizzaTestDrive2 {
 	public static void main(String[] args) {
-		// 首先需要一个纽约比萨店
+		// 棣栧厛闇�瑕佷竴涓航绾︽瘮钀ㄥ簵
 		PizzaStore nyPizzaStore = new NYPizzaStore();
-		// 店有了，开始接受订单了
+		// 搴楁湁浜嗭紝寮�濮嬫帴鍙楄鍗曚簡
 		nyPizzaStore.orderPizza("cheese");
 
 	}

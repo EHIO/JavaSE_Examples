@@ -1,4 +1,4 @@
-package creational.factory.simple_factory;
+package creational.factory.factory_method.example_2;
 
 import java.util.ArrayList;
 
@@ -28,12 +28,12 @@ public abstract class Pizza {
      * 准备
      */
     public void prepare() {
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppings: ");
+        System.out.println("准备 " + name);
+        System.out.println("揉面团...");
+        System.out.println("加酱料...");
+        System.out.println("加佐料: ");
         for (int i = 0; i < toppings.size(); i++) {
-            System.out.println("  " + toppings.get(i));
+            System.out.println("     " + toppings.get(i));
         }
     }
 
@@ -56,7 +56,7 @@ public abstract class Pizza {
      * 装盒
      */
     public void box() {
-        System.out.println("披萨装在官方匹萨商店盒子");
+        System.out.println("披萨装进官方匹萨商店盒子里");
     }
 
 }

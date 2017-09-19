@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * ±ÈÈø
+ * æ¯”è¨
  */
 public abstract class Pizza {
 	String name;
@@ -13,20 +13,20 @@ public abstract class Pizza {
 	Clams clams;
 
 	/**
-	 * ÔÚß@ÑeÊÕ¼¯±ÈË_ËùĞèÒªµÄÔ­ÁÏ£¬¶øß@Ğ©Ô­ÁÏí×Ôì¶Ô­ÁÏ¹¤S
+	 * åœ¨é€™è£¡æ”¶é›†æ¯”è–©æ‰€éœ€è¦çš„åŸæ–™ï¼Œè€Œé€™äº›åŸæ–™ä¾†è‡ªæ–¼åŸæ–™å·¥å» 
 	 */
 	abstract void prepare();
 
 	void bake() {
-		System.out.println("ÔÚ350¶ÈµÄÎÂ¶ÈÏÂ¿¾25·ÖÖÓ");
+		System.out.println("åœ¨350åº¦çš„æ¸©åº¦ä¸‹çƒ¤25åˆ†é’Ÿ");
 	}
 
 	void cut() {
-		System.out.println("°ÑÅûÈøÇĞ³ÉĞ±Æ¬");
+		System.out.println("æŠŠæŠ«è¨åˆ‡æˆæ–œç‰‡");
 	}
 
 	void box() {
-		System.out.println("ÅûÈøÔÚ¹Ù·½Æ¥ÈøÉÌµêºĞ×ÓÀï");
+		System.out.println("æŠ«è¨åœ¨å®˜æ–¹åŒ¹è¨å•†åº—ç›’å­é‡Œ");
 	}
 
 	void setName(String name) {

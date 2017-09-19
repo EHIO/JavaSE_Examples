@@ -1,26 +1,28 @@
 package creational.factory.simple_factory;
+
 /**
- * ÅûÈø¹¤³§
- * @author wang.gang
+ * æŠ«è¨å·¥å‚
  *
+ * @author wang.gang
  */
 public class SimplePizzaFactory {
-	/**
-	 * ¸ù¾İ´«½øÀ´µÄÀàĞÍ´´½¨ÏàÓ¦µÄÅûÈø
-	 * @param type
-	 * @return
-	 */
-	public Pizza createPizza(String type) {
-		Pizza pizza = null;
-		if("cheese".equals(type)) {
-			pizza = new CheesePizza();
-		} else if("pepperoniPizza".equals(type)) {
-			pizza = new PepperoniPizza();
-		} else if("clam".equals(type)) {
-			pizza = new ClamPizza();
-		} else if("veggie".equals(type)) {
-			pizza = new VeggiePizza();
-		}
-		return pizza;
-	}
+    /**
+     * æ ¹æ®ä¼ è¿›æ¥çš„ç±»å‹åˆ›å»ºç›¸åº”çš„æŠ«è¨
+     *
+     * @param type
+     * @return
+     */
+    public Pizza createPizza(String type) {
+        Pizza pizza = null;
+        if ("cheese".equals(type)) {
+            pizza = new CheesePizza();
+        } else if ("pepperoniPizza".equals(type)) {
+            pizza = new PepperoniPizza();
+        } else if ("clam".equals(type)) {
+            pizza = new ClamPizza();
+        } else if ("veggie".equals(type)) {
+            pizza = new VeggiePizza();
+        }
+        return pizza;
+    }
 }

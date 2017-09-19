@@ -1,7 +1,7 @@
 package creational.factory.abstract_factory;
 
 /**
- * 纽约风味原料工厂，生產製作紐約風味的比薩原料
+ * 绾界害椋庡懗鍘熸枡宸ュ巶锛岀敓鐢㈣＝浣滅磹绱勯ⅷ鍛崇殑姣旇柀鍘熸枡
  */
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 

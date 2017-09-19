@@ -1,8 +1,9 @@
 package creational.factory.simple_factory;
+
 /**
- * ¹şòÛÆ¥Èø
- * @author wang.gang
+ * å“ˆèœŠåŒ¹è¨
  *
+ * @author wang.gang
  */
 
 public class ClamPizza extends Pizza {
