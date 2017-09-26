@@ -5,30 +5,29 @@ import org.junit.Test;
 import java.io.*;
 import java.util.Properties;
 import java.util.Set;
+
 /**
  * Map
- * 	|--Hashtable
- * 		|--Properties:
- *
+ * |--Hashtable
+ * |--Properties:
+ * <p>
  * Properties集合：
  * 特点：
  * 1，该集合中的键和值都是字符串类型。
  * 2，集合中的数据可以保存到流中，或者从流获取。
- *
+ * <p>
  * 通常该集合用于操作以键值对形式存在的配置文件。
- *
- *
  */
 public class PropertiesDemo {
 
     //对已有的配置文件中的信息进行修改。
-	/*
+    /*
 	 * 读取这个文件。
 	 * 并将这个文件中的键值数据存储到集合中。
 	 * 在通过集合对数据进行修改。
 	 * 在通过流将修改后的数据存储到文件中。
 	 */
-	@Test
+    @Test
     public void test() throws IOException {
         //读取这个文件。
         File file = new File("info.txt");
@@ -128,10 +127,10 @@ public class PropertiesDemo {
         prop.list(System.out);
     }
 
-	/*
-	 * Properties集合的存和取。
-	 */
-	@Test
+    /*
+     * Properties集合的存和取。
+     */
+    @Test
     public void propertiesDemo() {
         //创建一个Properties集合。
 

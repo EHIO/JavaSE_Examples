@@ -5,7 +5,6 @@ import java.io.FilenameFilter;
 
 /**
  * 文件名过滤器
- *
  */
 public class SuffixFilter implements FilenameFilter {
 

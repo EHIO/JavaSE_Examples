@@ -25,21 +25,23 @@ public class PipedStream {
 }
 
 
-class Input implements Runnable{
+class Input implements Runnable {
 
     private PipedInputStream in;
-    Input(PipedInputStream in){
+
+    Input(PipedInputStream in) {
         this.in = in;
     }
-    public void run(){
+
+    public void run() {
 
         try {
             byte[] buf = new byte[1024];
             int len = in.read(buf);
 
-            String s = new String(buf,0,len);
+            String s = new String(buf, 0, len);
 
-            System.out.println("s="+s);
+            System.out.println("s=" + s);
             in.close();
         } catch (Exception e) {
             // TODO: handle exception
@@ -48,12 +50,14 @@ class Input implements Runnable{
     }
 }
 
-class Output implements Runnable{
+class Output implements Runnable {
     private PipedOutputStream out;
-    Output(PipedOutputStream out){
+
+    Output(PipedOutputStream out) {
         this.out = out;
     }
-    public void run(){
+
+    public void run() {
 
         try {
             Thread.sleep(5000);

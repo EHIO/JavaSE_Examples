@@ -34,7 +34,7 @@ public class FileWriterDemo {
 //		fw.write("xixi");
 
 		/*
-		 * 进行刷新，将数据直接写到目的地中。
+         * 进行刷新，将数据直接写到目的地中。
 		 */
 
 //		fw.flush();

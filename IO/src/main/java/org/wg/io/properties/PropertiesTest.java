@@ -41,18 +41,18 @@ public class PropertiesTest {
      * @throws IOException
      * @throws Exception
      */
-    public static void main(String[] args) throws IOException  {
+    public static void main(String[] args) throws IOException {
 
         getAppCount();
 
     }
 
-    public static void getAppCount() throws IOException{
+    public static void getAppCount() throws IOException {
 
         //将配置文件封装成File对象。
         File confile = new File("count.properties");
 
-        if(!confile.exists()){
+        if (!confile.exists()) {
             confile.createNewFile();
         }
 
@@ -66,10 +66,10 @@ public class PropertiesTest {
         //从集合中通过键获取次数。
         String value = prop.getProperty("time");
         //定义计数器。记录获取到的次数。
-        int count =0;
-        if(value!=null){
+        int count = 0;
+        if (value != null) {
             count = Integer.parseInt(value);
-            if(count>=5){
+            if (count >= 5) {
 //				System.out.println("使用次数已到，请注册，给钱！");
 //				return;
                 throw new RuntimeException("使用次数已到，请注册，给钱！");
@@ -78,7 +78,7 @@ public class PropertiesTest {
         count++;
 
         //将改变后的次数重新存储到集合中。
-        prop.setProperty("time", count+"");
+        prop.setProperty("time", count + "");
 
         FileOutputStream fos = new FileOutputStream(confile);
 

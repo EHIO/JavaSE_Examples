@@ -13,7 +13,7 @@ public class RandomAccessFileDemo {
     public static void main(String[] args) throws IOException {
 
 		/*
-		 * RandomAccessFile
+         * RandomAccessFile
 		 * 一看这个类名字，纠结。不是io体系中的子类。
 		 *
 		 * 特点：
@@ -31,11 +31,11 @@ public class RandomAccessFileDemo {
         randomWrite();
     }
 
-    public static void randomWrite() throws IOException{
+    public static void randomWrite() throws IOException {
         RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
 
         //往指定位置写入数据。
-        raf.seek(3*8);
+        raf.seek(3 * 8);
 
         raf.write("哈哈".getBytes());
         raf.writeInt(108);
@@ -49,7 +49,7 @@ public class RandomAccessFileDemo {
         RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "r");
 
         //通过seek设置指针的位置。
-        raf.seek(1*8);//随机的读取。只要指定指针的位置即可。
+        raf.seek(1 * 8);//随机的读取。只要指定指针的位置即可。
 
         byte[] buf = new byte[4];
         raf.read(buf);
@@ -58,10 +58,10 @@ public class RandomAccessFileDemo {
 
         int age = raf.readInt();
 
-        System.out.println("name="+name);
-        System.out.println("age="+age);
+        System.out.println("name=" + name);
+        System.out.println("age=" + age);
 
-        System.out.println("pos:"+raf.getFilePointer());
+        System.out.println("pos:" + raf.getFilePointer());
 
         raf.close();
 
@@ -69,12 +69,12 @@ public class RandomAccessFileDemo {
     }
 
     //使用RandomAccessFile对象写入一些人员信息，比如姓名和年龄。
-    public static void writeFile() throws IOException{
+    public static void writeFile() throws IOException {
 		/*
 		 * 如果文件不存在，则创建，如果文件存在，不创建
 		 *
 		 */
-        RandomAccessFile raf = new RandomAccessFile("ranacc.txt","rw");
+        RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
 
         raf.write("张三".getBytes());
         raf.writeInt(97);

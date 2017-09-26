@@ -32,7 +32,7 @@ public class SequenceInputStreamDemo {
 		
 		
 		/*
-		final Iterator<FileInputStream> it = al.iterator();
+        final Iterator<FileInputStream> it = al.iterator();
 		Enumeration<FileInputStream> en = new Enumeration<FileInputStream>(){
 
 			@Override

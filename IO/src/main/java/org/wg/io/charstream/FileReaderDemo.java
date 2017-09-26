@@ -36,7 +36,7 @@ public class FileReaderDemo {
 
         FileReader fr = new FileReader("demo.txt");
         /*
-		 * 使用read(char[])读取文本文件数据。
+         * 使用read(char[])读取文本文件数据。
 		 *
 		 * 先创建字符数组。
 		 */

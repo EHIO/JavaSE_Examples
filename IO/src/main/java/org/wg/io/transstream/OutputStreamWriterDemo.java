@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 /**
- *  OutputStreamWriter: 字符流
+ * OutputStreamWriter: 字符流
  * 作用： 是字符流通向字节流的桥梁
  * OutputStreamWriter(OutputStream out):根据默认编码把字节流的数据转换为字符流
  * OutputStreamWriter(OutputStream out,String charsetName):
