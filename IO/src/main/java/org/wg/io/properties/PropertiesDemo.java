@@ -1,38 +1,25 @@
 package org.wg.io.properties;
 
+import org.junit.Test;
+
 import java.io.*;
 import java.util.Properties;
 import java.util.Set;
-
+/**
+ * Map
+ * 	|--Hashtable
+ * 		|--Properties:
+ *
+ * Properties集合：
+ * 特点：
+ * 1，该集合中的键和值都是字符串类型。
+ * 2，集合中的数据可以保存到流中，或者从流获取。
+ *
+ * 通常该集合用于操作以键值对形式存在的配置文件。
+ *
+ *
+ */
 public class PropertiesDemo {
-
-    /**
-     * @param args
-     * @throws IOException
-     */
-    public static void main(String[] args) throws IOException {
-
-		/*
-         * Map
-		 * 	|--Hashtable
-		 * 		|--Properties:
-		 * 
-		 * Properties集合：
-		 * 特点：
-		 * 1，该集合中的键和值都是字符串类型。
-		 * 2，集合中的数据可以保存到流中，或者从流获取。
-		 *
-		 * 通常该集合用于操作以键值对形式存在的配置文件。
-		 *
-		 *
-		 */
-
-//		methodDemo_4();
-//		myLoad();
-
-        test();
-    }
-
 
     //对已有的配置文件中的信息进行修改。
 	/*
@@ -41,14 +28,14 @@ public class PropertiesDemo {
 	 * 在通过集合对数据进行修改。
 	 * 在通过流将修改后的数据存储到文件中。
 	 */
-    public static void test() throws IOException {
+	@Test
+    public void test() throws IOException {
         //读取这个文件。
         File file = new File("info.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
         FileReader fr = new FileReader(file);
-
 
         //创建集合存储配置信息。
         Properties prop = new Properties();
@@ -64,11 +51,8 @@ public class PropertiesDemo {
         prop.store(fw, "");
 
 //		prop.list(System.out);
-
         fw.close();
         fr.close();
-
-
     }
 
 
@@ -98,7 +82,8 @@ public class PropertiesDemo {
 
     }
 
-    public static void methodDemo_4() throws IOException {
+    @Test
+    public void methodDemo_4() throws IOException {
 
         Properties prop = new Properties();
 
@@ -111,11 +96,10 @@ public class PropertiesDemo {
         prop.load(fis);
 
         prop.list(System.out);
-
-
     }
 
-    public static void methodDemo_3() throws IOException {
+    @Test
+    public void methodDemo_3() throws IOException {
         Properties prop = new Properties();
 
         //存储元素。
@@ -138,25 +122,17 @@ public class PropertiesDemo {
     /**
      * 演示Properties集合和流对象相结合的功能。
      */
-
-    public static void methodDemo_2() {
-        Properties prop = new Properties();
-
-        //存储元素。
-//		prop.setProperty("zhangsan","30");
-//		prop.setProperty("lisi","31");
-//		prop.setProperty("wangwu","36");
-//		prop.setProperty("zhaoliu","20");
-
-        prop = System.getProperties();
+    @Test
+    public void methodDemo_2() {
+        Properties prop = System.getProperties();
         prop.list(System.out);
     }
 
 	/*
 	 * Properties集合的存和取。
 	 */
-
-    public static void propertiesDemo() {
+	@Test
+    public void propertiesDemo() {
         //创建一个Properties集合。
 
         Properties prop = new Properties();

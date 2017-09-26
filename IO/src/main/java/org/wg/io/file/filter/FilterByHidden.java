@@ -3,12 +3,15 @@ package org.wg.io.file.filter;
 import java.io.File;
 import java.io.FileFilter;
 
+/**
+ * 文件过滤器
+ */
 public class FilterByHidden implements FileFilter {
 
     @Override
-    public boolean accept(File pathname) {
+    public boolean accept(File pathName) {
 
-        return !pathname.isHidden();
+        return !pathName.isHidden();
     }
 
 }

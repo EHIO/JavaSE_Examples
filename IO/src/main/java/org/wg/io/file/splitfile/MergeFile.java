@@ -27,7 +27,7 @@ public class MergeFile {
     public static void mergeFile_2(File dir) throws IOException {
 
 		/*
-		 * ��ȡָ��Ŀ¼�µ������ļ�����
+         * ��ȡָ��Ŀ¼�µ������ļ�����
 		 */
         File[] files = dir.listFiles(new SuffixFilter(".properties"));
 
@@ -78,7 +78,6 @@ public class MergeFile {
     }
 
     public static void mergeFile(File dir) throws IOException {
-
 
         ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
 

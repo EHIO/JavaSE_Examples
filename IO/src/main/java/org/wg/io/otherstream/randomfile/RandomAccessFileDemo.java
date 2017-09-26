@@ -3,6 +3,7 @@ package org.wg.io.otherstream.randomfile;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+
 public class RandomAccessFileDemo {
 
     /**
@@ -12,17 +13,17 @@ public class RandomAccessFileDemo {
     public static void main(String[] args) throws IOException {
 
 		/*
-         * RandomAccessFile
-		 * һ����������֣����ᡣ����io��ϵ�е����ࡣ
-		 * 
-		 * �ص㣺
-		 * 1���ö����ܶ�������д��
-		 * 2���ö����ڲ�ά����һ��byte���飬��ͨ��ָ����Բ��������е�Ԫ�أ�
-		 * 3������ͨ��getFilePointer������ȡָ���λ�ã���ͨ��seek��������ָ���λ�á�
-		 * 4����ʵ�ö�����ǽ��ֽ�������������������˷�װ�� 
-		 * 5���ö����Դ����Ŀ��ֻ�����ļ���ͨ�����캯���Ϳ��Կ����� 
-		 * 
-		 * 
+		 * RandomAccessFile
+		 * 一看这个类名字，纠结。不是io体系中的子类。
+		 *
+		 * 特点：
+		 * 1，该对象即能读，又能写。
+		 * 2，该对象内部维护了一个byte数组，并通过指针可以操作数组中的元素，
+		 * 3，可以通过getFilePointer方法获取指针的位置，和通过seek方法设置指针的位置。
+		 * 4，其实该对象就是将字节输入流和输出流进行了封装。
+		 * 5，该对象的源或者目的只能是文件。通过构造函数就可以看出。
+		 *
+		 *
 		 */
 
 //		writeFile();
@@ -30,13 +31,13 @@ public class RandomAccessFileDemo {
         randomWrite();
     }
 
-    public static void randomWrite() throws IOException {
+    public static void randomWrite() throws IOException{
         RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
 
-        //��ָ��λ��д�����ݡ�
-        raf.seek(3 * 8);
+        //往指定位置写入数据。
+        raf.seek(3*8);
 
-        raf.write("����".getBytes());
+        raf.write("哈哈".getBytes());
         raf.writeInt(108);
 
         raf.close();
@@ -47,8 +48,8 @@ public class RandomAccessFileDemo {
 
         RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "r");
 
-        //ͨ��seek����ָ���λ�á�
-        raf.seek(1 * 8);//����Ķ�ȡ��ֻҪָ��ָ���λ�ü��ɡ�
+        //通过seek设置指针的位置。
+        raf.seek(1*8);//随机的读取。只要指定指针的位置即可。
 
         byte[] buf = new byte[4];
         raf.read(buf);
@@ -57,29 +58,29 @@ public class RandomAccessFileDemo {
 
         int age = raf.readInt();
 
-        System.out.println("name=" + name);
-        System.out.println("age=" + age);
+        System.out.println("name="+name);
+        System.out.println("age="+age);
 
-        System.out.println("pos:" + raf.getFilePointer());
+        System.out.println("pos:"+raf.getFilePointer());
 
         raf.close();
 
 
     }
 
-    //ʹ��RandomAccessFile����д��һЩ��Ա��Ϣ���������������䡣
-    public static void writeFile() throws IOException {
+    //使用RandomAccessFile对象写入一些人员信息，比如姓名和年龄。
+    public static void writeFile() throws IOException{
 		/*
-		 * ����ļ������ڣ��򴴽�������ļ����ڣ�������
-		 * 
+		 * 如果文件不存在，则创建，如果文件存在，不创建
+		 *
 		 */
-        RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
+        RandomAccessFile raf = new RandomAccessFile("ranacc.txt","rw");
 
-        raf.write("����".getBytes());
+        raf.write("张三".getBytes());
         raf.writeInt(97);
-        raf.write("Сǿ".getBytes());
+        raf.write("小强".getBytes());
         raf.writeInt(99);
-//		
+//
         raf.close();
     }
 

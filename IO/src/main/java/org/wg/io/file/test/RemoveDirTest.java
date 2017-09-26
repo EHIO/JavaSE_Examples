@@ -2,13 +2,6 @@ package org.wg.io.file.test;
 
 import java.io.File;
 
-/*
- * ɾ��һ�������ݵ�Ŀ¼�� 
- * 
- * ԭ�����������������ɾ�� 
- * ��Ҫ������ȱ�����
- * ע�⣺ɾ�����������Ϊ���߻���վ
- */
 public class RemoveDirTest {
 
     /**
@@ -17,7 +10,6 @@ public class RemoveDirTest {
     public static void main(String[] args) {
 
         File dir = new File("e:\\demodir");
-        // dir.delete();
         removeDir(dir);
     }
 
@@ -26,7 +18,6 @@ public class RemoveDirTest {
         File[] files = dir.listFiles();
 
         for (File file : files) {
-
             if (file.isDirectory()) {
                 removeDir(file);
             } else {

@@ -28,7 +28,7 @@ public class DataSteamDemo {
 
         DataOutputStream dos = new DataOutputStream(new FileOutputStream("data.txt"));
 
-        dos.writeUTF("���");
+        dos.writeUTF("你好");
 
         dos.close();
 

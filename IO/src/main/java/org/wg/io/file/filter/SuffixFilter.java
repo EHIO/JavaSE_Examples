@@ -4,9 +4,8 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /**
- * ���Թ���ָ����׺���ļ�
+ * 文件名过滤器
  *
- * @author Administrator
  */
 public class SuffixFilter implements FilenameFilter {
 
