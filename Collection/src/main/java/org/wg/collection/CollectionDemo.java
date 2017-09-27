@@ -1,4 +1,6 @@
-package org.wg.collection.demo;
+package org.wg.collection;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,36 +55,90 @@ import java.util.Collection;
  * 		Object[] toArray()
  */
 public class CollectionDemo {
-    public static void main(String[] args) {
-        // 测试不带All的方法
 
-        // 创建集合对象
-        // Collection c = new Collection(); //错误，因为接口不能实例化
-        Collection c = new ArrayList();
+    @Test
+    public void testAddAll() {
+        Collection c1 = new ArrayList();
+        c1.add("abc1");
+        c1.add("abc2");
+        c1.add("abc3");
+        c1.add("abc4");
 
-        // boolean add(Object obj):添加一个元素
-        // System.out.println("add:"+c.add("hello"));
-        c.add("hello");
-        c.add("world");
-        c.add("java");
-
-        // void clear():移除所有元素
-        // c.clear();
-
-        // boolean remove(Object o):移除一个元素
-        // System.out.println("remove:" + c.remove("hello"));
-        // System.out.println("remove:" + c.remove("javaee"));
-
-        // boolean contains(Object o)：判断集合中是否包含指定的元素
-        // System.out.println("contains:"+c.contains("hello"));
-        // System.out.println("contains:"+c.contains("android"));
-
-        // boolean isEmpty()：判断集合是否为空
-        // System.out.println("isEmpty:"+c.isEmpty());
-
-        //int size():元素的个数
-        System.out.println("size:" + c.size());
-
-        System.out.println("c:" + c);
+        Collection c2 = new ArrayList();
+//		c2.add("abc1");
+//		c2.add("abc2");
+//		c2.add("abc3");
+//		c2.add("abc4");
+        c2.add("abc5");
+        c2.add("abc6");
+        c2.add("abc7");
+        System.out.println("addAll:" + c1.addAll(c2));
     }
+
+    @Test
+    public void testRemoveAll() {
+        Collection c1 = new ArrayList();
+        c1.add("abc1");
+        c1.add("abc2");
+        c1.add("abc3");
+        c1.add("abc4");
+
+        Collection c2 = new ArrayList();
+//		c2.add("abc1");
+//		c2.add("abc2");
+//		c2.add("abc3");
+//		c2.add("abc4");
+        c2.add("abc5");
+        c2.add("abc6");
+        c2.add("abc7");
+        System.out.println("removeAll:"+c1.removeAll(c2));
+
+        System.out.println("c1:" + c1);
+        System.out.println("c2:" + c2);
+    }
+
+    @Test
+    public void testContainsAll() {
+        Collection c1 = new ArrayList();
+        c1.add("abc1");
+        c1.add("abc2");
+        c1.add("abc3");
+        c1.add("abc4");
+
+        Collection c2 = new ArrayList();
+//		c2.add("abc1");
+//		c2.add("abc2");
+//		c2.add("abc3");
+//		c2.add("abc4");
+        c2.add("abc5");
+        c2.add("abc6");
+        c2.add("abc7");
+         System.out.println("containsAll:"+c1.containsAll(c2));
+
+        System.out.println("c1:" + c1);
+        System.out.println("c2:" + c2);
+    }
+
+    @Test
+    public void testRetainAll() {
+        Collection c1 = new ArrayList();
+        c1.add("abc1");
+        c1.add("abc2");
+        c1.add("abc3");
+        c1.add("abc4");
+
+        Collection c2 = new ArrayList();
+//		c2.add("abc1");
+//		c2.add("abc2");
+//		c2.add("abc3");
+//		c2.add("abc4");
+        c2.add("abc5");
+        c2.add("abc6");
+        c2.add("abc7");
+        System.out.println("retainAll:" + c1.retainAll(c2));
+
+        System.out.println("c1:" + c1);
+        System.out.println("c2:" + c2);
+    }
+
 }

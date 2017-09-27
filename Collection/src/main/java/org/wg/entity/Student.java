@@ -3,11 +3,11 @@ package org.wg.entity;
 import org.wg.set.treeset.test.Person;
 
 public class Student extends Person {
-    // ��Ա����
+
     private String name;
     private int age;
 
-    // ���췽��
+
     public Student() {
         super();
     }
@@ -18,8 +18,6 @@ public class Student extends Person {
         this.age = age;
     }
 
-    // ��Ա����
-    // getXxx()/setXxx()
     public String getName() {
         return name;
     }
