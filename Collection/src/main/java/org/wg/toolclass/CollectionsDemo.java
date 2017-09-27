@@ -1,58 +1,129 @@
 package org.wg.toolclass;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import org.junit.Test;
 
-/*
- * Collections:����Լ��Ͻ��в����Ĺ����࣬���Ǿ�̬������
- * 
- * �����⣺
- * Collection��Collections������?
- * Collection:�ǵ��м��ϵĶ���ӿڣ����ӽӿ�List��Set��
- * Collections:����Լ��ϲ����Ĺ����࣬�жԼ��Ͻ�������Ͷ��ֲ��ҵķ���
- * 
- * Ҫ֪���ķ���
- * public static <T> void sort(List<T> list)������ Ĭ�����������Ȼ˳��
- * public static <T> int binarySearch(List<?> list,T key):���ֲ���
- * public static <T> T max(Collection<?> coll):���ֵ
- * public static void reverse(List<?> list):��ת
- * public static void shuffle(List<?> list):����û�
- */
+import java.util.*;
+
 public class CollectionsDemo {
-    public static void main(String[] args) {
-        // �������϶���
-        List<Integer> list = new ArrayList<Integer>();
+    @Test
+    public void demo_4() {
+        List<String> list = new ArrayList<String>();
 
-        // ���Ԫ��
-        list.add(30);
-        list.add(20);
-        list.add(50);
-        list.add(10);
-        list.add(40);
+        list.add("abcde");
+        list.add("cba");
+        list.add("zhangsan");
+        list.add("zhaoliu");
+        list.add("xiaoqiang");
 
-        System.out.println("list:" + list);
-
-        // public static <T> void sort(List<T> list)������ Ĭ�����������Ȼ˳��
-        // Collections.sort(list);
-        // System.out.println("list:" + list);
-        // [10, 20, 30, 40, 50]
-
-        // public static <T> int binarySearch(List<?> list,T key):���ֲ���
-        // System.out
-        // .println("binarySearch:" + Collections.binarySearch(list, 30));
-        // System.out.println("binarySearch:"
-        // + Collections.binarySearch(list, 300));
-
-        // public static <T> T max(Collection<?> coll):���ֵ
-        // System.out.println("max:"+Collections.max(list));
-
-        // public static void reverse(List<?> list):��ת
-        // Collections.reverse(list);
-        // System.out.println("list:" + list);
-
-        //public static void shuffle(List<?> list):����û�
+        System.out.println(list);
+//		Collections.replaceAll(list, "cba", "nba"); // set(indexOf("cba"),"nba");
         Collections.shuffle(list);
-        System.out.println("list:" + list);
+//		Collections.fill(list, "cc");
+        System.out.println(list);
+    }
+
+    public static void demo_3() {
+        /*
+        TreeSet<String> ts = new TreeSet<String>(new Comparator<String>(){
+
+			@Override
+			public int compare(String o1, String o2) {
+
+				int temp = o2.compareTo(o1);
+				return temp;
+			}
+
+		});
+		*/
+        TreeSet<String> ts = new TreeSet<String>(Collections.reverseOrder(new ComparatorByLength()));
+
+        ts.add("abc");
+        ts.add("hahaha");
+        ts.add("zzz");
+        ts.add("aa");
+        ts.add("cba");
+
+        System.out.println(ts);
+
+    }
+
+    @Test
+    public void demo_2() {
+        List<String> list = new ArrayList<String>();
+
+        list.add("abcde");
+        list.add("cba");
+        list.add("aa");
+        list.add("zzz");
+        list.add("cba");
+        list.add("nbaa");
+//		Collections.sort(list);
+        System.out.println(list);
+
+//		int index = Collections.binarySearch(list, "cba");
+//		System.out.println("index="+index);
+
+        //获取最大值。
+        String max = Collections.max(list, new ComparatorByLength());
+        System.out.println("max=" + max);
+    }
+
+
+    @Test
+    public void demo_1() {
+
+        List<String> list = new ArrayList<String>();
+
+        list.add("abcde");
+        list.add("cba");
+        list.add("aa");
+        list.add("zzz");
+        list.add("cba");
+        list.add("nbaa");
+        System.out.println(list);
+
+        //对list集合进行指定顺序的排序。
+//		Collections.sort(list);
+//		mySort(list);
+//		mySort(list,new ComparatorByLength());
+        Collections.sort(list, new ComparatorByLength());
+        System.out.println(list);
+    }
+
+    public static <T> void mySort(List<T> list, Comparator<? super T> comp) {
+
+        for (int i = 0; i < list.size() - 1; i++) {
+
+            for (int j = i + 1; j < list.size(); j++) {
+
+                if (comp.compare(list.get(i), list.get(j)) > 0) {
+
+//					T temp = list.get(i);
+//					list.set(i, list.get(j));
+//					list.set(j, temp);
+                    Collections.swap(list, i, j);
+
+                }
+            }
+        }
+    }
+
+
+    public static <T extends Comparable<? super T>> void mySort(List<T> list) {
+
+        for (int i = 0; i < list.size() - 1; i++) {
+
+            for (int j = i + 1; j < list.size(); j++) {
+
+                if (list.get(i).compareTo(list.get(j)) > 0) {
+
+//					T temp = list.get(i);
+//					list.set(i, list.get(j));
+//					list.set(j, temp);
+                    Collections.swap(list, i, j);
+
+                }
+            }
+        }
     }
 }

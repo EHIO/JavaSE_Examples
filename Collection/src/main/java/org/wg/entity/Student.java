@@ -1,6 +1,8 @@
 package org.wg.entity;
 
-public class Student {
+import org.wg.set.treeset.test.Person;
+
+public class Student extends Person {
     // ��Ա����
     private String name;
     private int age;

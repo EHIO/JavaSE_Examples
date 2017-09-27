@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-//����ת�ɼ��ϡ�
+//数组转成集合。
 public class ArraysDemo {
 
     /**
@@ -12,23 +12,23 @@ public class ArraysDemo {
      */
     public static void main(String[] args) {
         /*
-         * Arrays�����Ͽ�ܵĹ����ࡣ����ķ������Ǿ�̬�ġ�
-		 * 
+         * Arrays：集合框架的工具类。里面的方法都是静态的。
+		 *
 		 */
 
-//		int[] arr = {3,1,5,6,3,6};		
+//		int[] arr = {3,1,5,6,3,6};
 //		System.out.println(Arrays.toString(arr));
 
         demo_2();
     }
 
     public static void demo_2() {
-		
+
 		/*
-		 * ��������е�Ԫ���Ƕ�����ôת�ɼ���ʱ��ֱ�ӽ������е�Ԫ����Ϊ�����е�Ԫ�ؽ��м��ϴ洢��
-		 * 
-		 * ��������е�Ԫ���ǻ���������ֵ����ô�Ὣ��������Ϊ�����е�Ԫ�ؽ��д洢��
-		 * 
+         * 如果数组中的元素是对象，那么转成集合时，直接将数组中的元素作为集合中的元素进行集合存储。
+		 *
+		 * 如果数组中的元素是基本类型数值，那么会将该数组作为集合中的元素进行存储。
+		 *
 		 */
         int[] arr = {31, 11, 51, 61};
 
@@ -42,13 +42,13 @@ public class ArraysDemo {
      */
     public static void demo_1() {
 		/*
-		 * �ص㣺List asList(����)������ת�ɼ��ϡ�
-		 * 
-		 * �ô�����ʵ����ʹ�ü��ϵķ������������е�Ԫ�ء�
-		 * ע�⣺����ĳ����ǹ̶��ģ����Զ��ڼ��ϵ���ɾ�����ǲ�����ʹ�õ�
-		 * ����ᷢ��UnsupportedOperationException
-		 * 
-		 * 
+		 * 重点：List asList(数组)将数组转成集合。
+		 *
+		 * 好处：其实可以使用集合的方法操作数组中的元素。
+		 * 注意：数组的长度是固定的，所以对于集合的增删方法是不可以使用的
+		 * 否则会发生UnsupportedOperationException
+		 *
+		 *
 		 */
         String[] arr = {"abc", "haha", "xixi"};
 
@@ -71,7 +71,7 @@ public class ArraysDemo {
         return false;
     }
 
-    //toString�ľ���ʵ�֡�
+    //toString的经典实现。
     public static String myToString(int[] a) {
         int iMax = a.length - 1;
         if (iMax == -1)
@@ -79,7 +79,7 @@ public class ArraysDemo {
 
         StringBuilder b = new StringBuilder();
         b.append('[');
-        for (int i = 0; ; i++) {//�м�ʡ�������жϣ������Ч�ʡ�
+        for (int i = 0; ; i++) {//中间省略条件判断，提高了效率。
             b.append(a[i]);
             if (i == iMax)
                 return b.append(']').toString();
