@@ -9,24 +9,24 @@ import java.util.Collections;
 import java.util.Enumeration;
 
 public class SequenceInputStreamDemo {
-public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
 		
 		/*
-		 * ĞèÇó£º½«1.txt 2.txt 3.txtÎÄ¼şÖĞµÄÊı¾İºÏ²¢µ½Ò»¸öÎÄ¼şÖĞ¡£
+		 * éœ€æ±‚ï¼šå°†1.txt 2.txt 3.txtæ–‡ä»¶ä¸­çš„æ•°æ®åˆå¹¶åˆ°ä¸€ä¸ªæ–‡ä»¶ä¸­ã€‚
 		 */
-		
+
 //		Vector<FileInputStream> v = new Vector<FileInputStream>();		
 //		v.add(new FileInputStream("1.txt"));
 //		v.add(new FileInputStream("2.txt"));
 //		v.add(new FileInputStream("3.txt"));
 //		Enumeration<FileInputStream> en = v.elements();
-		
+
 		ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
 		for(int x=1; x<=3; x++){
 			al.add(new FileInputStream(x+".txt"));
 		}
-		
+
 		Enumeration<FileInputStream> en = Collections.enumeration(al);
 		
 		
@@ -48,21 +48,21 @@ public static void main(String[] args) throws IOException {
 			}
 			
 		};*/
-		
+
 		SequenceInputStream sis = new SequenceInputStream(en);
-		
+
 		FileOutputStream fos = new FileOutputStream("1234.txt");
-		
+
 		byte[] buf = new byte[1024];
-		
+
 		int len = 0;
-		
+
 		while((len=sis.read(buf))!=-1){
 			fos.write(buf,0,len);
 		}
-		
+
 		fos.close();
 		sis.close();
-		
+
 	}
 }
