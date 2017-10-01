@@ -1,31 +1,27 @@
 package org.wg.io.file.demo;
 
 import java.io.File;
-import java.lang.reflect.Method;
 
 /*
- * ÎÒÃÇÒªÏëÊµÏÖIOµÄ²Ù×÷£¬¾Í±ØĞëÖªµÀÓ²ÅÌÉÏÎÄ¼şµÄ±íÏÖĞÎÊ½¡£
- * ¶øJava¾ÍÌá¹©ÁËÒ»¸öÀàFile¹©ÎÒÃÇÊ¹ÓÃ¡£
- * 
- * File:ÎÄ¼şºÍÄ¿Â¼(ÎÄ¼ş¼Ğ)Â·¾¶ÃûµÄ³éÏó±íÊ¾ĞÎÊ½
- * ¹¹Ôì·½·¨£º
- * 		File(String pathname)£º¸ù¾İÒ»¸öÂ·¾¶µÃµ½File¶ÔÏó
- * 		File(String parent, String child):¸ù¾İÒ»¸öÄ¿Â¼ºÍÒ»¸ö×ÓÎÄ¼ş/Ä¿Â¼µÃµ½File¶ÔÏó
- * 		File(File parent, String child):¸ù¾İÒ»¸ö¸¸File¶ÔÏóºÍÒ»¸ö×ÓÎÄ¼ş/Ä¿Â¼µÃµ½File¶ÔÏó
+ * File:æ–‡ä»¶å’Œç›®å½•(æ–‡ä»¶å¤¹)è·¯å¾„åçš„æŠ½è±¡è¡¨ç¤ºå½¢å¼
+ * æ„é€ æ–¹æ³•ï¼š
+ * 		File(String pathname)ï¼šæ ¹æ®ä¸€ä¸ªè·¯å¾„å¾—åˆ°Fileå¯¹è±¡
+ * 		File(String parent, String child):æ ¹æ®ä¸€ä¸ªç›®å½•å’Œä¸€ä¸ªå­æ–‡ä»¶/ç›®å½•å¾—åˆ°Fileå¯¹è±¡
+ * 		File(File parent, String child):æ ¹æ®ä¸€ä¸ªçˆ¶Fileå¯¹è±¡å’Œä¸€ä¸ªå­æ–‡ä»¶/ç›®å½•å¾—åˆ°Fileå¯¹è±¡
  */
 public class FileConstructorDemo {
-	public static void main(String[] args) {
-		// File(String pathname)£º¸ù¾İÒ»¸öÂ·¾¶µÃµ½File¶ÔÏó
-		// °Ñe:\\demo\\a.txt·â×°³ÉÒ»¸öFile¶ÔÏó
-		File file = new File("E:\\demo\\a.txt");
+    public static void main(String[] args) {
+        // File(String pathname)ï¼šæ ¹æ®ä¸€ä¸ªè·¯å¾„å¾—åˆ°Fileå¯¹è±¡
+        // æŠŠe:\\demo\\a.txtå°è£…æˆä¸€ä¸ªFileå¯¹è±¡
+        File file = new File("E:\\demo\\a.txt");
 
-		// File(String parent, String child):¸ù¾İÒ»¸öÄ¿Â¼ºÍÒ»¸ö×ÓÎÄ¼ş/Ä¿Â¼µÃµ½File¶ÔÏó
-		File file2 = new File("E:\\demo", "a.txt");
+        // File(String parent, String child):æ ¹æ®ä¸€ä¸ªç›®å½•å’Œä¸€ä¸ªå­æ–‡ä»¶/ç›®å½•å¾—åˆ°Fileå¯¹è±¡
+        File file2 = new File("E:\\demo", "a.txt");
 
-		// File(File parent, String child):¸ù¾İÒ»¸ö¸¸File¶ÔÏóºÍÒ»¸ö×ÓÎÄ¼ş/Ä¿Â¼µÃµ½File¶ÔÏó
-		File file3 = new File("e:\\demo");
-		File file4 = new File(file3, "a.txt");
+        // File(File parent, String child):æ ¹æ®ä¸€ä¸ªçˆ¶Fileå¯¹è±¡å’Œä¸€ä¸ªå­æ–‡ä»¶/ç›®å½•å¾—åˆ°Fileå¯¹è±¡
+        File file3 = new File("e:\\demo");
+        File file4 = new File(file3, "a.txt");
 
-		// ÒÔÉÏÈıÖÖ·½Ê½ÆäÊµĞ§¹ûÒ»Ñù
-	}
+        // ä»¥ä¸Šä¸‰ç§æ–¹å¼å…¶å®æ•ˆæœä¸€æ ·
+    }
 }

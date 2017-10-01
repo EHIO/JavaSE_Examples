@@ -2,54 +2,53 @@ package org.wg.io.file.test;
 
 import java.io.File;
 /*
- * ĞèÇó£º¶ÔÖ¸¶¨Ä¿Â¼½øĞĞËùÓĞÄÚÈİµÄÁĞ³ö£¨°üº¬×ÓÄ¿Â¼ÖĞµÄÄÚÈİ£©
- * Ò²¿ÉÒÔÀí½âÎª Éî¶È±éÀú¡£
+ * ï¿½ï¿½ï¿½ó£º¶ï¿½Ö¸ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½Ğ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Ğµï¿½ï¿½ï¿½ï¿½İ£ï¿½
+ * Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½
  * 
  * 
  */
 
 public class FileTest4 {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		File dir = new File("f:\\temp");
-		
-		listAll(dir,0);
-	}
+        File dir = new File("f:\\temp");
 
-	public static void listAll(File dir,int level) {
-		
-	
-		System.out.println(getSpace(level)+dir.getName());
-		//»ñÈ¡Ö¸¶¨Ä¿Â¼ÏÂµ±Ç°µÄËùÓĞÎÄ¼ş¼Ğ»òÕßÎÄ¼ş¶ÔÏó
-		
-		level++;
-		File[] files = dir.listFiles();
-		
-		for(int x=0; x<files.length; x++){
-			
-			if(files[x].isDirectory()){
-				listAll(files[x],level);
-			}
-			else
-				System.out.println(getSpace(level)+files[x].getName());
-		}	
-	}
+        listAll(dir, 0);
+    }
 
-	private static String getSpace(int level) {
-		
-		StringBuilder sb = new StringBuilder();
-		
-		sb.append("|--");
-		for(int x=0; x<level; x++){
-			sb.insert(0,"|  ");
-		}
-		
-		return sb.toString();
-	}
-	
+    public static void listAll(File dir, int level) {
+
+
+        System.out.println(getSpace(level) + dir.getName());
+        //ï¿½ï¿½È¡Ö¸ï¿½ï¿½Ä¿Â¼ï¿½Âµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+
+        level++;
+        File[] files = dir.listFiles();
+
+        for (int x = 0; x < files.length; x++) {
+
+            if (files[x].isDirectory()) {
+                listAll(files[x], level);
+            } else
+                System.out.println(getSpace(level) + files[x].getName());
+        }
+    }
+
+    private static String getSpace(int level) {
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("|--");
+        for (int x = 0; x < level; x++) {
+            sb.insert(0, "|  ");
+        }
+
+        return sb.toString();
+    }
+
 
 }

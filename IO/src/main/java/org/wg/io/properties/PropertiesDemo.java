@@ -1,195 +1,183 @@
 package org.wg.io.properties;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 import java.util.Set;
 
 public class PropertiesDemo {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
 
 		/*
-		 * Map
+         * Map
 		 * 	|--Hashtable
 		 * 		|--Properties:
 		 * 
-		 * Properties¼¯ºÏ£º
-		 * ÌØµã£º
-		 * 1£¬¸Ã¼¯ºÏÖĞµÄ¼üºÍÖµ¶¼ÊÇ×Ö·û´®ÀàĞÍ¡£
-		 * 2£¬¼¯ºÏÖĞµÄÊı¾İ¿ÉÒÔ±£´æµ½Á÷ÖĞ£¬»òÕß´ÓÁ÷»ñÈ¡¡£
-		 * 
-		 * Í¨³£¸Ã¼¯ºÏÓÃÓÚ²Ù×÷ÒÔ¼üÖµ¶ÔĞÎÊ½´æÔÚµÄÅäÖÃÎÄ¼ş¡£ 
-		 * 
-		 * 
+		 * Propertiesé›†åˆï¼š
+		 * ç‰¹ç‚¹ï¼š
+		 * 1ï¼Œè¯¥é›†åˆä¸­çš„é”®å’Œå€¼éƒ½æ˜¯å­—ç¬¦ä¸²ç±»å‹ã€‚
+		 * 2ï¼Œé›†åˆä¸­çš„æ•°æ®å¯ä»¥ä¿å­˜åˆ°æµä¸­ï¼Œæˆ–è€…ä»æµè·å–ã€‚
+		 *
+		 * é€šå¸¸è¯¥é›†åˆç”¨äºæ“ä½œä»¥é”®å€¼å¯¹å½¢å¼å­˜åœ¨çš„é…ç½®æ–‡ä»¶ã€‚
+		 *
+		 *
 		 */
-		
+
 //		methodDemo_4();
 //		myLoad();
-		
-		test();
-	}
-	
-	
-	//¶ÔÒÑÓĞµÄÅäÖÃÎÄ¼şÖĞµÄĞÅÏ¢½øĞĞĞŞ¸Ä¡£ 
+
+        test();
+    }
+
+
+    //å¯¹å·²æœ‰çš„é…ç½®æ–‡ä»¶ä¸­çš„ä¿¡æ¯è¿›è¡Œä¿®æ”¹ã€‚
 	/*
-	 * ¶ÁÈ¡Õâ¸öÎÄ¼ş¡£
-	 * ²¢½«Õâ¸öÎÄ¼şÖĞµÄ¼üÖµÊı¾İ´æ´¢µ½¼¯ºÏÖĞ¡£
-	 * ÔÚÍ¨¹ı¼¯ºÏ¶ÔÊı¾İ½øĞĞĞŞ¸Ä¡£
-	 * ÔÚÍ¨¹ıÁ÷½«ĞŞ¸ÄºóµÄÊı¾İ´æ´¢µ½ÎÄ¼şÖĞ¡£ 
+	 * è¯»å–è¿™ä¸ªæ–‡ä»¶ã€‚
+	 * å¹¶å°†è¿™ä¸ªæ–‡ä»¶ä¸­çš„é”®å€¼æ•°æ®å­˜å‚¨åˆ°é›†åˆä¸­ã€‚
+	 * åœ¨é€šè¿‡é›†åˆå¯¹æ•°æ®è¿›è¡Œä¿®æ”¹ã€‚
+	 * åœ¨é€šè¿‡æµå°†ä¿®æ”¹åçš„æ•°æ®å­˜å‚¨åˆ°æ–‡ä»¶ä¸­ã€‚
 	 */
-	public static void test() throws IOException{
-		//¶ÁÈ¡Õâ¸öÎÄ¼ş¡£
-		File file = new File("info.txt");
-		if(!file.exists()){
-			file.createNewFile();
-		}
-		FileReader fr = new FileReader(file);
-		
-		
-		
-		
-		//´´½¨¼¯ºÏ´æ´¢ÅäÖÃĞÅÏ¢¡£
-		Properties prop = new Properties();
-		
-		//½«Á÷ÖĞĞÅÏ¢´æ´¢µ½¼¯ºÏÖĞ¡£
-		prop.load(fr);
-		
-		prop.setProperty("wangwu", "16");
-		
-		
-		
-		FileWriter fw = new FileWriter(file);
-		
-		prop.store(fw,"");
-		
+    public static void test() throws IOException {
+        //è¯»å–è¿™ä¸ªæ–‡ä»¶ã€‚
+        File file = new File("info.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        FileReader fr = new FileReader(file);
+
+
+        //åˆ›å»ºé›†åˆå­˜å‚¨é…ç½®ä¿¡æ¯ã€‚
+        Properties prop = new Properties();
+
+        //å°†æµä¸­ä¿¡æ¯å­˜å‚¨åˆ°é›†åˆä¸­ã€‚
+        prop.load(fr);
+
+        prop.setProperty("wangwu", "16");
+
+
+        FileWriter fw = new FileWriter(file);
+
+        prop.store(fw, "");
+
 //		prop.list(System.out);
-		
-		fw.close();
-		fr.close();
-		
-		
-		
-	}
-	
-	
-	
-	//Ä£ÄâÒ»ÏÂload·½·¨¡£
-	public static void myLoad() throws IOException{
-		
-		Properties prop  = new Properties();
-		
-		BufferedReader bufr = new BufferedReader(new FileReader("info.txt"));
-		
-		String line = null;
-		
-		while((line=bufr.readLine())!=null){
-			
-			if(line.startsWith("#"))
-				continue;
-			
-			String[] arr = line.split("=");
-			
+
+        fw.close();
+        fr.close();
+
+
+    }
+
+
+    //æ¨¡æ‹Ÿä¸€ä¸‹loadæ–¹æ³•ã€‚
+    public static void myLoad() throws IOException {
+
+        Properties prop = new Properties();
+
+        BufferedReader bufr = new BufferedReader(new FileReader("info.txt"));
+
+        String line = null;
+
+        while ((line = bufr.readLine()) != null) {
+
+            if (line.startsWith("#"))
+                continue;
+
+            String[] arr = line.split("=");
+
 //			System.out.println(arr[0]+"::"+arr[1]);
-			prop.setProperty(arr[0], arr[1]);
-		}
-		
-		prop.list(System.out);
-		
-		bufr.close();
-		
-	}
-	
-	public static void methodDemo_4() throws IOException {	
-		
-		Properties prop  = new Properties();
-		
-		//¼¯ºÏÖĞµÄÊı¾İÀ´×ÔÓÚÒ»¸öÎÄ¼ş¡£ 
-		//×¢Òâ£»±ØĞëÒª±£Ö¤¸ÃÎÄ¼şÖĞµÄÊı¾İÊÇ¼üÖµ¶Ô¡£
-		//ĞèÒªÊ¹ÓÃµ½¶ÁÈ¡Á÷¡£ 
-		FileInputStream fis = new FileInputStream("info.txt");
-		
-		//Ê¹ÓÃload·½·¨¡£ 
-		prop.load(fis);
-		
-		prop.list(System.out);
-		
-		
-		
-	}
+            prop.setProperty(arr[0], arr[1]);
+        }
 
-	public static void methodDemo_3() throws IOException {
-		Properties prop  = new Properties();
-		
-		//´æ´¢ÔªËØ¡£ 
-		prop.setProperty("zhangsan","30");
-		prop.setProperty("lisi","31");
-		prop.setProperty("wangwu","36");
-		prop.setProperty("zhaoliu","20");
-		
-		//ÏëÒª½«ÕâĞ©¼¯ºÏÖĞµÄ×Ö·û´®¼üÖµĞÅÏ¢³Ö¾Ã»¯´æ´¢µ½ÎÄ¼şÖĞ¡£
-		//ĞèÒª¹ØÁªÊä³öÁ÷¡£
-		FileOutputStream fos = new FileOutputStream("info.txt");
-		
-		//½«¼¯ºÏÖĞÊı¾İ´æ´¢µ½ÎÄ¼şÖĞ£¬Ê¹ÓÃstore·½·¨¡£
-		prop.store(fos, "info");
-		
-		fos.close();
-		
-	}
+        prop.list(System.out);
 
-	/**
-	 * ÑİÊ¾Properties¼¯ºÏºÍÁ÷¶ÔÏóÏà½áºÏµÄ¹¦ÄÜ¡£
-	 */
-	
-	public static void methodDemo_2(){
-		Properties prop  = new Properties();
-		
-		//´æ´¢ÔªËØ¡£ 
+        bufr.close();
+
+    }
+
+    public static void methodDemo_4() throws IOException {
+
+        Properties prop = new Properties();
+
+        //é›†åˆä¸­çš„æ•°æ®æ¥è‡ªäºä¸€ä¸ªæ–‡ä»¶ã€‚
+        //æ³¨æ„ï¼›å¿…é¡»è¦ä¿è¯è¯¥æ–‡ä»¶ä¸­çš„æ•°æ®æ˜¯é”®å€¼å¯¹ã€‚
+        //éœ€è¦ä½¿ç”¨åˆ°è¯»å–æµã€‚
+        FileInputStream fis = new FileInputStream("info.txt");
+
+        //ä½¿ç”¨loadæ–¹æ³•ã€‚
+        prop.load(fis);
+
+        prop.list(System.out);
+
+
+    }
+
+    public static void methodDemo_3() throws IOException {
+        Properties prop = new Properties();
+
+        //å­˜å‚¨å…ƒç´ ã€‚
+        prop.setProperty("zhangsan", "30");
+        prop.setProperty("lisi", "31");
+        prop.setProperty("wangwu", "36");
+        prop.setProperty("zhaoliu", "20");
+
+        //æƒ³è¦å°†è¿™äº›é›†åˆä¸­çš„å­—ç¬¦ä¸²é”®å€¼ä¿¡æ¯æŒä¹…åŒ–å­˜å‚¨åˆ°æ–‡ä»¶ä¸­ã€‚
+        //éœ€è¦å…³è”è¾“å‡ºæµã€‚
+        FileOutputStream fos = new FileOutputStream("info.txt");
+
+        //å°†é›†åˆä¸­æ•°æ®å­˜å‚¨åˆ°æ–‡ä»¶ä¸­ï¼Œä½¿ç”¨storeæ–¹æ³•ã€‚
+        prop.store(fos, "info");
+
+        fos.close();
+
+    }
+
+    /**
+     * æ¼”ç¤ºPropertiesé›†åˆå’Œæµå¯¹è±¡ç›¸ç»“åˆçš„åŠŸèƒ½ã€‚
+     */
+
+    public static void methodDemo_2() {
+        Properties prop = new Properties();
+
+        //å­˜å‚¨å…ƒç´ ã€‚
 //		prop.setProperty("zhangsan","30");
 //		prop.setProperty("lisi","31");
 //		prop.setProperty("wangwu","36");
 //		prop.setProperty("zhaoliu","20");
-	
-		prop = System.getProperties();
-		prop.list(System.out);
-	}
-	
+
+        prop = System.getProperties();
+        prop.list(System.out);
+    }
+
 	/*
-	 * Properties¼¯ºÏµÄ´æºÍÈ¡¡£
+	 * Propertiesé›†åˆçš„å­˜å’Œå–ã€‚
 	 */
-	
-	public static void propertiesDemo(){
-		//´´½¨Ò»¸öProperties¼¯ºÏ¡£
-		
-		Properties prop  = new Properties();
-		
-		//´æ´¢ÔªËØ¡£ 
-		prop.setProperty("zhangsan","30");
-		prop.setProperty("lisi","31");
-		prop.setProperty("wangwu","36");
-		prop.setProperty("zhaoliu","20");
-		
-		//ĞŞ¸ÄÔªËØ¡£ 
-		prop.setProperty("wangwu","26");
-		
-		//È¡³öËùÓĞÔªËØ¡£
-		Set<String> names = prop.stringPropertyNames();
-		
-		for(String name : names){
-			String value = prop.getProperty(name);
-			System.out.println(name+":"+value);
-		}
-	}
+
+    public static void propertiesDemo() {
+        //åˆ›å»ºä¸€ä¸ªPropertiesé›†åˆã€‚
+
+        Properties prop = new Properties();
+
+        //å­˜å‚¨å…ƒç´ ã€‚
+        prop.setProperty("zhangsan", "30");
+        prop.setProperty("lisi", "31");
+        prop.setProperty("wangwu", "36");
+        prop.setProperty("zhaoliu", "20");
+
+        //ä¿®æ”¹å…ƒç´ ã€‚
+        prop.setProperty("wangwu", "26");
+
+        //å–å‡ºæ‰€æœ‰å…ƒç´ ã€‚
+        Set<String> names = prop.stringPropertyNames();
+
+        for (String name : names) {
+            String value = prop.getProperty(name);
+            System.out.println(name + ":" + value);
+        }
+    }
 }
 
 

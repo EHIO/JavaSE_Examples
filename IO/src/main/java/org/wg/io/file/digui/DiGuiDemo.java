@@ -2,45 +2,45 @@ package org.wg.io.file.digui;
 
 public class DiGuiDemo {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
 		/*
-		 * µÝ¹é£º º¯Êý×ÔÉíÖ±½Ó»òÕß¼ä½ÓµÄµ÷ÓÃµ½ÁË×ÔÉí¡£
+         * ï¿½Ý¹é£º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó»ï¿½ï¿½ß¼ï¿½ÓµÄµï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 * 
-		 * Ò»¸ö¹¦ÄÜÔÚ±»ÖØ¸´Ê¹ÓÃ£¬²¢Ã¿´ÎÊ¹ÓÃÊ±£¬²ÎÓëÔËËãµÄ½á¹ûºÍÉÏÒ»´Îµ÷ÓÃÓÐ¹Ø¡£ ÕâÊ±¿ÉÒÔÓÃµÝ¹éÀ´½â¾öÎÊÌâ¡£
+		 * Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú±ï¿½ï¿½Ø¸ï¿½Ê¹ï¿½Ã£ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ê¹ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½ï¿½ï¿½Ð¹Ø¡ï¿½ ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÝ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â¡£
 		 * 
 		 * 
-		 * ×¢Òâ£º 1£¬µÝ¹éÒ»¶¨Ã÷È·Ìõ¼þ¡£·ñÔòÈÝÒ×Õ»Òç³ö¡£ 2£¬×¢ÒâÒ»ÏÂµÝ¹éµÄ´ÎÊý¡£
-		 * 3:¹¹Ôì·½·¨²»ÄÜµÝ¹éÊ¹ÓÃ
+		 * ×¢ï¿½â£º 1ï¿½ï¿½ï¿½Ý¹ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½×¢ï¿½ï¿½Ò»ï¿½ÂµÝ¹ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * 3:ï¿½ï¿½ï¿½ì·½ï¿½ï¿½ï¿½ï¿½ï¿½ÜµÝ¹ï¿½Ê¹ï¿½ï¿½
 		 */
-		// show();
-		// toBin(6);
-		int sum = getSum(9000);
+        // show();
+        // toBin(6);
+        int sum = getSum(9000);
 
-		System.out.println(sum);
-	}
+        System.out.println(sum);
+    }
 
-	public static int getSum(int num) {
+    public static int getSum(int num) {
 
-		int x = 9;
-		if (num == 1)
-			return 1;
+        int x = 9;
+        if (num == 1)
+            return 1;
 
-		return num + getSum(num - 1);
+        return num + getSum(num - 1);
 
-	}
+    }
 
-	public static void toBin(int num) {
-		if (num > 0) {
+    public static void toBin(int num) {
+        if (num > 0) {
 
-			toBin(num / 2);
-			System.out.println(num % 2);
+            toBin(num / 2);
+            System.out.println(num % 2);
 
-		}
-	}
+        }
+    }
 
 	/*
 	 * public static void show(){

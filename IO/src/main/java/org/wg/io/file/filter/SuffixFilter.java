@@ -4,23 +4,23 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /**
- * ¿ÉÒÔ¹ýÂËÖ¸¶¨ºó×ºµÄÎÄ¼þ
- * @author Administrator
+ * ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½×ºï¿½ï¿½ï¿½Ä¼ï¿½
  *
+ * @author Administrator
  */
 public class SuffixFilter implements FilenameFilter {
 
-	private String suffix;
+    private String suffix;
 
-	public SuffixFilter(String suffix) {
-		super();
-		this.suffix = suffix;
-	}
+    public SuffixFilter(String suffix) {
+        super();
+        this.suffix = suffix;
+    }
 
-	@Override
-	public boolean accept(File dir, String name) {
+    @Override
+    public boolean accept(File dir, String name) {
 
-		return name.endsWith(suffix);
-	}
+        return name.endsWith(suffix);
+    }
 
 }

@@ -1,48 +1,43 @@
 package org.wg.io.otherstream.objectstream;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
 import org.wg.io.otherstream.bean.Person;
+
+import java.io.*;
 
 public class ObjectStreamDemo {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 * @throws ClassNotFoundException 
-	 */
-	public static void main(String[] args) throws IOException, ClassNotFoundException {
-			
+    /**
+     * @param args
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
 //		writeObj();
-		readObj();
-	}
+        readObj();
+    }
 
-	public static void readObj() throws IOException, ClassNotFoundException {
-		
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("obj.object"));
-		//¶ÔÏóµÄ·´ÐòÁÐ»¯¡£ 
-		Person p = (Person)ois.readObject();
-		
-		System.out.println(p.getName()+":"+p.getAge());
-		
-		ois.close();
-		
-	}
+    public static void readObj() throws IOException, ClassNotFoundException {
 
-	public static void writeObj() throws IOException, IOException {
-		
-		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("obj.object"));
-		//¶ÔÏóÐòÁÐ»¯¡£  ±»ÐòÁÐ»¯µÄ¶ÔÏó±ØÐëÊµÏÖSerializable½Ó¿Ú¡£ 
-		oos.writeObject(new Person("Ð¡Ç¿",30));
-		
-		oos.close();
-		
-		
-		
-	}
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("obj.object"));
+        //ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½
+        Person p = (Person) ois.readObject();
+
+        System.out.println(p.getName() + ":" + p.getAge());
+
+        ois.close();
+
+    }
+
+    public static void writeObj() throws IOException, IOException {
+
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("obj.object"));
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Serializableï¿½Ó¿Ú¡ï¿½
+        oos.writeObject(new Person("Ð¡Ç¿", 30));
+
+        oos.close();
+
+
+    }
 
 }

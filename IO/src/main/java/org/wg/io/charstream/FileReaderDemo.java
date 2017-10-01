@@ -1,5 +1,7 @@
 package org.wg.io.charstream;
 
+import org.junit.Test;
+
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -10,9 +12,8 @@ public class FileReaderDemo {
      * @param args
      * @throws IOException
      */
-
+    @Test
     public void demo() throws IOException {
-
 
         //1,创建读取字符数据的流对象。
         /*
@@ -27,25 +28,14 @@ public class FileReaderDemo {
         while ((ch = fr.read()) != -1) {
             System.out.println((char) ch);
         }
-
-		/*
-		//用Reader中的read方法读取字符。
-		int ch = fr.read();
-		System.out.println((char)ch);
-		int ch1 = fr.read();
-		System.out.println(ch1);
-		int ch2 = fr.read();
-		System.out.println(ch2);
-		*/
-
         fr.close();
     }
 
+    @Test
     public void demo2() throws IOException {
 
         FileReader fr = new FileReader("demo.txt");
-
-		/*
+        /*
 		 * 使用read(char[])读取文本文件数据。
 		 *
 		 * 先创建字符数组。
@@ -66,7 +56,6 @@ public class FileReaderDemo {
 		int num2 = fr.read(buf);//将读取到的字符存储到数组中。
 		System.out.println(num2+":"+new String(buf));
 		*/
-
         fr.close();
     }
 }

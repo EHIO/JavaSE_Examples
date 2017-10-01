@@ -5,71 +5,70 @@ import java.io.UnsupportedEncodingException;
 
 public class EncodeDemo {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
 
 		/*
-		 * ×Ö·û´® --> ×Ö½ÚÊý×é£º±àÂë¡£
-		 * ×Ö½ÚÊý×é --> ×Ö·û´®£º½âÂë¡£
+         * ï¿½Ö·ï¿½ï¿½ï¿½ --> ï¿½Ö½ï¿½ï¿½ï¿½ï¿½é£ºï¿½ï¿½ï¿½ë¡£
+		 * ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ --> ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡£
 		 * 
-		 * ÄãºÃ£ºGBK:  -60 -29 -70 -61
+		 * ï¿½ï¿½Ã£ï¿½GBK:  -60 -29 -70 -61
 		 * 
-		 * ÄãºÃ: utf-8: -28 -67 -96 -27 -91 -67 
+		 * ï¿½ï¿½ï¿½: utf-8: -28 -67 -96 -27 -91 -67 
 		 * 
 		 * 
-		 * Èç¹ûÄã±à´íÁË£¬½â²»³öÀ´¡£
-		 * Èç¹û±à¶ÔÁË£¬½â´íÁË£¬ÓÐ¿ÉÄÜÓÐ¾È¡£
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½â²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½Ð¾È¡ï¿½
 		 */
-		
-		String str = "Ð»Ð»";
-		
-		byte[] buf = str.getBytes("gbk");
-		
-		String s1 = new String(buf,"UTF-8");
-		
-		System.out.println("s1="+s1);
-		
-		
-		byte[] buf2 = s1.getBytes("UTF-8");//»ñÈ¡Ô´×Ö½Ú.
-		
-		printBytes(buf2);//-17 -65 -67 -17 -65 -67 -17 -65 -67 
-					//-17 -65 -67 -17 -65 -67 -17 -65 -67 -17 -65 -67
-					//-48 -69 -48 -69 
-		String s2 = new String(buf2,"GBK");
-		
-		System.out.println("s2="+s2);
-		
-		
+
+        String str = "Ð»Ð»";
+
+        byte[] buf = str.getBytes("gbk");
+
+        String s1 = new String(buf, "UTF-8");
+
+        System.out.println("s1=" + s1);
+
+
+        byte[] buf2 = s1.getBytes("UTF-8");//ï¿½ï¿½È¡Ô´ï¿½Ö½ï¿½.
+
+        printBytes(buf2);//-17 -65 -67 -17 -65 -67 -17 -65 -67
+        //-17 -65 -67 -17 -65 -67 -17 -65 -67 -17 -65 -67
+        //-48 -69 -48 -69
+        String s2 = new String(buf2, "GBK");
+
+        System.out.println("s2=" + s2);
+
+
 //		encodeDemo(str);
-		
-		
-		
-	}
 
-	/**
-	 * @param str
-	 * @throws UnsupportedEncodingException
-	 */
-	public static void encodeDemo(String str)
-			throws UnsupportedEncodingException {
-		//±àÂë£»
-		byte[] buf = str.getBytes("UTF-8");
-		
+
+    }
+
+    /**
+     * @param str
+     * @throws UnsupportedEncodingException
+     */
+    public static void encodeDemo(String str)
+            throws UnsupportedEncodingException {
+        //ï¿½ï¿½ï¿½ë£»
+        byte[] buf = str.getBytes("UTF-8");
+
 //		printBytes(buf);
-		
-		//½âÂë£º
-		String s1 = new String(buf,"UTF-8");
-		
-		System.out.println("s1="+s1);
-	}
 
-	private static void printBytes(byte[] buf) {
-		for(byte b : buf){
-			System.out.print(b +" ");
-		}
-	}
+        //ï¿½ï¿½ï¿½ë£º
+        String s1 = new String(buf, "UTF-8");
+
+        System.out.println("s1=" + s1);
+    }
+
+    private static void printBytes(byte[] buf) {
+        for (byte b : buf) {
+            System.out.print(b + " ");
+        }
+    }
 
 }

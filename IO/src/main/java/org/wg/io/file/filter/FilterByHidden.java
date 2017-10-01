@@ -5,10 +5,10 @@ import java.io.FileFilter;
 
 public class FilterByHidden implements FileFilter {
 
-	@Override
-	public boolean accept(File pathname) {
+    @Override
+    public boolean accept(File pathname) {
 
-		return !pathname.isHidden();
-	}
+        return !pathname.isHidden();
+    }
 
 }

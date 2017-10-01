@@ -1,87 +1,86 @@
 package org.wg.io.otherstream.randomfile;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class RandomAccessFileDemo {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
 
 		/*
-		 * RandomAccessFile
-		 * Ò»¿´Õâ¸öÀàÃû×Ö£¬¾À½á¡£²»ÊÇioÌåÏµÖÐµÄ×ÓÀà¡£
+         * RandomAccessFile
+		 * Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½á¡£ï¿½ï¿½ï¿½ï¿½ioï¿½ï¿½Ïµï¿½Ðµï¿½ï¿½ï¿½ï¿½à¡£
 		 * 
-		 * ÌØµã£º
-		 * 1£¬¸Ã¶ÔÏó¼´ÄÜ¶Á£¬ÓÖÄÜÐ´¡£
-		 * 2£¬¸Ã¶ÔÏóÄÚ²¿Î¬»¤ÁËÒ»¸öbyteÊý×é£¬²¢Í¨¹ýÖ¸Õë¿ÉÒÔ²Ù×÷Êý×éÖÐµÄÔªËØ£¬
-		 * 3£¬¿ÉÒÔÍ¨¹ýgetFilePointer·½·¨»ñÈ¡Ö¸ÕëµÄÎ»ÖÃ£¬ºÍÍ¨¹ýseek·½·¨ÉèÖÃÖ¸ÕëµÄÎ»ÖÃ¡£
-		 * 4£¬ÆäÊµ¸Ã¶ÔÏó¾ÍÊÇ½«×Ö½ÚÊäÈëÁ÷ºÍÊä³öÁ÷½øÐÐÁË·â×°¡£ 
-		 * 5£¬¸Ã¶ÔÏóµÄÔ´»òÕßÄ¿µÄÖ»ÄÜÊÇÎÄ¼þ¡£Í¨¹ý¹¹Ôìº¯Êý¾Í¿ÉÒÔ¿´³ö¡£ 
+		 * ï¿½Øµã£º
+		 * 1ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
+		 * 2ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ú²ï¿½Î¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½byteï¿½ï¿½ï¿½é£¬ï¿½ï¿½Í¨ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ôªï¿½Ø£ï¿½
+		 * 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½getFilePointerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½Í¨ï¿½ï¿½seekï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Î»ï¿½Ã¡ï¿½
+		 * 4ï¿½ï¿½ï¿½ï¿½Êµï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë·ï¿½×°ï¿½ï¿½ 
+		 * 5ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½Í¿ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ 
 		 * 
 		 * 
 		 */
-		
+
 //		writeFile();
 //		readFile();
-		randomWrite();
-	}
-	
-	public static void randomWrite() throws IOException{
-		RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
-		
-		//ÍùÖ¸¶¨Î»ÖÃÐ´ÈëÊý¾Ý¡£
-		raf.seek(3*8);
-		
-		raf.write("¹þ¹þ".getBytes());
-		raf.writeInt(108);
-		
-		raf.close();
-	}
-	
-	
-	public static void readFile() throws IOException {
-		
-		RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "r");
-		
-		//Í¨¹ýseekÉèÖÃÖ¸ÕëµÄÎ»ÖÃ¡£
-		raf.seek(1*8);//Ëæ»úµÄ¶ÁÈ¡¡£Ö»ÒªÖ¸¶¨Ö¸ÕëµÄÎ»ÖÃ¼´¿É¡£ 
-		
-		byte[] buf = new byte[4];
-		raf.read(buf);
-		
-		String name = new String(buf);
-		
-		int age = raf.readInt();
-		
-		System.out.println("name="+name);
-		System.out.println("age="+age);
-		
-		System.out.println("pos:"+raf.getFilePointer());
-		
-		raf.close();
-		
-		
-	}
+        randomWrite();
+    }
 
-	//Ê¹ÓÃRandomAccessFile¶ÔÏóÐ´ÈëÒ»Ð©ÈËÔ±ÐÅÏ¢£¬±ÈÈçÐÕÃûºÍÄêÁä¡£
-	public static void writeFile() throws IOException{
+    public static void randomWrite() throws IOException {
+        RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
+
+        //ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ý¡ï¿½
+        raf.seek(3 * 8);
+
+        raf.write("ï¿½ï¿½ï¿½ï¿½".getBytes());
+        raf.writeInt(108);
+
+        raf.close();
+    }
+
+
+    public static void readFile() throws IOException {
+
+        RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "r");
+
+        //Í¨ï¿½ï¿½seekï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Î»ï¿½Ã¡ï¿½
+        raf.seek(1 * 8);//ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½È¡ï¿½ï¿½Ö»ÒªÖ¸ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Î»ï¿½Ã¼ï¿½ï¿½É¡ï¿½
+
+        byte[] buf = new byte[4];
+        raf.read(buf);
+
+        String name = new String(buf);
+
+        int age = raf.readInt();
+
+        System.out.println("name=" + name);
+        System.out.println("age=" + age);
+
+        System.out.println("pos:" + raf.getFilePointer());
+
+        raf.close();
+
+
+    }
+
+    //Ê¹ï¿½ï¿½RandomAccessFileï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ò»Ð©ï¿½ï¿½Ô±ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä¡£
+    public static void writeFile() throws IOException {
 		/*
-		 * Èç¹ûÎÄ¼þ²»´æÔÚ£¬Ôò´´½¨£¬Èç¹ûÎÄ¼þ´æÔÚ£¬²»´´½¨
+		 * ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ò´´½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 * 
 		 */
-		RandomAccessFile raf = new RandomAccessFile("ranacc.txt","rw");
-		
-		raf.write("ÕÅÈý".getBytes());
-		raf.writeInt(97);
-		raf.write("Ð¡Ç¿".getBytes());
-		raf.writeInt(99);
+        RandomAccessFile raf = new RandomAccessFile("ranacc.txt", "rw");
+
+        raf.write("ï¿½ï¿½ï¿½ï¿½".getBytes());
+        raf.writeInt(97);
+        raf.write("Ð¡Ç¿".getBytes());
+        raf.writeInt(99);
 //		
-		raf.close();
-	}
+        raf.close();
+    }
 
 }

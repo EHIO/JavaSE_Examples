@@ -3,48 +3,48 @@ package org.wg.io.file.test;
 import java.io.File;
 
 /*
- * ĞèÇó£º°ÑE:\ÆÀÊé\Èı¹úÑİÒåÏÂÃæµÄÊÓÆµÃû³ÆĞŞ¸ÄÎª
- * 		00?_½éÉÜ.avi
+ * ï¿½ï¿½ï¿½ó£º°ï¿½E:\ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Ş¸ï¿½Îª
+ * 		00?_ï¿½ï¿½ï¿½ï¿½.avi
  * 
- * Ë¼Â·£º
- * 		A:·â×°Ä¿Â¼
- * 		B:»ñÈ¡¸ÃÄ¿Â¼ÏÂËùÓĞµÄÎÄ¼şµÄFileÊı×é
- * 		C:±éÀú¸ÃFileÊı×é£¬µÃµ½Ã¿Ò»¸öFile¶ÔÏó
- * 		D:Æ´½ÓÒ»¸öĞÂµÄÃû³Æ£¬È»ºóÖØÃüÃû¼´¿É¡£
+ * Ë¼Â·ï¿½ï¿½
+ * 		A:ï¿½ï¿½×°Ä¿Â¼
+ * 		B:ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
+ * 		C:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½é£¬ï¿½Ãµï¿½Ã¿Ò»ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
+ * 		D:Æ´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½Æ£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½
  */
 public class FileTest3 {
-	public static void main(String[] args) {
-		// ·â×°Ä¿Â¼
-		File srcFolder = new File("E:\\ÆÀÊé\\Èı¹úÑİÒå");
+    public static void main(String[] args) {
+        // ï¿½ï¿½×°Ä¿Â¼
+        File srcFolder = new File("E:\\ï¿½ï¿½ï¿½ï¿½\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
-		// »ñÈ¡¸ÃÄ¿Â¼ÏÂËùÓĞµÄÎÄ¼şµÄFileÊı×é
-		File[] fileArray = srcFolder.listFiles();
+        // ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
+        File[] fileArray = srcFolder.listFiles();
 
-		// ±éÀú¸ÃFileÊı×é£¬µÃµ½Ã¿Ò»¸öFile¶ÔÏó
-		for (File file : fileArray) {
-			// System.out.println(file);
-			// E:\ÆÀÊé\Èı¹úÑİÒå\Èı¹úÑİÒå_001_[ÆÀÊéÍø-½ñÌìºÜ¸ßĞË,Ã÷Ìì¾ÍIOÁË]_ÌÒÔ°Èı½áÒå.avi
-			// ¸Äºó£ºE:\ÆÀÊé\Èı¹úÑİÒå\001_ÌÒÔ°Èı½áÒå.avi
-			String name = file.getName(); // Èı¹úÑİÒå_001_[ÆÀÊéÍø-½ñÌìºÜ¸ßĞË,Ã÷Ìì¾ÍIOÁË]_ÌÒÔ°Èı½áÒå.avi
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½é£¬ï¿½Ãµï¿½Ã¿Ò»ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
+        for (File file : fileArray) {
+            // System.out.println(file);
+            // E:\ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_001_[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½]_ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.avi
+            // ï¿½Äºï¿½E:\ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\001_ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.avi
+            String name = file.getName(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_001_[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½]_ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.avi
 
-			int index = name.indexOf("_");
-			String numberString = name.substring(index + 1, index + 4);
-			// System.out.println(numberString);
+            int index = name.indexOf("_");
+            String numberString = name.substring(index + 1, index + 4);
+            // System.out.println(numberString);
 
-			// int startIndex = name.lastIndexOf('_');
-			// int endIndex = name.lastIndexOf('.');
-			// String nameString = name.substring(startIndex + 1, endIndex);
-			// System.out.println(nameString);
-			int endIndex = name.lastIndexOf('_');
-			String nameString = name.substring(endIndex);
+            // int startIndex = name.lastIndexOf('_');
+            // int endIndex = name.lastIndexOf('.');
+            // String nameString = name.substring(startIndex + 1, endIndex);
+            // System.out.println(nameString);
+            int endIndex = name.lastIndexOf('_');
+            String nameString = name.substring(endIndex);
 
-			String newName = numberString.concat(nameString); // 001_ÌÒÔ°Èı½áÒå.avi
-			// System.out.println(newName);
+            String newName = numberString.concat(nameString); // 001_ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.avi
+            // System.out.println(newName);
 
-			File newFile = new File(srcFolder, newName); // E:\\ÆÀÊé\\Èı¹úÑİÒå\\001_ÌÒÔ°Èı½áÒå.avi
+            File newFile = new File(srcFolder, newName); // E:\\ï¿½ï¿½ï¿½ï¿½\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\\001_ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.avi
 
-			// ÖØÃüÃû¼´¿É
-			file.renameTo(newFile);
-		}
-	}
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            file.renameTo(newFile);
+        }
+    }
 }

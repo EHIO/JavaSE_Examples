@@ -7,100 +7,99 @@ import java.io.IOException;
 import java.util.Properties;
 
 /*
- * ÎÄ¼þÇÐ¸îÆ÷¡£
+ * ï¿½Ä¼ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 
 public class SplitFileDemo {
 
-	private static final int SIZE = 1024 * 1024;
+    private static final int SIZE = 1024 * 1024;
 
-	/**
-	 * @param args
-	 * @throws Exception
-	 */
-	public static void main(String[] args) throws Exception {
+    /**
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
 
-		File file = new File("f:\\temp\\ÓÑÒêÌì³¤µØ¾Ã.mp3");
+        File file = new File("f:\\temp\\ï¿½ï¿½ï¿½ï¿½ï¿½ì³¤ï¿½Ø¾ï¿½.mp3");
 
-		splitFile_2(file);
-	}
+        splitFile_2(file);
+    }
 
-	private static void splitFile_2(File file) throws IOException {
+    private static void splitFile_2(File file) throws IOException {
 
-		// ÓÃ¶ÁÈ¡Á÷¹ØÁªÔ´ÎÄ¼þ¡£
-		FileInputStream fis = new FileInputStream(file);
+        // ï¿½Ã¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½
+        FileInputStream fis = new FileInputStream(file);
 
-		// ¶¨ÒåÒ»¸ö1MµÄ»º³åÇø¡£
-		byte[] buf = new byte[SIZE];
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½1Mï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        byte[] buf = new byte[SIZE];
 
-		// ´´½¨Ä¿µÄ¡£
-		FileOutputStream fos = null;
+        // ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä¡ï¿½
+        FileOutputStream fos = null;
 
-		int len = 0;
-		int count = 1;
-		
+        int len = 0;
+        int count = 1;
+
 		
 		/*
-		 * ÇÐ¸îÎÄ¼þÊ±£¬±ØÐë¼ÇÂ¼×¡±»ÇÐ¸îÎÄ¼þµÄÃû³Æ£¬ÒÔ¼°ÇÐ¸î³öÀ´ËéÆ¬ÎÄ¼þµÄ¸öÊý¡£ ÒÔ·½±ãÓÚºÏ²¢¡£
-		 * Õâ¸öÐÅÏ¢ÎªÁË½øÐÐÃèÊö£¬Ê¹ÓÃ¼üÖµ¶ÔµÄ·½Ê½¡£ÓÃµ½ÁËproperties¶ÔÏó
+		 * ï¿½Ð¸ï¿½ï¿½Ä¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼×¡ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½Ô¼ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½Ä¼ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ÚºÏ²ï¿½ï¿½ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îªï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¼ï¿½Öµï¿½ÔµÄ·ï¿½Ê½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½propertiesï¿½ï¿½ï¿½ï¿½
 		 * 
 		 */
-		Properties prop  = new Properties();
-		
-	
+        Properties prop = new Properties();
 
-		File dir = new File("f:temp\\partfiles");
-		if (!dir.exists())
-			dir.mkdirs();
 
-		while ((len = fis.read(buf)) != -1) {
+        File dir = new File("f:temp\\partfiles");
+        if (!dir.exists())
+            dir.mkdirs();
 
-			fos = new FileOutputStream(new File(dir, (count++) + ".part"));
-			fos.write(buf, 0, len);
-			fos.close();
-		}
-		
-		//½«±»ÇÐ¸îÎÄ¼þµÄÐÅÏ¢±£´æµ½prop¼¯ºÏÖÐ¡£
-		prop.setProperty("partcount", count+"");
-		prop.setProperty("filename", file.getName());
-		
-		fos = new FileOutputStream(new File(dir,count+".properties"));
-		
-		//½«prop¼¯ºÏÖÐµÄÊý¾Ý´æ´¢µ½ÎÄ¼þÖÐ¡£ 
-		prop.store(fos, "save file info");
+        while ((len = fis.read(buf)) != -1) {
 
-		fos.close();
-		fis.close();
+            fos = new FileOutputStream(new File(dir, (count++) + ".part"));
+            fos.write(buf, 0, len);
+            fos.close();
+        }
 
-	}
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½æµ½propï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+        prop.setProperty("partcount", count + "");
+        prop.setProperty("filename", file.getName());
 
-	public static void splitFile(File file) throws IOException {
+        fos = new FileOutputStream(new File(dir, count + ".properties"));
 
-		// ÓÃ¶ÁÈ¡Á÷¹ØÁªÔ´ÎÄ¼þ¡£
-		FileInputStream fis = new FileInputStream(file);
+        //ï¿½ï¿½propï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý´æ´¢ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð¡ï¿½
+        prop.store(fos, "save file info");
 
-		// ¶¨ÒåÒ»¸ö1MµÄ»º³åÇø¡£
-		byte[] buf = new byte[SIZE];
+        fos.close();
+        fis.close();
 
-		// ´´½¨Ä¿µÄ¡£
-		FileOutputStream fos = null;
+    }
 
-		int len = 0;
-		int count = 1;
+    public static void splitFile(File file) throws IOException {
 
-		File dir = new File("c:\\partfiles");
-		if (!dir.exists())
-			dir.mkdirs();
+        // ï¿½Ã¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½
+        FileInputStream fis = new FileInputStream(file);
 
-		while ((len = fis.read(buf)) != -1) {
+        // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½1Mï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        byte[] buf = new byte[SIZE];
 
-			fos = new FileOutputStream(new File(dir, (count++) + ".part"));
-			fos.write(buf, 0, len);
-		}
+        // ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä¡ï¿½
+        FileOutputStream fos = null;
 
-		fos.close();
-		fis.close();
+        int len = 0;
+        int count = 1;
 
-	}
+        File dir = new File("c:\\partfiles");
+        if (!dir.exists())
+            dir.mkdirs();
+
+        while ((len = fis.read(buf)) != -1) {
+
+            fos = new FileOutputStream(new File(dir, (count++) + ".part"));
+            fos.write(buf, 0, len);
+        }
+
+        fos.close();
+        fis.close();
+
+    }
 
 }

@@ -1,38 +1,39 @@
 package org.wg.io.file.test;
 
 import java.io.File;
+
 /*
- * É¾³ýÒ»¸ö´øÄÚÈÝµÄÄ¿Â¼¡£ 
+ * É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½Ä¿Â¼ï¿½ï¿½ 
  * 
- * Ô­Àí£º±ØÐë´Ó×îÀïÃæÍùÍâÉ¾¡£ 
- * ÐèÒª½øÐÐÉî¶È±éÀú¡£
- * ×¢Òâ£ºÉ¾³ýÐè½÷É÷£¬ÒòÎª²»×ß»ØÊÕÕ¾
+ * Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ 
+ * ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ×¢ï¿½â£ºÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ß»ï¿½ï¿½ï¿½Õ¾
  */
 public class RemoveDirTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
 
-		File dir = new File("e:\\demodir");
-		// dir.delete();
-		removeDir(dir);
-	}
+        File dir = new File("e:\\demodir");
+        // dir.delete();
+        removeDir(dir);
+    }
 
-	public static void removeDir(File dir) {
+    public static void removeDir(File dir) {
 
-		File[] files = dir.listFiles();
+        File[] files = dir.listFiles();
 
-		for (File file : files) {
+        for (File file : files) {
 
-			if (file.isDirectory()) {
-				removeDir(file);
-			} else {
-				System.out.println(file + ":" + file.delete());
-			}
-		}
-		System.out.println(dir + ":" + dir.delete());
-	}
+            if (file.isDirectory()) {
+                removeDir(file);
+            } else {
+                System.out.println(file + ":" + file.delete());
+            }
+        }
+        System.out.println(dir + ":" + dir.delete());
+    }
 
 }

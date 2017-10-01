@@ -4,41 +4,41 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /*
- * ÅĞ¶ÏEÅÌÄ¿Â¼ÏÂÊÇ·ñÓĞºó×ºÃûÎª.jpgµÄÎÄ¼ş£¬Èç¹ûÓĞ£¬¾ÍÊä³ö´ËÎÄ¼şÃû³Æ
- * A:ÏÈ»ñÈ¡ËùÓĞµÄ£¬È»ºó±éÀúµÄÊ±ºò£¬ÒÀ´ÎÅĞ¶Ï£¬Èç¹ûÂú×ãÌõ¼ş¾ÍÊä³ö¡£
- * B:»ñÈ¡µÄÊ±ºò¾ÍÒÑ¾­ÊÇÂú×ãÌõ¼şµÄÁË£¬È»ºóÊä³ö¼´¿É¡£
+ * ï¿½Ğ¶ï¿½Eï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ğºï¿½×ºï¿½ï¿½Îª.jpgï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+ * A:ï¿½È»ï¿½È¡ï¿½ï¿½ï¿½ĞµÄ£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * B:ï¿½ï¿½È¡ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½
  * 
- * ÒªÏëÊµÏÖÕâ¸öĞ§¹û£¬¾Í±ØĞëÑ§Ï°Ò»¸ö½Ó¿Ú£ºÎÄ¼şÃû³Æ¹ıÂËÆ÷
+ * Òªï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½Ñ§Ï°Ò»ï¿½ï¿½ï¿½Ó¿Ú£ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½
  * public String[] list(FilenameFilter filter)
  * public File[] listFiles(FilenameFilter filter)
  */
 public class FileTest2 {
-	public static void main(String[] args) {
-		// ·â×°eÅĞ¶ÏÄ¿Â¼
-		File file = new File("e:\\");
+    public static void main(String[] args) {
+        // ï¿½ï¿½×°eï¿½Ğ¶ï¿½Ä¿Â¼
+        File file = new File("e:\\");
 
-		// »ñÈ¡¸ÃÄ¿Â¼ÏÂËùÓĞÎÄ¼ş»òÕßÎÄ¼ş¼ĞµÄStringÊı×é
-		// public String[] list(FilenameFilter filter)
-		String[] strArray = file.list(new FilenameFilter() {
-			@Override
-			public boolean accept(File dir, String name) {
-				// return false;
-				// return true;
-				// Í¨¹ıÕâ¸ö²âÊÔ£¬ÎÒÃÇ¾ÍÖªµÀÁË£¬µ½µ×°ÑÕâ¸öÎÄ¼ş»òÕßÎÄ¼ş¼ĞµÄÃû³Æ¼Ó²»¼Óµ½Êı×éÖĞ£¬È¡¾öÓÚÕâÀïµÄ·µ»ØÖµÊÇtrue»¹ÊÇfalse
-				// ËùÒÔ£¬Õâ¸öµÄtrue»òÕßfalseÓ¦¸ÃÊÇÎÒÃÇÍ¨¹ıÄ³ÖÖÅĞ¶ÏµÃµ½µÄ
-				// System.out.println(dir + "---" + name);
-				// File file = new File(dir, name);
-				// // System.out.println(file);
-				// boolean flag = file.isFile();
-				// boolean flag2 = name.endsWith(".jpg");
-				// return flag && flag2;
-				return new File(dir, name).isFile() && name.endsWith(".jpg");
-			}
-		});
+        // ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ğµï¿½Stringï¿½ï¿½ï¿½ï¿½
+        // public String[] list(FilenameFilter filter)
+        String[] strArray = file.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                // return false;
+                // return true;
+                // Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½Öªï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½Æ¼Ó²ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½Öµï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½false
+                // ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½falseÓ¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ğ¶ÏµÃµï¿½ï¿½ï¿½
+                // System.out.println(dir + "---" + name);
+                // File file = new File(dir, name);
+                // // System.out.println(file);
+                // boolean flag = file.isFile();
+                // boolean flag2 = name.endsWith(".jpg");
+                // return flag && flag2;
+                return new File(dir, name).isFile() && name.endsWith(".jpg");
+            }
+        });
 
-		// ±éÀú
-		for (String s : strArray) {
-			System.out.println(s);
-		}
-	}
+        // ï¿½ï¿½ï¿½ï¿½
+        for (String s : strArray) {
+            System.out.println(s);
+        }
+    }
 }

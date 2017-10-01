@@ -1,52 +1,39 @@
 package org.wg.io.charstream;
 
+import org.junit.Test;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/*
- * ×ª»»Á÷
- * InputStreamReader ÊÇ×Ö½ÚÁ÷Í¨Ïò×Ö·ûÁ÷µÄÇÅÁº
- * InputStreamReader(InputStream is):ÓÃÄ¬ÈÏµÄ±àÂë¶ÁÈ¡Êı¾İ
- * InputStreamReader(InputStream is,String charsetName):ÓÃÖ¸¶¨µÄ±àÂë¶ÁÈ¡Êı¾İ
+/**
+ * InputStreamReader: å­—ç¬¦æµ
+ * ä½œç”¨ï¼šå­—èŠ‚æµé€šå‘å­—ç¬¦æµçš„æ¡¥æ¢
  */
 public class InputStreamReaderDemo {
-	public static void main(String[] args) throws IOException {
-		// ´´½¨¶ÔÏó
-		// InputStreamReader isr = new InputStreamReader(new FileInputStream(
-		// "osw.txt"));
 
-		// InputStreamReader isr = new InputStreamReader(new FileInputStream(
-		// "osw.txt"), "GBK");
+    public static void main(String[] args) throws IOException {
 
-		InputStreamReader isr = new InputStreamReader(new FileInputStream(
-				"osw.txt"), "UTF-8");
+        InputStreamReader isr = new InputStreamReader(new FileInputStream("fos.txt"), "UTF-8");
 
-		// ¶ÁÈ¡Êı¾İ
-		// Ò»´Î¶ÁÈ¡Ò»¸ö×Ö·û
-		int ch = 0;
-		while ((ch = isr.read()) != -1) {
-			System.out.print((char) ch);
-		}
+        int ch = 0;
+        while ((ch = isr.read()) != -1) {
+            System.out.print((char) ch);
+        }
 
-		// ÊÍ·Å×ÊÔ´
-		isr.close();
-	}
-	
-	public static void demo() throws IOException {
-		// ´´½¨¶ÔÏó
-		InputStreamReader isr = new InputStreamReader(new FileInputStream(
-				"StringDemo.java"));
+        isr.close();
+    }
 
-		// Ò»´Î¶ÁÈ¡Ò»¸ö×Ö·ûÊı×é
-		char[] chs = new char[1024];
-		int len = 0;
-		while ((len = isr.read(chs)) != -1) {
-			System.out.print(new String(chs, 0, len));
-		}
+    @Test
+    public void demo() throws IOException {
 
-		// ÊÍ·Å×ÊÔ´
-		isr.close();
-	}
+        InputStreamReader isr = new InputStreamReader(new FileInputStream("osw.txt"));
+
+        char[] chs = new char[1024];
+        int len = 0;
+        while ((len = isr.read(chs)) != -1) {
+            System.out.print(new String(chs, 0, len));
+        }
+        isr.close();
+    }
 }

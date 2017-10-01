@@ -5,83 +5,82 @@ import java.io.IOException;
 
 public class Test {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
-		
-		String str = "abÄãºÃcdÐ»Ð»";
-//		str = "ab¬i¬icd¬i¬i";
-		
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+
+        String str = "abï¿½ï¿½ï¿½cdÐ»Ð»";
+//		str = "abï¿½iï¿½icdï¿½iï¿½i";
+
 //		int len = str.getBytes("gbk").length;		
 //		for(int x=0; x<len; x++){
-//			System.out.println("½ØÈ¡"+(x+1)+"¸ö×Ö½Ú½á¹ûÊÇ£º"+cutStringByByte(str, x+1));
+//			System.out.println("ï¿½ï¿½È¡"+(x+1)+"ï¿½ï¿½ï¿½Ö½Ú½ï¿½ï¿½ï¿½Ç£ï¿½"+cutStringByByte(str, x+1));
 //		}
-		
-		int len = str.getBytes("utf-8").length;		
-		for(int x=0; x<len; x++){
-			System.out.println("½ØÈ¡"+(x+1)+"¸ö×Ö½Ú½á¹ûÊÇ£º"+cutStringByU8Byte(str, x+1));
-		}
-		
-		
-		
-//		String str = "¬i";
+
+        int len = str.getBytes("utf-8").length;
+        for (int x = 0; x < len; x++) {
+            System.out.println("ï¿½ï¿½È¡" + (x + 1) + "ï¿½ï¿½ï¿½Ö½Ú½ï¿½ï¿½ï¿½Ç£ï¿½" + cutStringByU8Byte(str, x + 1));
+        }
+
+
+//		String str = "ï¿½i";
 //		byte[] buf = str.getBytes("gbk");
 //		for(byte b : buf){
 //			System.out.println(b);//-84  105 
 //		}
-			
-	}
-	
+
+    }
+
 	/*
-	  	ÔÚjavaÖÐ£¬×Ö·û´®¡°abcd¡±Óë×Ö·û´®¡°abÄãºÃ¡±µÄ³¤¶ÈÊÇÒ»Ñù£¬¶¼ÊÇËÄ¸ö×Ö·û¡£
-		µ«¶ÔÓ¦µÄ×Ö½ÚÊý²»Í¬£¬Ò»¸öºº×ÖÕ¼Á½¸ö×Ö½Ú¡£
-		¶¨ÒåÒ»¸ö·½·¨£¬°´ÕÕ×î´óµÄ×Ö½ÚÊýÀ´È¡×Ó´®¡£
-		Èç£º¶ÔÓÚ¡°abÄãºÃ¡±£¬Èç¹ûÈ¡Èý¸ö×Ö½Ú£¬ÄÇÃ´×Ó´®¾ÍÊÇabÓë¡°Äã¡±×ÖµÄ°ë¸ö£¬
-		ÄÇÃ´°ë¸ö¾ÍÒªÉáÆú¡£Èç¹ûÈ¥ËÄ¸ö×Ö½Ú¾ÍÊÇ¡°abÄã¡±£¬È¡Îå¸ö×Ö½Ú»¹ÊÇ¡°abÄã¡±.
+	  	ï¿½ï¿½javaï¿½Ð£ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½abcdï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½abï¿½ï¿½Ã¡ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+		ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ú¡ï¿½
+		ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ó´ï¿½ï¿½ï¿½
+		ï¿½ç£ºï¿½ï¿½ï¿½Ú¡ï¿½abï¿½ï¿½Ã¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ú£ï¿½ï¿½ï¿½Ã´ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½abï¿½ë¡°ï¿½ã¡±ï¿½ÖµÄ°ï¿½ï¿½ï¿½ï¿½
+		ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½Ä¸ï¿½ï¿½Ö½Ú¾ï¿½ï¿½Ç¡ï¿½abï¿½ã¡±ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö½Ú»ï¿½ï¿½Ç¡ï¿½abï¿½ã¡±.
 		
 		
 	 */
-	
-	public static String cutStringByU8Byte(String str, int len) throws IOException {
-		
-		byte[] buf = str.getBytes("utf-8");
-		
-		int count = 0;
-		for(int x=len-1; x>=0; x--){
-			if(buf[x]<0)
-				count++;
-			else
-				break;
-		}
-		
-		if(count%3==0)
-			return new String(buf,0,len,"utf-8");
-		else if(count%3==1)
-			return new String(buf,0,len-1,"utf-8");
-		else 
-			return new String(buf,0,len-2,"utf-8");
-		
-	}
 
-	public static String cutStringByByte(String str,int len) throws IOException{
-		
-		byte[] buf = str.getBytes("gbk");
-		
-		int count = 0;
-		for(int x=len-1; x>=0; x--){
-			if(buf[x]<0)
-				count++;
-			else
-				break;
-		}
-		
-		if(count%2==0)
-			return new String(buf,0,len,"gbk");
-		else
-			return new String(buf,0,len-1,"gbk");
-	}
+    public static String cutStringByU8Byte(String str, int len) throws IOException {
+
+        byte[] buf = str.getBytes("utf-8");
+
+        int count = 0;
+        for (int x = len - 1; x >= 0; x--) {
+            if (buf[x] < 0)
+                count++;
+            else
+                break;
+        }
+
+        if (count % 3 == 0)
+            return new String(buf, 0, len, "utf-8");
+        else if (count % 3 == 1)
+            return new String(buf, 0, len - 1, "utf-8");
+        else
+            return new String(buf, 0, len - 2, "utf-8");
+
+    }
+
+    public static String cutStringByByte(String str, int len) throws IOException {
+
+        byte[] buf = str.getBytes("gbk");
+
+        int count = 0;
+        for (int x = len - 1; x >= 0; x--) {
+            if (buf[x] < 0)
+                count++;
+            else
+                break;
+        }
+
+        if (count % 2 == 0)
+            return new String(buf, 0, len, "gbk");
+        else
+            return new String(buf, 0, len - 1, "gbk");
+    }
 }
 
 

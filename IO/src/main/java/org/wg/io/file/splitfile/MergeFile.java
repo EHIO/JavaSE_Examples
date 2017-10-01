@@ -1,109 +1,106 @@
 package org.wg.io.file.splitfile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.SequenceInputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Properties;
+
 /**
- * ÎÄ¼þºÏ²¢
- * @author Administrator
+ * ï¿½Ä¼ï¿½ï¿½Ï²ï¿½
  *
+ * @author Administrator
  */
 public class MergeFile {
 
-	/**
-	 * @param args
-	 * @throws IOException 
-	 */
-	public static void main(String[] args) throws IOException {
+    /**
+     * @param args
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
 
-		File dir = new File("f:temp\\partfiles");
-		
-		mergeFile_2(dir);
-	}
-	
-	public static void mergeFile_2(File dir) throws IOException {
-		
+        File dir = new File("f:temp\\partfiles");
+
+        mergeFile_2(dir);
+    }
+
+    public static void mergeFile_2(File dir) throws IOException {
+
 		/*
-		 * »ñÈ¡Ö¸¶¨Ä¿Â¼ÏÂµÄÅäÖÃÎÄ¼þ¶ÔÏó¡£
+		 * ï¿½ï¿½È¡Ö¸ï¿½ï¿½Ä¿Â¼ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 		 */
-		File[] files = dir.listFiles(new SuffixFilter(".properties"));
-		
-		if(files.length!=1)
-			throw new RuntimeException(dir+",¸ÃÄ¿Â¼ÏÂÃ»ÓÐpropertiesÀ©Õ¹ÃûµÄÎÄ¼þ»òÕß²»Î¨Ò»");
-		//¼ÇÂ¼ÅäÖÃÎÄ¼þ¶ÔÏó¡£
-		File confile = files[0];
-		
-		//»ñÈ¡¸ÃÎÄ¼þÖÐµÄÐÅÏ¢================================================¡£
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(confile);
-		
-		prop.load(fis);
-		
-		String filename = prop.getProperty("filename");		
-		int count = Integer.parseInt(prop.getProperty("partcount"));
-		
-		//»ñÈ¡¸ÃÄ¿Â¼ÏÂµÄËùÓÐËéÆ¬ÎÄ¼þ¡£ ==============================================
-		File[] partFiles = dir.listFiles(new SuffixFilter(".part"));
-		
-		if(partFiles.length!=(count-1)){
-			throw new RuntimeException(" ËéÆ¬ÎÄ¼þ²»·ûºÏÒªÇó£¬¸öÊý²»¶Ô!Ó¦¸Ã"+count+"¸ö");
-		}
-		
-		//½«ËéÆ¬ÎÄ¼þºÍÁ÷¶ÔÏó¹ØÁª ²¢´æ´¢µ½¼¯ºÏÖÐ¡£ 
-		ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
-		for(int x=0; x<partFiles.length; x++){
-			
-			al.add(new FileInputStream(partFiles[x]));
-		}
-		
-		//½«¶à¸öÁ÷ºÏ²¢³ÉÒ»¸öÐòÁÐÁ÷¡£ 
-		Enumeration<FileInputStream> en = Collections.enumeration(al);
-		SequenceInputStream sis = new SequenceInputStream(en);
-		
-		FileOutputStream fos = new FileOutputStream(new File(dir,filename));
-		
-		byte[] buf = new byte[1024];
-		
-		int len = 0;
-		while((len=sis.read(buf))!=-1){
-			fos.write(buf,0,len);
-		}
-		
-		fos.close();
-		sis.close();
-		
-	}
+        File[] files = dir.listFiles(new SuffixFilter(".properties"));
 
-	public static void mergeFile(File dir) throws IOException{
-		
-		
-		ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
-		
-		for(int x=1; x<=3 ;x++){
-			al.add(new FileInputStream(new File(dir,x+".part")));
-		}
-		
-		Enumeration<FileInputStream> en = Collections.enumeration(al);
-		SequenceInputStream sis = new SequenceInputStream(en);
-		
-		FileOutputStream fos = new FileOutputStream(new File(dir,"1.bmp"));
-		
-		byte[] buf = new byte[1024];
-		
-		int len = 0;
-		while((len=sis.read(buf))!=-1){
-			fos.write(buf,0,len);
-		}
-		
-		fos.close();
-		sis.close();
-		
-	}
+        if (files.length != 1)
+            throw new RuntimeException(dir + ",ï¿½ï¿½Ä¿Â¼ï¿½ï¿½Ã»ï¿½ï¿½propertiesï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ß²ï¿½Î¨Ò»");
+        //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+        File confile = files[0];
+
+        //ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ï¢================================================ï¿½ï¿½
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream(confile);
+
+        prop.load(fis);
+
+        String filename = prop.getProperty("filename");
+        int count = Integer.parseInt(prop.getProperty("partcount"));
+
+        //ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½Ä¼ï¿½ï¿½ï¿½ ==============================================
+        File[] partFiles = dir.listFiles(new SuffixFilter(".part"));
+
+        if (partFiles.length != (count - 1)) {
+            throw new RuntimeException(" ï¿½ï¿½Æ¬ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ó£¬¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!Ó¦ï¿½ï¿½" + count + "ï¿½ï¿½");
+        }
+
+        //ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+        ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
+        for (int x = 0; x < partFiles.length; x++) {
+
+            al.add(new FileInputStream(partFiles[x]));
+        }
+
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        Enumeration<FileInputStream> en = Collections.enumeration(al);
+        SequenceInputStream sis = new SequenceInputStream(en);
+
+        FileOutputStream fos = new FileOutputStream(new File(dir, filename));
+
+        byte[] buf = new byte[1024];
+
+        int len = 0;
+        while ((len = sis.read(buf)) != -1) {
+            fos.write(buf, 0, len);
+        }
+
+        fos.close();
+        sis.close();
+
+    }
+
+    public static void mergeFile(File dir) throws IOException {
+
+
+        ArrayList<FileInputStream> al = new ArrayList<FileInputStream>();
+
+        for (int x = 1; x <= 3; x++) {
+            al.add(new FileInputStream(new File(dir, x + ".part")));
+        }
+
+        Enumeration<FileInputStream> en = Collections.enumeration(al);
+        SequenceInputStream sis = new SequenceInputStream(en);
+
+        FileOutputStream fos = new FileOutputStream(new File(dir, "1.bmp"));
+
+        byte[] buf = new byte[1024];
+
+        int len = 0;
+        while ((len = sis.read(buf)) != -1) {
+            fos.write(buf, 0, len);
+        }
+
+        fos.close();
+        sis.close();
+
+    }
 
 }

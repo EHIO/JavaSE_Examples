@@ -1,38 +1,41 @@
 package org.wg.io.otherstream.bean;
 
 import java.io.Serializable;
+
 /*
- * Serializable:ÓÃÓÚ¸ø±»ÐòÁÐ»¯µÄÀà¼ÓÈëIDºÅ¡£
- * ÓÃÓÚÅÐ¶ÏÀàºÍ¶ÔÏóÊÇ·ñÊÇÍ¬Ò»¸ö°æ±¾¡£ 
+ * Serializable:ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IDï¿½Å¡ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½ 
  */
-public class Person implements Serializable/*±ê¼Ç½Ó¿Ú*/ {
+public class Person implements Serializable/*ï¿½ï¿½Ç½Ó¿ï¿½*/ {
 
-	/**
-	 * transient:·Ç¾²Ì¬Êý¾Ý²»Ïë±»ÐòÁÐ»¯¿ÉÒÔÊ¹ÓÃÕâ¸ö¹Ø¼ü×ÖÐÞÊÎ¡£ 
-	 */
-	private static final long serialVersionUID = 9527l;
-	private transient String name;
-	private static int age;
-	
-	
-	public Person(String name, int age) {
-		super();
-		this.name = name;
-		this.age = age;
-	}
+    /**
+     * transient:ï¿½Ç¾ï¿½Ì¬ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ë±»ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¡ï¿½
+     */
+    private static final long serialVersionUID = 9527l;
+    private transient String name;
+    private static int age;
 
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
+
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 }
