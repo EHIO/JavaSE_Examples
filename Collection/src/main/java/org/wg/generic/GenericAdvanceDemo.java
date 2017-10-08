@@ -26,7 +26,7 @@ public class GenericAdvanceDemo {
     }
 
     /**
-     * ��������ӡ������Ԫ�ء�
+     * 通配符
      *
      * @param al
      */
@@ -35,11 +35,8 @@ public class GenericAdvanceDemo {
         Iterator<?> it = al.iterator();
 
         while (it.hasNext()) {
-//			T str = it.next();
-//			System.out.println(str);
             System.out.println(it.next().toString());
         }
-
     }
 
 }

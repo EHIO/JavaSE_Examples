@@ -1,34 +1,49 @@
 package org.wg.generic.p1;
 
+import org.junit.Test;
+import org.wg.entity.Student;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class GenericDemo {
-    public static void main(String[] args) {
-        // ����
+
+    @Test
+    public void demo() {
         ArrayList<String> array = new ArrayList<String>();
 
-        // ���Ԫ��
         array.add("hello");
         array.add("world");
         array.add("java");
-        // array.add(new Integer(100));
-        //array.add(10); // JDK5�Ժ���Զ�װ��
-        // �ȼ��ڣ�array.add(Integer.valueOf(10));
-
-        // ����
         Iterator<String> it = array.iterator();
         while (it.hasNext()) {
-            // ClassCastException
-            // String s = (String) it.next();
             String s = it.next();
             System.out.println(s);
         }
+    }
 
-        // �������������
-        // String[] strArray = new String[3];
-        // strArray[0] = "hello";
-        // strArray[1] = "world";
-        // strArray[2] = 10;
+    @Test
+    public void demo2() {
+        ArrayList<Student> array = new ArrayList<Student>();
+
+        Student s1 = new Student("张三", 40);
+        Student s2 = new Student("李四", 30);
+        Student s3 = new Student("王五", 26);
+
+        array.add(s1);
+        array.add(s2);
+        array.add(s3);
+
+        Iterator<Student> it = array.iterator();
+        while (it.hasNext()) {
+            Student s = it.next();
+            System.out.println(s.getName() + "---" + s.getAge());
+        }
+        System.out.println("------------------");
+
+        for (int x = 0; x < array.size(); x++) {
+            Student s = array.get(x);
+            System.out.println(s.getName() + "---" + s.getAge());
+        }
     }
 }

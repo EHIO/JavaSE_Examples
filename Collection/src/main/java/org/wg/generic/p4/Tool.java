@@ -1,24 +1,5 @@
 package org.wg.generic.p4;
 
-/*
-public class Tool {
-
-	private Object object;
-
-	public Object getObject() {
-		return object;
-	}
-
-	public void setObject(Object object) {
-		this.object = object;
-	}
-	
-}
-*/
-//��jdk1.5��ʹ�÷�������������Ҫ�����������������͡�
-//�����ࡣʲôʱ���ã������еĲ����������������Ͳ�ȷ����ʱ�򣬾�ʹ�÷�������ʾ�� 
-
-
 public class Tool<QQ> {
     private QQ q;
 
@@ -30,12 +11,6 @@ public class Tool<QQ> {
         this.q = object;
     }
 
-
-    /**
-     * �����Ͷ����ڷ����ϡ�
-     *
-     * @param str
-     */
     public <W> void show(W str) {
         System.out.println("show : " + str.toString());
     }
@@ -45,10 +20,9 @@ public class Tool<QQ> {
     }
 
     /**
-     * ��������̬ʱ�����ܷ������϶���ķ��͡������̬����ʹ�÷��ͣ�
-     * ֻ�ܽ����Ͷ����ڷ����ϡ�
-     *
+     * 泛型方法
      * @param obj
+     * @param <Y>
      */
     public static <Y> void method(Y obj) {
         System.out.println("method:" + obj);
