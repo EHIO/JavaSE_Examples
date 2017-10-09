@@ -8,27 +8,27 @@ public class PrintStreamDemo {
 
 		/*
 		 * PrintStream:
-		 * 1,Ìá¹©ÁË´òÓ¡·½·¨¿ÉÒÔ¶Ô¶àÖÖÊý¾ÝÀàÐÍÖµ½øÐÐ´òÓ¡¡£²¢±£³ÖÊý¾ÝµÄ±íÊ¾ÐÎÊ½¡£ 
-		 * 2£¬Ëü²»Å×IOException.
-		 * 
-		 * ¹¹Ôìº¯Êý£¬½ÓÊÕÈýÖÖÀàÐÍµÄÖµ£º
-		 * 1£¬×Ö·û´®Â·¾¶¡£
-		 * 2£¬File¶ÔÏó¡£
-		 * 3£¬×Ö½ÚÊä³öÁ÷¡£
+		 * 1,æä¾›äº†æ‰“å°æ–¹æ³•å¯ä»¥å¯¹å¤šç§æ•°æ®ç±»åž‹å€¼è¿›è¡Œæ‰“å°ã€‚å¹¶ä¿æŒæ•°æ®çš„è¡¨ç¤ºå½¢å¼ã€‚
+		 * 2ï¼Œå®ƒä¸æŠ›IOException.
+		 *
+		 * æž„é€ å‡½æ•°ï¼ŒæŽ¥æ”¶ä¸‰ç§ç±»åž‹çš„å€¼ï¼š
+		 * 1ï¼Œå­—ç¬¦ä¸²è·¯å¾„ã€‚
+		 * 2ï¼ŒFileå¯¹è±¡ã€‚
+		 * 3ï¼Œå­—èŠ‚è¾“å‡ºæµã€‚
 		 */
-		
+
 		PrintStream out = new PrintStream("print.txt");
-		
+
 //		int by = read();
 //		write(by);
-		
-//		out.write(610);//Ö»Ð´×îµÍ8Î»£¬
-		
-//		out.print(97);//½«97ÏÈ±ä³É×Ö·û±£³ÖÔ­Ñù½«Êý¾Ý´òÓ¡µ½Ä¿µÄµØ¡£ 
-		
+
+		out.write(610);//åªå†™æœ€ä½Ž8ä½ï¼Œ
+
+//		out.print(97);//å°†97å…ˆå˜æˆå­—ç¬¦ä¿æŒåŽŸæ ·å°†æ•°æ®æ‰“å°åˆ°ç›®çš„åœ°ã€‚
+
 		out.close();
-		
-		
+
+
 	}
 
 }
