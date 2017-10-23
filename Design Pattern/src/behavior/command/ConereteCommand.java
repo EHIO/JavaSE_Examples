@@ -1,6 +1,6 @@
 package behavior.command;
 
-public class ConereteCommand extends Command {
+public class ConereteCommand implements Command {
 	private Recevier rece;
 	
 	public ConereteCommand(Recevier rece) {

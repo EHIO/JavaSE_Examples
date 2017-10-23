@@ -1,5 +1,8 @@
 package behavior.command;
 
+/**
+ * 调用者
+ */
 public class Invoker {
 	private Command comm;
 	

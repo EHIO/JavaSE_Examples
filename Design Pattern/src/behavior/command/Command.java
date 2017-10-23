@@ -1,5 +1,11 @@
 package behavior.command;
 
-public abstract class Command {
-	public abstract void execute();
+/**
+ * 命令接口
+ */
+public interface Command {
+	/**
+	 *
+	 */
+	void execute();
 }
