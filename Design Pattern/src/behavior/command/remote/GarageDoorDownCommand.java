@@ -1,7 +1,7 @@
 package behavior.command.remote;
 
 /**
- * �رճ����ŵ�����
+ * 关闭车库门命令
  */
 public class GarageDoorDownCommand implements Command {
 	GarageDoor garageDoor;

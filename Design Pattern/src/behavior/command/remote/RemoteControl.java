@@ -1,10 +1,8 @@
 package behavior.command.remote;
 
-import java.util.*;
-
-//
-// This is the invoker (������)
-//
+/**
+ * 遥控器
+ */
 public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;

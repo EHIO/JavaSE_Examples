@@ -1,5 +1,7 @@
 package behavior.command.remote;
-
+/**
+ * 客厅灯打开命令
+ */
 public class LivingroomLightOnCommand implements Command {
 	Light light;
 

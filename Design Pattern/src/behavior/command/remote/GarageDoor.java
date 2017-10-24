@@ -1,11 +1,7 @@
 package behavior.command.remote;
 
 /**
- * ����
- * @ClassName: GarageDoor 
- * @Description: TODO(������һ�仰��������������) 
- * @author A18ccms a18ccms_gmail_com 
- * @date 2016-2-15 ����5:47:39
+ * 车库门
  */
 public class GarageDoor {
 	String location;

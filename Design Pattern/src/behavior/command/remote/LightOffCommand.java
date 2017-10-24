@@ -1,11 +1,7 @@
 package behavior.command.remote;
 
 /**
- * �ص�����
- * @ClassName: LightOffCommand 
- * @Description: TODO(������һ�仰��������������) 
- * @author A18ccms a18ccms_gmail_com 
- * @date 2016-2-15 ����5:50:49
+ * 电灯关闭命令
  */
 public class LightOffCommand implements Command {
 	Light light;

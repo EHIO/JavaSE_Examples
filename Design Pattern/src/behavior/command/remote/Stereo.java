@@ -1,11 +1,7 @@
 package behavior.command.remote;
 
 /**
- * ����
- * @ClassName: Stereo 
- * @Description: TODO(������һ�仰��������������) 
- * @author A18ccms a18ccms_gmail_com 
- * @date 2016-2-15 ����5:19:16
+ * 立体声系统
  */
 public class Stereo {
 	String location;

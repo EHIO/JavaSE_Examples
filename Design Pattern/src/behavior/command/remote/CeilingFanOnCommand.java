@@ -1,11 +1,7 @@
 package behavior.command.remote;
 
 /**
- * �����컨����ȵ�����
- * @ClassName: CeilingFanOnCommand 
- * @Description: TODO(������һ�仰��������������) 
- * @author A18ccms a18ccms_gmail_com 
- * @date 2016-2-15 ����5:53:20
+ * 吊扇打开命令
  */
 public class CeilingFanOnCommand implements Command {
 	CeilingFan ceilingFan;

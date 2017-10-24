@@ -1,9 +1,12 @@
 package behavior.command.remote;
 
+/**
+ * 热水浴缸
+ */
 public class Hottub {
 	boolean on;
 	/**
-	 * �¶�
+	 * 温度
 	 */
 	int temperature;
 
