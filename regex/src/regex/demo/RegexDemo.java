@@ -16,23 +16,22 @@ import java.util.regex.Pattern;
 public class RegexDemo {
 
 	public static void main(String[] args) {
-
-		String qq = "12364567";
-		String regex = "[1-9][0-9]{4,14}";
-		boolean b = qq.matches(regex);
-		System.out.println(qq + ":" + b);
+//		functionDemo1();
+//		functionDemo2();
+//		functionDemo3();
+		functionDemo4();
 	}
 
 	/**
 	 * 获取
 	 * 将正则规则进行对象的封装。
 	 * Pattern p = Pattern.compile("a*b");
-	 * //通过正则对象的matcher方法字符串相关联。获取要对字符串操作的匹配器对象Matcher .
+	 * 通过正则对象的matcher方法字符串相关联。获取要对字符串操作的匹配器对象Matcher .
 	 * Matcher m = p.matcher("aaaaab");
-	 * //通过Matcher匹配器对象的方法对字符串进行操作。
+	 * 通过Matcher匹配器对象的方法对字符串进行操作。
 	 * boolean b = m.matches();
 	 */
-	public static void functionDemo_4() {
+	public static void functionDemo4() {
 
 		String str = "da jia hao,ming tian bu fang jia!";
 
@@ -57,7 +56,7 @@ public class RegexDemo {
 	/**
 	 * 替换
 	 */
-	public static void functionDemo_3() {
+	public static void functionDemo3() {
 
 		String str = "zhangsanttttxiaoqiangmmmmmmzhaoliu";
 
@@ -70,7 +69,6 @@ public class RegexDemo {
 		tel = tel.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
 
 		System.out.println(tel);
-
 	}
 
 	/**
@@ -78,11 +76,11 @@ public class RegexDemo {
 	 * <p>
 	 * 组：((A)(B(C)))
 	 */
-	public static void functionDemo_2() {
+	public static void functionDemo2() {
 
 		String str = "zhangsanttttxiaoqiangmmmmmmzhaoliu";
 
-		String[] names = str.split("(.)\\1+");//str.split("\\.");
+		String[] names = str.split("(.)\\1+");
 
 		for (String name : names) {
 			System.out.println(name);
@@ -92,7 +90,7 @@ public class RegexDemo {
 	/**
 	 * 演示匹配。
 	 */
-	public static void functionDemo_1() {
+	public static void functionDemo1() {
 		//匹配手机号码是否正确。
 		String tel = "15800001111";
 		String regex = "1[358]\\d{9}";
