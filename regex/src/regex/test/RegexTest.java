@@ -30,8 +30,6 @@ public class RegexTest {
 		boolean b = mail.matches(regex);
 
 		System.out.println(mail + ":" + b);
-
-
 	}
 
 	/*
@@ -48,8 +46,6 @@ public class RegexTest {
 		//2,替换叠词。
 		str = str.replaceAll("(.)\\1+", "$1");
 		System.out.println(str);
-
-
 	}
 
 	/*
@@ -59,36 +55,33 @@ public class RegexTest {
 	 */
 	public static void test_2() {
 
-		String ip_str = "192.168.10.34  127.0.0.1  3.3.3.3  105.70.11.55";
+		String ipStr = "192.168.10.34  127.0.0.1  3.3.3.3  105.70.11.55";
 
 
 		//1,为了让ip可以按照字符串顺序比较，只要让ip的每一段的位数相同。
 		//所以，补零，按照每一位所需做多0进行补充。每一段都加两个0.
 
-		ip_str = ip_str.replaceAll("(\\d+)", "00$1");
-		System.out.println(ip_str);
+		ipStr = ipStr.replaceAll("(\\d+)", "00$1");
+		System.out.println(ipStr);
 
 		//然后每一段保留数字3位。
-		ip_str = ip_str.replaceAll("0*(\\d{3})", "$1");
-		System.out.println(ip_str);
+		ipStr = ipStr.replaceAll("0*(\\d{3})", "$1");
+		System.out.println(ipStr);
 
 
 		//1，将ip地址切出。
-		String[] ips = ip_str.split(" +");
+		String[] ips = ipStr.split(" +");
 
 		TreeSet<String> ts = new TreeSet<String>();
 
 		for (String ip : ips) {
-//			System.out.println(ip);
 			ts.add(ip);
 		}
 
 		for (String ip : ts) {
 			System.out.println(ip.replaceAll("0*(\\d+)", "$1"));
 		}
-
 	}
-
 }
 
 

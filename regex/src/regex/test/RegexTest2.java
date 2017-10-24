@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/*
+/**
  * 网页爬虫：其实就一个程序用于在互联网中获取符合指定规则的数据。
  *
  * 爬取邮箱地址。
@@ -38,7 +38,7 @@ public class RegexTest2 {
 		//1,读取源文件。
 //				BufferedReader bufr = new BufferedReader(new FileReader("c:\\mail.html"));
 
-		URL url = new URL("http://192.168.1.100:8080/myweb/mail.html");
+		URL url = new URL("http://blog.sina.com.cn/s/blog_515617e60101e151.html");
 
 		BufferedReader bufIn = new BufferedReader(new InputStreamReader(url.openStream()));
 
@@ -74,7 +74,6 @@ public class RegexTest2 {
 
 		List<String> list = new ArrayList<String>();
 
-
 		Pattern p = Pattern.compile(mail_regex);
 
 		String line = null;
@@ -89,7 +88,5 @@ public class RegexTest2 {
 
 		}
 		return list;
-
 	}
-
 }
