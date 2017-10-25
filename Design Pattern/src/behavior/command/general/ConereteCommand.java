@@ -1,5 +1,8 @@
 package behavior.command.general;
 
+/**
+ * 具体的命令
+ */
 public class ConereteCommand implements Command {
 	private Recevier rece;
 	
