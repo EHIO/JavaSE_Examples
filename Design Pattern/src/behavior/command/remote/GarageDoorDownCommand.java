@@ -10,6 +10,7 @@ public class GarageDoorDownCommand implements Command {
 		this.garageDoor = garageDoor;
 	}
 
+	@Override
 	public void execute() {
 		garageDoor.up();
 	}

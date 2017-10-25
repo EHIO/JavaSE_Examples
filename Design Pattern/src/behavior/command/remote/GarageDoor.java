@@ -11,22 +11,22 @@ public class GarageDoor {
 	}
 
 	public void up() {
-		System.out.println(location + " garage Door is Up");
+		System.out.println(location + " 车库门上升");
 	}
 
 	public void down() {
-		System.out.println(location + " garage Door is Down");
+		System.out.println(location + " 车库门下降");
 	}
 
 	public void stop() {
-		System.out.println(location + " garage Door is Stopped");
+		System.out.println(location + " 车库门停止");
 	}
 
 	public void lightOn() {
-		System.out.println(location + " garage light is on");
+		System.out.println(location + " 打开车库灯");
 	}
 
 	public void lightOff() {
-		System.out.println(location + " garage light is off");
+		System.out.println(location + " 关闭车库灯");
 	}
 }

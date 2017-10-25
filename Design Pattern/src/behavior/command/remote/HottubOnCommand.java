@@ -9,6 +9,7 @@ public class HottubOnCommand implements Command {
 		this.hottub = hottub;
 	}
 
+	@Override
 	public void execute() {
 		hottub.on();
 		hottub.heat();

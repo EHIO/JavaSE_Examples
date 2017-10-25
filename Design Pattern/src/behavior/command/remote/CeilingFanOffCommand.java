@@ -9,7 +9,8 @@ public class CeilingFanOffCommand implements Command {
 	public CeilingFanOffCommand(CeilingFan ceilingFan) {
 		this.ceilingFan = ceilingFan;
 	}
-	
+
+	@Override
 	public void execute() {
 		ceilingFan.off();
 	}

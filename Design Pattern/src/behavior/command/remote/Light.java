@@ -11,10 +11,10 @@ public class Light {
 	}
 
 	public void on() {
-		System.out.println(location + " light is on");
+		System.out.println(location + " 电灯打开");
 	}
 
 	public void off() {
-		System.out.println(location + " light is off");
+		System.out.println(location + " 电灯关闭");
 	}
 }
