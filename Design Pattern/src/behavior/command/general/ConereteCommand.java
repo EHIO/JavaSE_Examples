@@ -1,4 +1,4 @@
-package behavior.command;
+package behavior.command.general;
 
 public class ConereteCommand implements Command {
 	private Recevier rece;

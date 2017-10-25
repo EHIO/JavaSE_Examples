@@ -1,4 +1,4 @@
-package behavior.command;
+package behavior.command.general;
 
 /**
  * 接受者
