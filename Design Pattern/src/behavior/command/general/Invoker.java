@@ -4,14 +4,14 @@ package behavior.command.general;
  * 调用者
  */
 public class Invoker {
-	private Command comm;
-	
-	public Invoker(Command comm) {
-		super();
-		this.comm = comm;
-	}
+    private Command comm;
 
-	public void action() {
-		comm.execute();
-	}
+    public Invoker(Command comm) {
+        super();
+        this.comm = comm;
+    }
+
+    public void action() {
+        comm.execute();
+    }
 }

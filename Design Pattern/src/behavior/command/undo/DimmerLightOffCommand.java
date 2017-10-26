@@ -1,20 +1,29 @@
 package behavior.command.undo;
 
+/**
+ * 调光灯关闭命令
+ */
 public class DimmerLightOffCommand implements Command {
-	Light light;
-	int prevLevel;
+    Light light;
 
-	public DimmerLightOffCommand(Light light) {
-		this.light = light;
-		prevLevel = 100;
-	}
+    /**
+     * 上一次级别
+     */
+    int prevLevel;
 
-	public void execute() {
-		prevLevel = light.getLevel();
-		light.off();
-	}
+    public DimmerLightOffCommand(Light light) {
+        this.light = light;
+        prevLevel = 100;
+    }
 
-	public void undo() {
-		light.dim(prevLevel);
-	}
+    @Override
+    public void execute() {
+        prevLevel = light.getLevel();
+        light.off();
+    }
+
+    @Override
+    public void undo() {
+        light.dim(prevLevel);
+    }
 }

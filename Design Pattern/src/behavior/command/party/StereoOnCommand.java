@@ -1,17 +1,19 @@
 package behavior.command.party;
 
 public class StereoOnCommand implements Command {
-	Stereo stereo;
+    Stereo stereo;
 
-	public StereoOnCommand(Stereo stereo) {
-		this.stereo = stereo;
-	}
+    public StereoOnCommand(Stereo stereo) {
+        this.stereo = stereo;
+    }
 
-	public void execute() {
-		stereo.on();
-	}
+    @Override
+    public void execute() {
+        stereo.on();
+    }
 
-	public void undo() {
-		stereo.off();
-	}
+    @Override
+    public void undo() {
+        stereo.off();
+    }
 }
