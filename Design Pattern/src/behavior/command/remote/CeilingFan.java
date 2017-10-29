@@ -17,20 +17,20 @@ public class CeilingFan {
     public void high() {
         // turns the ceiling fan on to high
         level = HIGH;
-        System.out.println(location + " 吊扇打到最高档");
+        System.out.println(location + " 吊扇设置高转速");
 
     }
 
     public void medium() {
         // turns the ceiling fan on to medium
         level = MEDIUM;
-        System.out.println(location + " 吊扇打到中档");
+        System.out.println(location + " 吊扇设置中转速");
     }
 
     public void low() {
         // turns the ceiling fan on to low
         level = LOW;
-        System.out.println(location + " 吊扇打到低档");
+        System.out.println(location + " 吊扇设置低转速");
     }
 
     public void off() {

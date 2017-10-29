@@ -11,11 +11,11 @@ public class GarageDoor {
     }
 
     public void up() {
-        System.out.println("打开车库门");
+        System.out.println("车库门向上");
     }
 
     public void down() {
-        System.out.println("关闭车库门");
+        System.out.println("车库门向下");
     }
 
     public void stop() {

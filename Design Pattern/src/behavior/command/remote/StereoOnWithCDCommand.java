@@ -1,7 +1,7 @@
 package behavior.command.remote;
 
 /**
- * 立体声系统打开命令
+ * 音响打开命令
  */
 public class StereoOnWithCDCommand implements Command {
     Stereo stereo;
