@@ -33,7 +33,10 @@ public class LazySingleton {
     */
 
 
-    // 加入双重判断可以解决效率问题
+    /**
+     * 加入双重判断可以解决效率问题
+     * @return
+     */
     public static LazySingleton getInstance() {
         if (uniqueInstance == null) {
             synchronized(LazySingleton.class) {
@@ -44,6 +47,4 @@ public class LazySingleton {
         }
         return uniqueInstance;
     }
-
-
 }
