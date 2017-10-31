@@ -2,6 +2,9 @@ package creational.factory.simple_factory;
 
 import java.util.ArrayList;
 
+/**
+ * 比萨
+ */
 public abstract class Pizza {
     /**
      * 名称
@@ -28,7 +31,7 @@ public abstract class Pizza {
      * 准备
      */
     public void prepare() {
-        System.out.println("Preparing " + name);
+        System.out.println("准备 " + name);
         System.out.println("Tossing dough...");
         System.out.println("Adding sauce...");
         System.out.println("Adding toppings: ");
