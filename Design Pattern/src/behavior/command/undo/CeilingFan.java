@@ -23,7 +23,7 @@ public class CeilingFan {
     }
 
     /**
-     * ����
+     *
      */
     public void high() {
         speed = HIGH;
@@ -31,7 +31,7 @@ public class CeilingFan {
     }
 
     /**
-     * ����
+     *
      */
     public void medium() {
         speed = MEDIUM;
@@ -39,7 +39,7 @@ public class CeilingFan {
     }
 
     /**
-     * ����
+     *
      */
     public void low() {
         speed = LOW;

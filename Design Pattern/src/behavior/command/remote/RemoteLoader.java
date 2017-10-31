@@ -13,7 +13,7 @@ public class RemoteLoader {
         Stereo stereo = new Stereo("客厅");
   
 		/*
-         *
+         * 创建电灯相关命令
 		 */
         LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
         LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
@@ -21,25 +21,25 @@ public class RemoteLoader {
         LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
   
 		/*
-         *
+         * 创建吊扇相关命令
 		 */
         CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
         CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
  
 		/*
-		 *
+		 * 创建车库门相关命令
 		 */
         GarageDoorUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
         GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
  
 		/*
-		 *
+		 * 创建音响相关命令
 		 */
         StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
         StereoOffCommand stereoOff = new StereoOffCommand(stereo);
  
 		/*
-		 *
+		 * 设置遥控器插槽
 		 */
         remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
         remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);

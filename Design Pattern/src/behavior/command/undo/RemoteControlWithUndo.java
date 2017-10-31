@@ -52,6 +52,7 @@ public class RemoteControlWithUndo {
         undoCommand.undo();
     }
 
+    @Override
     public String toString() {
         StringBuffer stringBuff = new StringBuffer();
         stringBuff.append("\n------ 遥控器 -------\n");
