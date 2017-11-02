@@ -7,10 +7,10 @@ package creational.factory.simple_factory;
  */
 public class CheesePizza extends Pizza {
     public CheesePizza() {
-        name = "Cheese Pizza";
-        dough = "Regular Crust";
-        sauce = "Marinara Pizza Sauce";
-        toppings.add("Fresh Mozzarella");
-        toppings.add("Parmesan");
+        name = "芝士匹萨";
+        dough = "常规的壳";
+        sauce = "比萨酱沙司";
+        toppings.add("新鲜的奶酪");
+        toppings.add("帕尔马干酪");
     }
 }
