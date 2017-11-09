@@ -1,21 +1,20 @@
 package org.wg.toolclass;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
 
-//数组转成集合。
+/**
+ * 数组转成集合。
+ */
 public class ArraysDemo {
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-        /*
-         * Arrays：集合框架的工具类。里面的方法都是静态的。
-		 *
-		 */
-
 //		int[] arr = {3,1,5,6,3,6};
 //		System.out.println(Arrays.toString(arr));
 
@@ -38,18 +37,13 @@ public class ArraysDemo {
     }
 
     /**
-     *
+     * 重点：List asList(数组)将数组转成集合。
+     * 好处：其实可以使用集合的方法操作数组中的元素。
+     * 注意：数组的长度是固定的，所以对于集合的增删方法是不可以使用的
+     * 否则会发生UnsupportedOperationException
      */
-    public static void demo_1() {
-		/*
-		 * 重点：List asList(数组)将数组转成集合。
-		 *
-		 * 好处：其实可以使用集合的方法操作数组中的元素。
-		 * 注意：数组的长度是固定的，所以对于集合的增删方法是不可以使用的
-		 * 否则会发生UnsupportedOperationException
-		 *
-		 *
-		 */
+    @Test
+    public void demo_1() {
         String[] arr = {"abc", "haha", "xixi"};
 
         boolean b = myContains(arr, "xixi");
@@ -57,7 +51,7 @@ public class ArraysDemo {
 
         List<String> list = Arrays.asList(arr);
         boolean b1 = list.contains("xixi");
-        System.out.println("list contaisn:=" + b1);
+        System.out.println("list contains:=" + b1);
 //		list.add("hiahia");//UnsupportedOperationException
 
         System.out.println(list);
@@ -65,24 +59,29 @@ public class ArraysDemo {
 
     public static boolean myContains(String[] arr, String key) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals(key))
+            if (arr[i].equals(key)) {
                 return true;
+            }
         }
         return false;
     }
 
-    //toString的经典实现。
+    /**
+     * toString的经典实现
+     */
     public static String myToString(int[] a) {
         int iMax = a.length - 1;
-        if (iMax == -1)
+        if (iMax == -1) {
             return "[]";
+        }
 
         StringBuilder b = new StringBuilder();
         b.append('[');
         for (int i = 0; ; i++) {//中间省略条件判断，提高了效率。
             b.append(a[i]);
-            if (i == iMax)
+            if (i == iMax) {
                 return b.append(']').toString();
+            }
             b.append(", ");
         }
     }

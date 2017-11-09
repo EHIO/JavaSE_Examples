@@ -2,6 +2,7 @@ package org.wg.toolclass;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class ToArray {
@@ -34,4 +35,9 @@ public class ToArray {
 
         System.out.println(Arrays.toString(arr));
     }
+
+/*    public static <T> T[] toArray(Collection<T> collection) {
+
+        return collection.toArray(new T[collection.size()]);
+    }*/
 }

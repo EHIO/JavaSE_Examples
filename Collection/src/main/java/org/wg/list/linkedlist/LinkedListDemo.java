@@ -2,7 +2,7 @@ package org.wg.list.linkedlist;
 
 import java.util.LinkedList;
 
-/*
+/**
  * LinkedList�����й��ܣ�
  * 		A:��ӹ���
  * 			public void addFirst(Object e)

@@ -1,5 +1,8 @@
 package org.wg.iterator;
 
+import org.junit.Test;
+import org.wg.entity.Student;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -8,28 +11,41 @@ import java.util.Iterator;
 
  */
 public class IteratorDemo {
-    public static void main(String[] args) {
-        Collection c = new ArrayList();
 
+    @Test
+    public void demo1() {
+        Collection c = new ArrayList();
         c.add("hello");
         c.add("world");
         c.add("java");
-
         iterator(c);
         iterator2(c);
     }
 
-    public static void iterator(Collection c) {
-        Iterator it = c.iterator();
+    @Test
+    public void demo2() {
+        ArrayList<Student> array = new ArrayList<Student>();
+        Student s1 = new Student("张三", 40);
+        Student s2 = new Student("李四", 30);
+        Student s3 = new Student("王五", 26);
+        array.add(s1);
+        array.add(s2);
+        array.add(s3);
+
+        iterator(array);
+        iterator2(array);
+    }
+
+    public static void iterator(Collection<?> c) {
+        Iterator<?> it = c.iterator();
         while (it.hasNext()) {
-            String s = (String) it.next();
-            System.out.println(s);
+            System.out.println(it.next());
         }
     }
 
-    public static void iterator2(Collection c) {
+    public static void iterator2(Collection<?> c) {
         Object obj;
-        for (Iterator iterator = c.iterator(); iterator.hasNext();) {
+        for (Iterator<?> iterator = c.iterator(); iterator.hasNext();) {
             obj = iterator.next();
             System.out.println(obj);
         }

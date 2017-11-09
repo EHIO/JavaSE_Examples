@@ -9,26 +9,26 @@ import java.util.TreeSet;
 
 public class GenericAdvanceDemo4 {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
 
-        TreeSet<Person> al1 = new TreeSet<Person>(new CompByName());
+		TreeSet<Person> al1 = new TreeSet<Person>(new CompByName());
 
-        al1.add(new Person("abc4", 34));
-        al1.add(new Person("abc1", 30));
-        al1.add(new Person("abc2", 38));
+		al1.add(new Person("abc4", 34));
+		al1.add(new Person("abc1", 30));
+		al1.add(new Person("abc2", 38));
 
-        TreeSet<Student> al2 = new TreeSet<Student>(new CompByName());
+		TreeSet<Student> al2 = new TreeSet<Student>(new CompByName());
 
-        al2.add(new Student("stu1", 11));
-        al2.add(new Student("stu7", 20));
-        al2.add(new Student("stu2", 22));
+		al2.add(new Student("stu1", 11));
+		al2.add(new Student("stu7", 20));
+		al2.add(new Student("stu2", 22));
 
 
-        TreeSet<String> al4 = new TreeSet<String>();
-        al4.add("abcdeef");
+		TreeSet<String> al4 = new TreeSet<String>();
+		al4.add("abcdeef");
 //		al1.addAll(al4);//�������Ͳ�ƥ�䡣
 
 //		al1.addAll(al2);
@@ -37,12 +37,12 @@ public class GenericAdvanceDemo4 {
 //		System.out.println(al1.size());
 
 
-        Iterator<Student> it = al2.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
-        }
+		Iterator<Student> it = al2.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 
-    }
+	}
 }
 
 
@@ -55,25 +55,25 @@ public class GenericAdvanceDemo4 {
 
 class CompByName implements Comparator<Person> {
 
-    @Override
-    public int compare(Person o1, Person o2) {
+	@Override
+	public int compare(Person o1, Person o2) {
 
-        int temp = o1.getName().compareTo(o2.getName());
+		int temp = o1.getName().compareTo(o2.getName());
 
-        return temp == 0 ? o1.getAge() - o2.getAge() : temp;
-    }
+		return temp == 0 ? o1.getAge() - o2.getAge() : temp;
+	}
 
 }
 
 class CompByStuName implements Comparator<Student> {
 
-    @Override
-    public int compare(Student o1, Student o2) {
+	@Override
+	public int compare(Student o1, Student o2) {
 
-        int temp = o1.getName().compareTo(o2.getName());
+		int temp = o1.getName().compareTo(o2.getName());
 
-        return temp == 0 ? o1.getAge() - o2.getAge() : temp;
-    }
+		return temp == 0 ? o1.getAge() - o2.getAge() : temp;
+	}
 
 }
 
