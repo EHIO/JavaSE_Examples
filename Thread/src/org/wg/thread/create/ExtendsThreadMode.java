@@ -1,5 +1,4 @@
-package org.wg.thread.mode;
-
+package org.wg.thread.create;
 /**
  * 创建线程方式一：继承Thread类。
  *
@@ -9,11 +8,26 @@ package org.wg.thread.mode;
  * 	 3，直接创建Thread的子类对象创建线程。
  * 	 4，调用start方法开启线程并调用线程的任务run方法执行。
  */
-public class Test {
+public class ExtendsThreadMode extends Thread {
+
+	private String name;
+
+	public ExtendsThreadMode(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 5; i++) {
+			System.out.println(name + "...." + i + ".....name=" + Thread.currentThread().getName());
+		}
+	}
+
+
 
 	public static void main(String[] args) {
-		Thread1 d1 = new Thread1("旺财");
-		Thread1 d2 = new Thread1("小强");
+		ExtendsThreadMode d1 = new ExtendsThreadMode("旺财");
+		ExtendsThreadMode d2 = new ExtendsThreadMode("小强");
 		d1.start();//开启线程，调用run方法。
 
 		d2.start();

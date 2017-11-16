@@ -1,4 +1,4 @@
-package org.wg.thread.mode2;
+package org.wg.thread.create;
 
 /**
  * 创建线程的第二种方式：实现Runnable接口。
@@ -9,11 +9,31 @@ package org.wg.thread.mode2;
  * 	所以要在线程对象创建时就必须明确要运行的任务。
  * 4，调用线程对象的start方法开启线程。
  */
-public class Test2 {
+public class RunnableModeDemo {
 
 	public static void main(String[] args) {
 		new Thread(new Thread2("旺财")).start();
 		new Thread(new Thread2("小强")).start();
 		System.out.println("over...... " + Thread.currentThread().getName() );
+	}
+
+	static class Thread2 implements Runnable {
+		private String name;
+
+		public Thread2(String name) {
+			this.name = name;
+		}
+
+		@Override
+		public void run() {
+			for (int i = 0; i < 5; i++) {
+				System.out.println(name + "运行    " + i + "......" + Thread.currentThread().getName());
+				try {
+					Thread.sleep((int) Math.random() * 10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 }
