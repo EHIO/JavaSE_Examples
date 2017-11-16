@@ -2,10 +2,9 @@ package org.wg.thread.communication;
 
 
 /**
- * 线程间的通信
- * 多个线程在处理同一资源，但是任务却不同。
+ *
  */
-public class CommunicationDemo {
+public class CommunicationDemo3 {
 
 	public static void main(String[] args) {
 		// 创建资源对象
@@ -27,6 +26,34 @@ public class CommunicationDemo {
 	static class Resource {
 		String name;
 		String sex;
+		boolean flag = false;
+
+		public synchronized void set(String name, String sex) {
+			if (flag) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			this.name = name;
+			this.sex = sex;
+			flag = true;
+			notify();
+		}
+
+		public synchronized void get() {
+			if (!flag) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println(name + "		" + sex);
+			this.flag = false;
+			this.notify();
+		}
 	}
 
 
@@ -41,14 +68,10 @@ public class CommunicationDemo {
 		public void run() {
 			int i = 0;
 			while (true) {
-				synchronized (r) {
-					if (i == 0) {
-						r.name = "旺财";
-						r.sex = "母";
-					} else {
-						r.name = "小强";
-						r.sex = "公";
-					}
+				if (i == 0) {
+					r.set("旺财", "母");
+				} else {
+					r.set("小强", "公");
 				}
 				i = (i + 1) % 2;
 			}
@@ -66,13 +89,10 @@ public class CommunicationDemo {
 		@Override
 		public void run() {
 			while (true) {
-				synchronized (r) {
-					System.out.println(r.name + "		" + r.sex);
-				}
+				r.get();
 			}
 		}
 	}
-
 }
 
 
