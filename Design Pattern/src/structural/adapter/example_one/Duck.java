@@ -1,7 +1,7 @@
 package structural.adapter.example_one;
 
 /**
- * Ѽ�ӣ�Ŀ��ӿ�
+ * 鸭子，目标接口
  */
 public interface Duck {
 	void quack();

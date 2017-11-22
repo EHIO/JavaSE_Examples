@@ -2,24 +2,24 @@ package structural.adapter.example_one;
 
 public class DuckTestDrive {
 	public static void main(String[] args) {
-		// ´´½¨Ò»¸öÑ¼×Ó
+		// åˆ›å»ºä¸€ä¸ªé¸­å­
 		MallardDuck duck = new MallardDuck();
-		// ´´½¨Ò»Ö»»ğ¼¦
+		// åˆ›å»ºä¸€åªç«é¸¡
 		WildTurkey turkey = new WildTurkey();
-		// ½«»ğ¼¦°ü×°½øÒ»¸ö»ğ¼¦ÊÊÅäÆ÷ÖĞ£¬Ê¹Ëü¿´ÆğÀ´ÏñÒ»Ö»Ñ¼×Ó
+		// å°†ç«é¸¡åŒ…è£…è¿›ä¸€ä¸ªç«é¸¡é€‚é…å™¨ä¸­ï¼Œä½¿å®ƒçœ‹èµ·æ¥åƒä¸€åªé¸­å­
 		Duck turkeyAdapter = new TurkeyAdapter(turkey);
-		System.err.println("¿´»ğ¼¦µÄ±íÑİ");
+		System.err.println("çœ‹ç«é¸¡çš„è¡¨æ¼”");
 		turkey.gobble();
 		turkey.fly();
-		System.err.println("¿´Ñ¼×ÓµÄ±íÑİ");
+		System.err.println("çœ‹é¸­å­çš„è¡¨æ¼”");
 		testDuck(duck);
-		System.err.println("¿´»ğ¼¦ÊÊÅäÆ÷µÄ¹¦Ğ§");
+		System.err.println("çœ‹ç«é¸¡é€‚é…å™¨çš„åŠŸæ•ˆ");
 		testDuck(turkeyAdapter);
 	}
 
 	/**
-	 * È¡µÃÒ»Ö»Ñ¼×Ó£¬²¢µ÷ÓÃËüµÄ·½·¨
-	 * 
+	 * å–å¾—ä¸€åªé¸­å­ï¼Œå¹¶è°ƒç”¨å®ƒçš„æ–¹æ³•
+	 *
 	 * @param duck
 	 */
 	private static void testDuck(Duck duck) {

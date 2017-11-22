@@ -1,7 +1,7 @@
 package structural.adapter.example_one;
 
 /**
- * »ğ¼¦£¬±»ÊÊÅäÕß
+ * ç«é¸¡ï¼Œè¢«é€‚é…è€…
  */
 public interface Turkey {
 	void gobble();

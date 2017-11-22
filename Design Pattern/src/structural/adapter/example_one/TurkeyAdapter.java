@@ -1,8 +1,8 @@
 package structural.adapter.example_one;
 
 /**
- * ÊÊÅäÆ÷£¬ÊµÏÖÁËÄ¿±ê½Ó¿Ú
- * (¶ÔÏóÊÊÅäÆ÷)
+ * é€‚é…å™¨ï¼Œå®ç°äº†ç›®æ ‡æ¥å£
+ * (å¯¹è±¡é€‚é…å™¨)
  */
 public class TurkeyAdapter implements Duck {
 	Turkey turkey;

@@ -1,18 +1,18 @@
 package structural.adapter.example_one;
 
 /**
- * ÂÌÍ·Ñ¼
+ * ç»¿å¤´é¸­
  */
 public class MallardDuck implements Duck {
 
 	@Override
 	public void quack() {
-		System.out.println("¸Â¸Â½Ğ");
+		System.out.println("å˜å˜å«");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println("ÕıÔÚ·É");
+		System.out.println("æ­£åœ¨é£");
 	}
 
 }

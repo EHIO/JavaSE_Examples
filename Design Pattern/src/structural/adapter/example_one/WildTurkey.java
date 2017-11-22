@@ -1,7 +1,7 @@
 package structural.adapter.example_one;
 
 /**
- * ¾ßÌåµÄ»ğ¼¦
+ * å…·ä½“çš„ç«é¸¡
  * @author gang.wang
  *
  */
@@ -9,12 +9,12 @@ public class WildTurkey implements Turkey {
 
 	@Override
 	public void gobble() {
-		System.out.println("¹¾¹¾½Ğ");
+		System.out.println("å’•å’•å«");
 	}
 
 	@Override
 	public void fly() {
-		System.out.println("ºÜÏë·É");
+		System.out.println("å¾ˆæƒ³é£");
 	}
 
 }
