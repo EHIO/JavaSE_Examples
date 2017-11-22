@@ -1,5 +1,8 @@
 package org.wg.thread.error;
 
+/**
+ * 错误的加锁
+ */
 public class BadLockOnInteger implements Runnable {
 	public static Integer i = 0;
 
@@ -15,7 +18,7 @@ public class BadLockOnInteger implements Runnable {
 	}
 
 	public static void main(String[] args) {
-	/*	Thread t1 = new Thread(instance);
+		Thread t1 = new Thread(instance);
 		Thread t2 = new Thread(instance);
 
 		t1.start();
@@ -28,15 +31,5 @@ public class BadLockOnInteger implements Runnable {
 			e.printStackTrace();
 		}
 		System.out.println(i);
-*/
-
-		Integer a = Integer.valueOf(200);
-		int b = Integer.valueOf(200);
-
-		Integer c = Integer.parseInt("200");
-
-		System.out.println();
-//		System.out.println(a == b);
-
 	}
 }
