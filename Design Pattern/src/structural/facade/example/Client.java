@@ -1,4 +1,4 @@
-package structural.facade_门面;
+package structural.facade.example;
 
 public class Client {
 	private static SecurityFacade sf;

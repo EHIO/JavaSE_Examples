@@ -1,6 +1,7 @@
-package structural.facade;
+package structural.facade.hometheater;
 /**
- * ��ͥӰԺ���
+ * 家庭影院外观类
+ * @author wg
  */
 public class HomeTheaterFacade {
 	Amplifier amp;
@@ -26,7 +27,7 @@ public class HomeTheaterFacade {
 	}
 	
 	public void watchMovie(String movie) {
-		System.out.println("׼������Ӱ�ˡ���������");
+		System.out.println("准备看电影了......");
 		popper.on();
 		popper.pop();
 		lights.dim();
@@ -41,7 +42,7 @@ public class HomeTheaterFacade {
 	}
 	
 	public void endMovie() {
-		System.out.println("��Ӱ�����ˣ�׼���رռ�ͥӰԺ");
+		System.out.println("关闭电影院......");
 		popper.off();
 		lights.on();
 		screen.up();

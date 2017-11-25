@@ -1,4 +1,4 @@
-package structural.facade;
+package structural.facade.hometheater;
 
 public class HomeTheaterTestDrive {
 	public static void main(String[] args) {

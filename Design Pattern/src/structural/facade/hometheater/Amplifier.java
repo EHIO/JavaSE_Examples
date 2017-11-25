@@ -1,6 +1,6 @@
-package structural.facade;
+package structural.facade.hometheater;
 /**
- * ������
+ * 扩音器
  */
 public class Amplifier {
 

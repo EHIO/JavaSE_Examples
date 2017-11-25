@@ -1,4 +1,4 @@
-package structural.facade_门面;
+package structural.facade.example;
 
 public class Camera {
 	private String name;

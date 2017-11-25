@@ -1,4 +1,4 @@
-package structural.facade_门面;
+package structural.facade.example;
 
 public class SecurityFacade {
 	private Light light = new Light("阿拉丁神灯");
