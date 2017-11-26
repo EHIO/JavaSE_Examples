@@ -1,17 +1,14 @@
 package behavior.strategy.fly;
 
 /**
- * ÀûÓÃ»ğ¼ı¶¯Á¦µÄ·ÉĞĞĞĞÎª
- * @ClassName: FlyRocketPowered 
- * @Description: TODO(ÕâÀïÓÃÒ»¾ä»°ÃèÊöÕâ¸öÀàµÄ×÷ÓÃ) 
- * @author A18ccms a18ccms_gmail_com 
- * @date 2015-12-26 ÏÂÎç6:43:41
+ * åˆ©ç”¨ç«ç®­åŠ¨åŠ›çš„é£è¡Œè¡Œä¸º
+ * @author wg
  */
 public class FlyRocketPowered implements FlyBehavior {
 
 	@Override
 	public void fly() {
-		System.out.println("×îĞÂ¼¼Êõ£¬ ¼ÓÈë»ğ¼ıÍÆÁ¦");
+		System.out.println("æˆ‘åŠ äº†ç«ç®­é£è¡ŒåŠ¨åŠ›");
 	}
 
 }

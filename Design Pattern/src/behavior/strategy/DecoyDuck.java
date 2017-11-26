@@ -4,8 +4,8 @@ import behavior.strategy.fly.FlyNotWay;
 import behavior.strategy.quack.MuteQuack;
 
 /**
- * �ն�Ѽ
- * @author Administrator
+ * 诱饵鸭
+ * @author wg
  *
  */
 public class DecoyDuck extends Duck {

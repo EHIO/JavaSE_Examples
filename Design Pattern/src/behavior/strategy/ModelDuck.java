@@ -1,18 +1,23 @@
 package behavior.strategy;
 
 import behavior.strategy.fly.FlyNotWay;
-import behavior.strategy.fly.FlyWithWings;
 import behavior.strategy.quack.Quack;
 
+/**
+ * æ¨¡åž‹é¸­
+ *
+ * @author wg
+ */
 public class ModelDuck extends Duck {
 
-	public ModelDuck() {
-		flyBehavior = new FlyNotWay();
-		quackBehavior = new Quack();
-	}
-	@Override
-	public void display() {
-		System.out.println("ÎÒÊÇÄ£ÐÍÑ¼");
-	}
+    public ModelDuck() {
+        flyBehavior = new FlyNotWay();
+        quackBehavior = new Quack();
+    }
+
+    @Override
+    public void display() {
+        System.out.println("æˆ‘æ˜¯æ¨¡åž‹é¸­");
+    }
 
 }

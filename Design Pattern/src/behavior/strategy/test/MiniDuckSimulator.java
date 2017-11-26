@@ -6,17 +6,19 @@ import behavior.strategy.ModelDuck;
 import behavior.strategy.fly.FlyRocketPowered;
 
 public class MiniDuckSimulator {
-	public static void main(String[] args) {
-		Duck mallard = new MarrardDuck();
-		mallard.performFly();
-		mallard.performQuack();
-		
-		System.out.println("---------------------");
-		//动态的改变行为
-		Duck modelDuck = new ModelDuck();
-		modelDuck.display();
-		modelDuck.performFly();
-		modelDuck.setFlyBehavior(new FlyRocketPowered());
-		modelDuck.performFly();
-	}
+    public static void main(String[] args) throws InterruptedException {
+        Duck mallard = new MarrardDuck();
+        mallard.display();
+        mallard.performFly();
+        mallard.performQuack();
+
+        Thread.sleep(1000);
+        System.out.println("---------------------");
+        Duck modelDuck = new ModelDuck();
+        modelDuck.display();
+        modelDuck.performFly();
+        // 鍔ㄦ�佺殑鏀瑰彉椋炶琛屼负
+        modelDuck.setFlyBehavior(new FlyRocketPowered());
+        modelDuck.performFly();
+    }
 }

@@ -1,6 +1,6 @@
 package behavior.strategy.fly;
 /**
- * 	飞行行为
+ * 	椋炶琛屼负鎺ュ彛
  * @author Administrator
  *
  */

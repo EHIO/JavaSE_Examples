@@ -1,9 +1,10 @@
 package behavior.strategy.quack;
+
 /**
- * 叫的行为
- * @author Administrator
+ * 鍙殑琛屼负
  *
+ * @author wg
  */
 public interface QuackBehavior {
-	void quack();
+    void quack();
 }

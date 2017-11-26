@@ -1,18 +1,18 @@
 package behavior.strategy.fly;
 
 /**
- * ÕâÊÇ·ÉĞĞĞĞÎªµÄÊµÏÖ£¬¸ø¡°Õæ»á·ÉµÄÑ¼×ÓÓÃ¡±
- * @author Administrator
+ * è¿™æ˜¯é£è¡Œè¡Œä¸ºçš„å®ç°ï¼Œç»™â€œçœŸä¼šé£çš„é¸­å­ç”¨â€
  *
+ * @author wg
  */
 public class FlyWithWings implements FlyBehavior {
 
-	/**
-	 * ÊµÏÖ»á·ÉµÄÑ¼×ÓµÄ·ÉĞĞĞĞÎª
-	 */
-	@Override
-	public void fly() {
-		System.err.println("ÎÒ»á·É");
-	}
+    /**
+     * å®ç°ä¼šé£çš„é¸­å­çš„é£è¡Œè¡Œä¸º
+     */
+    @Override
+    public void fly() {
+        System.err.println("æˆ‘ä¼šé£");
+    }
 
 }

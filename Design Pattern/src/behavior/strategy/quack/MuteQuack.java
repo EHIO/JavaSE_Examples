@@ -1,16 +1,16 @@
 package behavior.strategy.quack;
+
 /**
- * ÕâÊÇ½ĞĞĞÎªµÄÊµÏÖ£¬¸ø²»»á½ĞµÄÑ¼×ÓÓÃ
- * @author Administrator
+ * è¿™æ˜¯å«è¡Œä¸ºçš„å®ç°ï¼Œç»™ä¸ä¼šå«çš„é¸­å­ç”¨
  *
+ * @author wg
  */
 public class MuteQuack implements QuackBehavior {
 
-	/**
-	 * ÊµÏÖ²»»á½ĞµÄÑ¼×ÓĞĞÎª
-	 */
-	@Override
-	public void quack() {
-	}
-
+    /**
+     * å®ç°ä¸ä¼šå«çš„é¸­å­è¡Œä¸º
+     */
+    @Override
+    public void quack() {
+    }
 }

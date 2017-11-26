@@ -4,53 +4,48 @@ import behavior.strategy.fly.FlyBehavior;
 import behavior.strategy.quack.QuackBehavior;
 
 /**
- * Ñ¼×ÓÀà
- * @author Administrator
+ * é¸­å­ç±»
  *
+ * @author Administrator
  */
 public abstract class Duck {
 
-	FlyBehavior flyBehavior;
-	QuackBehavior quackBehavior;
-	
-	public Duck() {
-		
-	}
-	
-	public abstract void display();
-	
-	/**
-	 * Ö´ĞĞ·ÉµÄ·½·¨
-	 * <p>Title: </p> 
-	 * <p>Description: </p>
-	 */
-	public void performFly() {
-		flyBehavior.fly();
-	}
-	/**
-	 * Ö´ĞĞ½ĞµÄ·½·¨
-	 * <p>Title: </p> 
-	 * <p>Description: </p>
-	 */
-	public void performQuack() {
-		//Ñ¼×Ó¶ÔÏó²»Ç××Ô´¦Àí½ĞµÄĞĞÎª£¬¶øÊÇÎ¯ÍĞ¸øquackBehaviorÒıÓÃµÄ¶ÔÏó
-		quackBehavior.quack();
-	}
-	
-	/**
-	 * ÓÎÓ¾·½·¨
-	 * <p>Title: </p> 
-	 * <p>Description: </p>
-	 */
-	public void swim() {
-		
-	}
-	public void setFlyBehavior(FlyBehavior flyBehavior) {
-		this.flyBehavior = flyBehavior;
-	}
+    FlyBehavior flyBehavior;
+    QuackBehavior quackBehavior;
 
-	public void setQuackBehavior(QuackBehavior quackBehavior) {
-		this.quackBehavior = quackBehavior;
-	}
+    public Duck() {
+
+    }
+
+    public abstract void display();
+
+    /**
+     * æ‰§è¡Œé£è¡Œ
+     */
+    public void performFly() {
+        flyBehavior.fly();
+    }
+
+    /**
+     * æ‰§è¡Œå«
+     */
+    public void performQuack() {
+        quackBehavior.quack();
+    }
+
+    /**
+     * æ¸¸æ³³
+     */
+    public void swim() {
+
+    }
+
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
+        this.quackBehavior = quackBehavior;
+    }
 }
 

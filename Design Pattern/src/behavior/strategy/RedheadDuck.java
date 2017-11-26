@@ -4,19 +4,20 @@ import behavior.strategy.fly.FlyWithWings;
 import behavior.strategy.quack.Squeak;
 
 /**
- * ºìÍ·Ñ¼
- * @author Administrator
- *
+ * çº¢å¤´é¸­
+
+ * @author wg
  */
 public class RedheadDuck extends Duck {
 
-	public RedheadDuck() {
-		flyBehavior = new FlyWithWings();
-		quackBehavior = new Squeak();
-	}
-	@Override
-	public void display() {
-		System.err.println("ÎÒÊÇÒ»Ö»ÓÇÓôµÄºìÍ·Ñ¼");
-	}
+    public RedheadDuck() {
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Squeak();
+    }
+
+    @Override
+    public void display() {
+        System.err.println("æˆ‘æ˜¯ä¸€åªå¿§éƒçš„çº¢å¤´é¸­");
+    }
 
 }

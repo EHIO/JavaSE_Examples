@@ -4,19 +4,20 @@ import behavior.strategy.fly.FlyNotWay;
 import behavior.strategy.quack.Squeak;
 
 /**
- * ÏğÆ¤Ñ¼
- * @author Administrator
+ * æ©¡çš®é¸­
  *
+ * @author Administrator
  */
 public class RubberDuck extends Duck {
 
-	public RubberDuck() {
-		flyBehavior = new FlyNotWay();
-		quackBehavior = new Squeak();
-	}
-	@Override
-	public void display() {
-		System.out.println("ÎÒÊÇÒ»Ö»»á½Ğ²»»á·ÉµÄÏğÆ¤Ñ¼");
-	}
+    public RubberDuck() {
+        flyBehavior = new FlyNotWay();
+        quackBehavior = new Squeak();
+    }
+
+    @Override
+    public void display() {
+        System.out.println("æˆ‘æ˜¯ä¸€åªä¼šå«ä¸ä¼šé£çš„æ©¡çš®é¸­");
+    }
 
 }

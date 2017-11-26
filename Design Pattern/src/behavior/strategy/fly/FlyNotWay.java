@@ -1,17 +1,13 @@
 package behavior.strategy.fly;
 /**
- * ÕâÊÇ·ÉĞĞĞĞÎªµÄÊµÏÖ£¬¸ø¡°²»»á·ÉµÄÑ¼×ÓÓÃ¡±
- * @author Administrator
- *
+ * ä¸ä¼šé£ï¼Œ ç»™ä¸ä¼šé£çš„é¸­å­ä½¿ç”¨
+ * @author wg
  */
 public class FlyNotWay implements FlyBehavior {
 
-	/**
-	 * ÊµÏÖËùÓĞ²»»á·ÉµÄÑ¼×ÓµÄ·ÉĞĞ¶¯×÷
-	 */
 	@Override
 	public void fly() {
-		System.out.println("ÎÒ²»»á·É");
+		System.out.println("æˆ‘ä¸ä¼šé£");
 	}
 
 }

@@ -1,17 +1,18 @@
 package behavior.strategy.quack;
+
 /**
- * ÕâÊÇ½ĞĞĞÎªµÄÊµÏÖ£¬¸øÖ¨Ö¨½ĞµÄÑ¼×ÓÓÃ
- * @author Administrator
+ * è¿™æ˜¯å«è¡Œä¸ºçš„å®ç°ï¼Œç»™å±å±å«çš„é¸­å­ç”¨
  *
+ * @author wg
  */
 public class Squeak implements QuackBehavior {
 
-	/**
-	 * ÊµÏÖÖ¨Ö¨½ĞµÄÑ¼×ÓĞĞÎª
-	 */
-	@Override
-	public void quack() {
-		System.out.println("Ö¨Ö¨½Ğ");
-	}
+    /**
+     * å®ç°å±å±å«çš„é¸­å­è¡Œä¸º
+     */
+    @Override
+    public void quack() {
+        System.out.println("å±å±å«");
+    }
 
 }

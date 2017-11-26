@@ -4,7 +4,7 @@ import behavior.strategy.fly.FlyWithWings;
 import behavior.strategy.quack.Quack;
 
 /**
- * ÂÌÍ·Ñ¼
+ * ç»¿å¤´é¸­
  */
 public class MarrardDuck extends Duck {
 
@@ -12,10 +12,10 @@ public class MarrardDuck extends Duck {
 		flyBehavior = new FlyWithWings();
 		quackBehavior = new Quack();
 	}
-	
+
 	@Override
 	public void display() {
-		System.out.println("ÎÒÊÇÂÌÍ·Ñ¼");
+		System.err.println("æˆ‘æ˜¯ç»¿å¤´é¸­");
 	}
 
 }
