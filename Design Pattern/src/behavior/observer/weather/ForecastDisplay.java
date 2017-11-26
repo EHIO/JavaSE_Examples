@@ -1,7 +1,7 @@
 package behavior.observer.weather;
 
 /**
- * ÌìÆøÔ¤±¨²¼¸æ°å£¬ Ò»¸ö¾ßÌåµÄ¹Û²ìÕß
+ * å¤©æ°”é¢„æŠ¥å¸ƒå‘Šæ¿ï¼Œ ä¸€ä¸ªå…·ä½“çš„è§‚å¯Ÿè€…
  *
  * @author wg
  */
@@ -25,13 +25,13 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.print("Ô¤±¨: ");
+        System.out.print("é¢„æŠ¥: ");
         if (currentPressure > lastPressure) {
-            System.out.println("ÌìÆø¸ÄÉÆ!");
+            System.out.println("å¤©æ°”æ”¹å–„!");
         } else if (currentPressure == lastPressure) {
-            System.out.println("ÌìÆø²»±ä");
+            System.out.println("å¤©æ°”ä¸å˜");
         } else if (currentPressure < lastPressure) {
-            System.out.println("Ğ¡ĞÄÁ¹Ë¬¡¢¶àÓêµÄÌìÆø");
+            System.out.println("å°å¿ƒå‡‰çˆ½ã€å¤šé›¨çš„å¤©æ°”");
         }
     }
 }
