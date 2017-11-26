@@ -1,19 +1,17 @@
 package structural.facade.example;
 
 public class Client {
-	private static SecurityFacade sf;
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		sf = new SecurityFacade();
-		sf.on();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		sf.off();
-	}
+
+    public static void main(String[] args) throws InterruptedException {
+        /**
+         * 子系统
+         */
+        Light light = new Light("阿拉丁神灯");
+        Camera camera = new Camera("遗像录像机");
+        SecurityFacade sf = new SecurityFacade(light, camera);
+        sf.on();
+        Thread.sleep(1000);
+        sf.off();
+    }
 
 }

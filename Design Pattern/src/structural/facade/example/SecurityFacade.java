@@ -1,16 +1,25 @@
 package structural.facade.example;
 
+/**
+ * 外观
+ * 意图：简化接口
+ */
 public class SecurityFacade {
-	private Light light = new Light("阿拉丁神灯");
-	private Camera camera = new Camera("遗像录像机");
-	
-	public void on() {
-		light.turnOn();
-		camera.turnOn();
-	}
-	
-	public void off() {
-		light.turnOff();
-		camera.turnOff();
-	}
+    private Light light;
+    private Camera camera;
+
+    public SecurityFacade(Light light, Camera camera) {
+        this.light = light;
+        this.camera = camera;
+    }
+
+    public void on() {
+        light.turnOn();
+        camera.turnOn();
+    }
+
+    public void off() {
+        light.turnOff();
+        camera.turnOff();
+    }
 }
