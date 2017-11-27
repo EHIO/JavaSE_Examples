@@ -5,10 +5,12 @@ package structural.decorator.starbuzz;
  */
 public class StarbuzzCoffee {
     public static void main(String[] args) {
+        // 浓缩咖啡
         Beverage beverage = new Espresso();
         System.err.println(beverage.getDescription() + ",$" + beverage.cost());
-
+        // 深焙咖啡
         Beverage beverage2 = new DarkRoast();
+        // 两份摩卡和奶泡装饰深焙咖啡
         beverage2 = new Mocha(beverage2);
         beverage2 = new Mocha(beverage2);
         beverage2 = new Whip(beverage2);

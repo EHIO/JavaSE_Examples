@@ -5,7 +5,7 @@ package structural.decorator.starbuzz;
  */
 public class Decaf extends Beverage {
     public Decaf() {
-        description = "Decaf";
+        description = "低咖啡因";
     }
 
     @Override

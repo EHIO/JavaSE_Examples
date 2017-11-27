@@ -5,7 +5,7 @@ package structural.decorator.starbuzz;
  */
 public class DarkRoast extends Beverage {
     public DarkRoast() {
-        description = "Dark Roast Coffee";
+        description = "深焙咖啡";
     }
 
     @Override

@@ -10,5 +10,9 @@ public abstract class Beverage {
         return description;
     }
 
+    /**
+     * 计算价钱
+     * @return
+     */
     public abstract double cost();
 }
