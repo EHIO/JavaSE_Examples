@@ -3,7 +3,7 @@ package org.wg.thread.create;
 import java.util.Random;
 import java.util.concurrent.*;
 
-public class FutureTest {
+public class FutureDemo {
 
 	/**
 	 * @param args

@@ -18,6 +18,8 @@ public class DieLockDemo {
 
 class DieLock implements Runnable {
 
+	public static final Object objA = new Object();
+	public static final Object objB = new Object();
 	private boolean flag;
 
 	public DieLock(boolean flag) {
@@ -28,18 +30,18 @@ class DieLock implements Runnable {
 	public void run() {
 		if (flag) {
 			while(true) {
-				synchronized (MyLock.objA) {
+				synchronized (objA) {
 					System.out.println(Thread.currentThread().getName()+"......if objA");
-					synchronized (MyLock.objB) {
+					synchronized (objB) {
 						System.out.println(Thread.currentThread().getName()+"......if objB");
 					}
 				}
 			}
 		} else {
 			while(true) {
-				synchronized (MyLock.objB) {
+				synchronized (objB) {
 					System.out.println(Thread.currentThread().getName()+"......else objB");
-					synchronized (MyLock.objA) {
+					synchronized (objA) {
 						System.out.println(Thread.currentThread().getName()+"......else objA");
 					}
 				}
@@ -47,10 +49,3 @@ class DieLock implements Runnable {
 		}
 	}
 }
-
-class MyLock {
-
-	public static final Object objA = new Object();
-	public static final Object objB = new Object();
-}
-

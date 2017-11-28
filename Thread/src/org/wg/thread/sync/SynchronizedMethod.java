@@ -10,40 +10,53 @@ package org.wg.thread.sync;
  * 建议使用同步代码块。
  *
  */
-public class SynchronizedMethod {
+public class SynchronizedMethod implements Runnable {
+
+	private static int num = 100;
 
 	public static void main(String[] args) {
-		Runnable ticket = new Runnable() {
+		Runnable r = new SynchronizedMethod();
 
-			private int num = 1000;
-
-			@Override
-			public void run() {
-				while (true) {
-					syncMethod();
-				}
-			}
-
-			private /*synchronized*/ void syncMethod() {
-				if (num > 0) {
-					try {
-						Thread.sleep(10);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					System.out.println(Thread.currentThread().getName() + "				" + num--);
-				}
-			}
-		};
-
-		Thread t1 = new Thread(ticket);
-		Thread t2 = new Thread(ticket);
-		Thread t3 = new Thread(ticket);
-		Thread t4 = new Thread(ticket);
+		Thread t1 = new Thread(r);
+		Thread t2 = new Thread(r);
 
 		t1.start();
 		t2.start();
-		t3.start();
-		t4.start();
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+//			syncMethod();
+			staticSyncMethod();
+		}
+	}
+
+	/**
+	 * 同步函数的锁是this。
+	 */
+	private synchronized void syncMethod() {
+		if (num > 0) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "				" + num--);
+		}
+	}
+
+	/**
+	 * 同步静态方法使用的锁是类Class对象
+	 */
+	private static synchronized void staticSyncMethod() {
+		if (num > 0) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "				" + num--);
+		}
 	}
 }

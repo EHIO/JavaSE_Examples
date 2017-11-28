@@ -11,7 +11,7 @@ package org.wg.thread.sync;
  * 同步的好处：解决了线程的安全问题。
  * 同步的弊端：相对降低了效率，因为同步外的线程的都会判断同步锁。
  * 同步的前提：同步中必须有多个线程并使用同一个锁。
- *
+ * <p>
  * 同步代码块
  * 同步代码块的锁是任意的对象。
  */
@@ -26,30 +26,29 @@ public class SynchronizedBlock {
 
 			@Override
 			public void run() {
-				while (true) {
-					synchronized (obj) {
-						if (num > 0) {
-							try {
+				try {
+					while (true) {
+						synchronized (obj) {
+							if (num > 0) {
 								Thread.sleep(10);
-							} catch (InterruptedException e) {
-								e.printStackTrace();
+								System.out.println(Thread.currentThread().getName() + "			num=" + num--);
 							}
-							System.out.println(Thread.currentThread().getName() + "			num=" + num--);
 						}
 					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
 			}
 		};
 
+		//创建3个线程
 		Thread t1 = new Thread(ticket);
 		Thread t2 = new Thread(ticket);
 		Thread t3 = new Thread(ticket);
-		Thread t4 = new Thread(ticket);
 
 		t1.start();
 		t2.start();
 		t3.start();
-		t4.start();
 	}
 }
 

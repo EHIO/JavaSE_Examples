@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
-public class FutrueTaskTest {
+public class FutrueTaskDemo {
 
 	public static void main(String[] args) {
 		//采用直接启动线程的方法
@@ -31,7 +31,7 @@ public class FutrueTaskTest {
 
 	/**
 	 * 采用直接启动线程的方法
- 	 */
+	 */
 	private static Future<Integer> getIntegerFutureTask(Callable myFutureTask) {
 		FutureTask<Integer> result = new FutureTask<>(myFutureTask);
 		Thread thread = new Thread(result);

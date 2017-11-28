@@ -1,4 +1,4 @@
-package org.wg.thread;
+package org.wg.thread.method;
 
 /**
  * 守护线程
@@ -9,13 +9,13 @@ public class DaemonDemo {
 
 		@Override
 		public void run() {
-			while (true) {
-				System.out.println("hello world!");
-				try {
+			try {
+				while (true) {
+					System.out.println("hello world!");
 					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
 				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 	}
@@ -27,6 +27,6 @@ public class DaemonDemo {
 		t.setDaemon(true);
 		t.start();
 
-		Thread.sleep(200);
+		Thread.sleep(2000);
 	}
 }
