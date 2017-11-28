@@ -12,13 +12,13 @@ public class JoinMethodDemo {
 		Thread t2 = new Thread(mythread);
 		t1.start();
 		t2.start();
-		/*try {
+		try {
 			// 加了join方法后， 主线程会等子线程执行完毕后才会结束
 			t1.join();
 			t2.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}*/
+		}
 		System.out.println(Thread.currentThread().getName() + " 运行结束!");
 	}
 

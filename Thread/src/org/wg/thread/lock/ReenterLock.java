@@ -3,7 +3,7 @@ package org.wg.thread.lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 锁的简单示例
+ * 重入锁的简单示例
  * 与synchronized相比，重入锁有着显示的操作过程， 对逻辑的控制的灵活性要好于synchronized
  * 注意：记得释放锁
  */

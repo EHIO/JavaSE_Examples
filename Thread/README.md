@@ -89,7 +89,7 @@ synchronized的功能扩展： 重入锁
 
 ReentrantLock
     lock():获得锁， 如果锁已经被占用， 则等待
-    lockInterruptibly():获得锁， 钽优先响应中断
+    lockInterruptibly():获得锁， 但优先响应中断
     tryLock():尝试获得锁， 如果成功， 返回true; 失败返回false。该方法不等待， 立刻返回
     tryLock(long time, TimeUnit unit):在给定的时间内获得锁
     unlock():释放锁
