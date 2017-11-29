@@ -94,3 +94,10 @@ ReentrantLock
     tryLock(long time, TimeUnit unit):在给定的时间内获得锁
     unlock():释放锁
 
+重入锁的好搭档：Condition
+    await():使当前线程等待， 同时释放当前锁， 与Object.wait()相似
+    awaitUninterruptibly():与await()方法基本相同， 但是它并不会在等待过程中响应中断
+    singal():用于唤醒一个在等待中的线程，与Object.notify()方法类似
+    singalAll:唤醒所有在等待中的线程， 与Object.notifyAll()类似
+    
+
