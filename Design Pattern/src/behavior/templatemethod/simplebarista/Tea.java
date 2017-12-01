@@ -1,5 +1,9 @@
 package behavior.templatemethod.simplebarista;
 
+/**
+ * 茶
+ * @author wg
+ */
 public class Tea {
  
 	void prepareRecipe() {
@@ -8,20 +12,32 @@ public class Tea {
 		pourInCup();
 		addLemon();
 	}
- 
+
+	/**
+	 * 烧开水
+	 */
 	public void boilWater() {
-		System.out.println("Boiling water");
+		System.out.println("煮开水");
 	}
- 
+
+	/**
+	 * 浸泡茶
+	 */
 	public void steepTeaBag() {
-		System.out.println("Steeping the tea");
+		System.out.println("浸泡茶");
 	}
- 
+
+	/**
+	 * 添加柠檬
+	 */
 	public void addLemon() {
-		System.out.println("Adding Lemon");
+		System.out.println("添加柠檬");
 	}
- 
+
+	/**
+	 * 倒入杯中
+	 */
 	public void pourInCup() {
-		System.out.println("Pouring into cup");
+		System.out.println("倒入杯中");
 	}
 }
