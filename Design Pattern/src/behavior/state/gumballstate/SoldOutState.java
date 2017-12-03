@@ -22,12 +22,12 @@ public class SoldOutState implements State {
 
     @Override
     public void turnCrank() {
-        System.out.println("已经售馨");
+        System.out.println("糖果已经售馨");
     }
 
     @Override
     public void dispense() {
-        System.out.println("已经售馨");
+        System.out.println("糖果已经售馨");
     }
 
     @Override

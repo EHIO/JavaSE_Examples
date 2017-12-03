@@ -23,7 +23,7 @@ public class HasQuarterState implements State {
 
     @Override
     public void turnCrank() {
-        System.out.println("成功...");
+        System.out.println("转动曲柄开关...");
         gumballMachine.setState(gumballMachine.getSoldState());
     }
 
@@ -38,6 +38,6 @@ public class HasQuarterState implements State {
 
     @Override
     public String toString() {
-        return "等待转动曲柄";
+        return "已投币， 等待转动曲柄";
     }
 }

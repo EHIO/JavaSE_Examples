@@ -12,7 +12,7 @@ public class NoQuarterState implements State {
 
     @Override
     public void insertQuarter() {
-        System.out.println("投币成功");
+        System.out.println("已投币......");
         gumballMachine.setState(gumballMachine.getHasQuarterState());
     }
 
@@ -37,6 +37,6 @@ public class NoQuarterState implements State {
 
     @Override
     public String toString() {
-        return "等待投币";
+        return "未投币";
     }
 }
