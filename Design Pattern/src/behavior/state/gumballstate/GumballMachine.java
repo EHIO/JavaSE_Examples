@@ -1,5 +1,8 @@
 package behavior.state.gumballstate;
 
+/**
+ * 万能糖果机
+ */
 public class GumballMachine {
     /**
      * 售馨状态
