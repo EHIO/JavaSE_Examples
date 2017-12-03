@@ -1,10 +1,21 @@
 package behavior.state.gumballstate;
 
 public class GumballMachine {
-
+    /**
+     * 售馨状态
+     */
     State soldOutState;
+    /**
+     * 未投币状态
+     */
     State noQuarterState;
+    /**
+     * 已投币状态
+     */
     State hasQuarterState;
+    /**
+     * 售出状态
+     */
     State soldState;
 
     State state;

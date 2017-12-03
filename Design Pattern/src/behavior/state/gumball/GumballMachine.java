@@ -10,12 +10,12 @@ public class GumballMachine {
      */
     final static int SOLD_OUT = 0;
     /**
-     * 没有投币状态
+     * 未投币状态
      */
     final static int NO_QUARTER = 1;
 
     /**
-     * 投入币状态
+     * 已投币状态
      */
     final static int HAS_QUARTER = 2;
     /**

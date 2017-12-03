@@ -10,7 +10,7 @@ public class GumballMachine {
      */
     State soldOutState;
     /**
-     * 没有投币状态
+     * 未投币状态
      */
     State noQuarterState;
     /**
