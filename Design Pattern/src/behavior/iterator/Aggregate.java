@@ -1,14 +1,15 @@
 package behavior.iterator;
 
-//Ä£Äâ¼¯ºÏ½Ó¿Ú ÔöÉ¾ ²î(±éÀú)
-interface Aggregate {
+/**
+ * æ¨¡æ‹Ÿé›†åˆæ¥å£ å¢åˆ æŸ¥(éå†)
+ */
+public interface Aggregate {
 
 	public void add(Object obj);
 
 	public void remove(Object obj);
 
 	public Iterator iterator();
-
 }
 
                                                  
