@@ -3,40 +3,34 @@ package behavior.iterator.example_v3;
 import java.util.Iterator;
 
 /**
- * ¾ßÌåµü´úÆ÷  
- * @author run
+ * å…·ä½“è¿­ä»£å™¨
  *
+ * @author run
  */
 public class DinerMenuIterator implements Iterator {
 	MenuItem[] items;
-	int position = 0;	//¼ÇÂ¼µ±Ç°Êý×é±éÀúµÄÎ»ÖÃ
- 
+	int position = 0;    //è®°å½•å½“å‰æ•°ç»„éåŽ†çš„ä½ç½®
+
 	public DinerMenuIterator(MenuItem[] items) {
 		this.items = items;
 	}
- 
+
 	/**
-	 * ·µ»ØÊý×éµÄÏÂÒ»Ïî
-	 * @return 
-	 * @author wg
-	 * @date 2016Äê11ÔÂ30ÈÕ ÏÂÎç11:39:51
-	 * @see behavior.iterator.example_v2.Iterator#next()
+	 * è¿”å›žæ•°ç»„çš„ä¸‹ä¸€é¡¹
 	 */
+	@Override
 	public MenuItem next() {
 		MenuItem menuItem = items[position];
 		position = position + 1;
 		return menuItem;
 	}
- 
+
 	/**
-	 * ¼ì²éÊÇ·ñÒÑ¾­È¡µÃÁËÊý×éÄÚµÄËùÓÐÔªËØ£¬ Èç¹û»¹ÓÐÔªËØ±éÀú£¬ Ôò·µ»Øtrue
-	 * @return 
-	 * @author wg
-	 * @date 2016Äê11ÔÂ30ÈÕ ÏÂÎç11:37:10
-	 * @see behavior.iterator.example_v2.Iterator#hasNext()
+	 * æ£€æŸ¥æ˜¯å¦å·²ç»å–å¾—äº†æ•°ç»„å†…çš„æ‰€æœ‰å…ƒç´ ï¼Œ å¦‚æžœè¿˜æœ‰å…ƒç´ éåŽ†ï¼Œ åˆ™è¿”å›žtrue
 	 */
+	@Override
 	public boolean hasNext() {
-		//ÒòÎªÊ¹ÓÃµÄÊÇ¹Ì¶¨³¤¶ÈµÄÊý×é£¬ ËùÒÔ²»µ«Òª¼ì²éÊÇ·ñ³¬³öÁËÊý×é³¤¶È£¬ Ò²±ØÐë¼ì²éÏÂÒ»ÏîÊÇ·ñÎª¿Õ£¬Èç¹ûÎª¿Õ£¬ ¾Í±íÊ¾Ã»ÓÐÔªËØÁË
+		//å› ä¸ºä½¿ç”¨çš„æ˜¯å›ºå®šé•¿åº¦çš„æ•°ç»„ï¼Œ æ‰€ä»¥ä¸ä½†è¦æ£€æŸ¥æ˜¯å¦è¶…å‡ºäº†æ•°ç»„é•¿åº¦ï¼Œ ä¹Ÿå¿…é¡»æ£€æŸ¥ä¸‹ä¸€é¡¹æ˜¯å¦ä¸ºç©ºï¼Œå¦‚æžœä¸ºç©ºï¼Œ å°±è¡¨ç¤ºæ²¡æœ‰å…ƒç´ äº†
 		if (position >= items.length || items[position] == null) {
 			return false;
 		} else {

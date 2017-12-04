@@ -2,10 +2,10 @@ package behavior.iterator.example_v3;
 
 public class MenuTestDrive {
 	public static void main(String[] args) {
-		//´´½¨Á½ÖÖ²Ëµ¥
+		//åˆ›å»ºä¸¤ç§èœå•
 		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		DinerMenu dinerMenu = new DinerMenu();
-		//´´½¨Å®ÕĞ´ı
+		//åˆ›å»ºå¥³æ‹›å¾…
 		Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
 		waitress.printMenu();
 	}

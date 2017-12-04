@@ -3,18 +3,16 @@ package behavior.iterator.example_v3;
 import java.util.Iterator;
 
 /**
- * Å®ÕĞ´ı
- * 
- * @author run
+ * å¥³æ‹›å¾…
  *
+ * @author run
  */
 public class Waitress {
 	Menu pancakeHouseMenu;
 	Menu dinerMenu;
 
 	/**
-	 * ¹¹ÔìÆ÷ÖĞ£¬ Å®ÕĞ´ıÒªÕÕ¹ËÁ½ÖÖ²Ëµ¥
-	 * @param menus
+	 * æ„é€ å™¨ä¸­ï¼Œ å¥³æ‹›å¾…è¦ç…§é¡¾ä¸¤ç§èœå•
 	 */
 	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
 		this.pancakeHouseMenu = pancakeHouseMenu;
@@ -22,14 +20,14 @@ public class Waitress {
 	}
 
 	/**
-	 * ´òÓ¡Ã¿·İ²Ëµ¥µÄËùÓĞÏî
+	 * æ‰“å°æ¯ä»½èœå•çš„æ‰€æœ‰é¡¹
 	 */
 	public void printMenu() {
-		// ¼å±ıÎİ²Ëµ¥ËùÓĞÏî
+		// ç…é¥¼å±‹èœå•æ‰€æœ‰é¡¹
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
 		this.printMenu(breakfastIterator);
 		System.err.println("----------------------------------");
-		// ²ÍÌü²Ëµ¥ËùÓĞÏî
+		// é¤å…èœå•æ‰€æœ‰é¡¹
 		Iterator lunchIterator = dinerMenu.createIterator();
 		this.printMenu(lunchIterator);
 	}
@@ -38,7 +36,7 @@ public class Waitress {
 		while (iterator.hasNext()) {
 			MenuItem menuItem = (MenuItem) iterator.next();
 			System.out.print(menuItem.getName() + ", ");
-			System.out.print(menuItem.getPrice() + " -- ");
+			System.out.print(menuItem.getPrice() + " --- ");
 			System.out.println(menuItem.getDescription());
 		}
 	}

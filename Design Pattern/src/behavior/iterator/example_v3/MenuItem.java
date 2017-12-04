@@ -1,16 +1,27 @@
 package behavior.iterator.example_v3;
 
 /**
- * ²Ëµ¥Ïî
- * 
- * @author run
+ * èœå•é¡¹
  *
+ * @author run
  */
 public class MenuItem {
-	String name; // Ãû³Æ
-	String description; // ĞğÊö
-	boolean vegetarian; // ÊÇ·ñÎªËØÊ³µÄ±ê¼Ç
-	double price; // ¼Û¸ñ
+	/**
+	 * åç§°
+	 */
+	String name;
+	/**
+	 * æè¿°
+	 */
+	String description;
+	/**
+	 * æ˜¯å¦ä¸ºç´ é£Ÿçš„æ ‡è®°
+	 */
+	boolean vegetarian;
+	/**
+	 * ä»·æ ¼
+	 */
+	double price;
 
 	public MenuItem(String name, String description, boolean vegetarian, double price) {
 		this.name = name;

@@ -1,4 +1,4 @@
-package behavior.iterator;
+package behavior.iterator.general;
 
 /**
  * 模拟集合接口 增删查(遍历)

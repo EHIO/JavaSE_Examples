@@ -1,30 +1,26 @@
 package behavior.iterator.example_v2;
 
 /**
- * Å®ÕĞ´ı
- * 
- * @author run
+ * å¥³æ‹›å¾…
  *
+ * @author run
  */
 public class Waitress {
 	PancakeHouseMenu pancakeHouseMenu;
 	DinerMenu dinerMenu;
 
-	/**
-	 * ¹¹ÔìÆ÷ÖĞ£¬ Å®ÕĞ´ıÒªÕÕ¹ËÁ½ÖÖ²Ëµ¥
-	 * @param menus
-	 */
 	public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
 		this.pancakeHouseMenu = pancakeHouseMenu;
 		this.dinerMenu = dinerMenu;
 	}
 
 	/**
-	 * ´òÓ¡Ã¿·İ²Ëµ¥µÄËùÓĞÏî
+	 * æ‰“å°æ¯ä»½èœå•çš„æ‰€æœ‰é¡¹
 	 */
-	public void printMenu() {
+	public void printMenu() throws InterruptedException {
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
 		this.printMenu(breakfastIterator);
+		Thread.sleep(100);
 		System.err.println("----------------------------------");
 		Iterator lunchIterator = dinerMenu.createIterator();
 		this.printMenu(lunchIterator);

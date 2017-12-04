@@ -1,42 +1,39 @@
 package behavior.iterator.example_v1;
 
-import java.util.*;
+import java.util.ArrayList;
 
 
 /**
- * Å®ÕĞ´ı
- * 
- * @author run
+ * å¥³æ‹›å¾…
  *
+ * @author run
  */
 public class Waitress {
 
 	/**
-	 * ´òÓ¡Ã¿·İ²Ëµ¥µÄËùÓĞÏî
+	 * æ‰“å°æ¯ä»½èœå•çš„æ‰€æœ‰é¡¹
 	 */
 	public void printMenu() {
-		// ¼å±ıÎİ²Ëµ¥ËùÓĞÏî
+		// ç…é¥¼å±‹èœå•æ‰€æœ‰é¡¹
 		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-		
-		// ²ÍÌü²Ëµ¥ËùÓĞÏî
+
+		// é¤å…èœå•æ‰€æœ‰é¡¹
 		DinerMenu dinerMenu = new DinerMenu();
 		MenuItem[] lunchItems = dinerMenu.getMenuItems();
-		
+
 		for (int i = 0; i < breakfastItems.size(); i++) {
 			MenuItem menuItem = (MenuItem) breakfastItems.get(i);
 			System.out.println(menuItem.getName() + "	");
 			System.out.println(menuItem.getDescription() + "	");
 			System.out.println(menuItem.getPrice() + "	");
 		}
-		
+
 		for (int i = 0; i < lunchItems.length; i++) {
 			MenuItem menuItem = lunchItems[i];
 			System.out.println(menuItem.getName() + "	");
 			System.out.println(menuItem.getDescription() + "	");
 			System.out.println(menuItem.getPrice() + "	");
-			
 		}
 	}
-
 }

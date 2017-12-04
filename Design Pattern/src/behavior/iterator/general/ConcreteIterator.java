@@ -1,4 +1,4 @@
-package behavior.iterator;
+package behavior.iterator.general;
 
 import java.util.List;
 

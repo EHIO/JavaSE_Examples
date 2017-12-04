@@ -3,24 +3,23 @@ package behavior.iterator.example_v2;
 import java.util.ArrayList;
 
 /**
- * ¼å±ıÎİ²Ëµ¥
- * 
- * @author run
+ * ç…é¥¼å±‹èœå•
  *
+ * @author run
  */
 public class PancakeHouseMenu {
 	ArrayList<MenuItem> menuItems;
 
 	public PancakeHouseMenu() {
-		menuItems = new ArrayList<MenuItem>();
+		menuItems = new ArrayList<>();
 
-		addItem("K&B¼å±ıÔç²Í", "¼å±ı³´µ°,ÍÁË¾", true, 2.99);
+		addItem("è‘±æ²¹é¥¼", "åŒ—æ–¹åœ°åŒºç‰¹è‰²å°åƒçš„ä¸€ç§, å±é—½èœæˆ–é²èœèœç³»", true, 2.99);
 
-		addItem("ÆÕÍ¨¼å±ıÔç²Í", "¼å±ıºÍ¼å¼¦µ°,Ïã³¦", false, 2.99);
+		addItem("åƒå±‚é¥¼", "å±±ä¸œä¸œå¹³æ¥å±±ä¹¡ä¸€å¸¦çš„ä¼ ç»Ÿååƒä¹‹ä¸€", false, 2.99);
 
-		addItem("À¶İ®¼å±ı", "¼å±ıÓÃĞÂÏÊµÄÀ¶İ®,À¶İ®ÌÇ½¬", true, 3.49);
+		addItem("è€å©†é¥¼", "å¹¿ä¸œæ½®å·åœ°åŒºçš„ç‰¹è‰²ä¼ ç»Ÿåç‚¹", true, 3.49);
 
-		addItem("»ª·ò±ı", "»ª·ò±ı¸É,ÄãËùÑ¡ÔñµÄÀ¶İ®»ò²İİ®", true, 3.59);
+		addItem("ç…é¥¼æœå­", "å¤©æ´¥å¸‚çš„è‘—åå°åƒ", true, 3.59);
 	}
 
 	public void addItem(String name, String description, boolean vegetarian, double price) {

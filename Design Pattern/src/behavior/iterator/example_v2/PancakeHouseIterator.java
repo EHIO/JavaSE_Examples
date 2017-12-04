@@ -3,25 +3,22 @@ package behavior.iterator.example_v2;
 import java.util.ArrayList;
 
 /**
- * ¾ßÌåµü´úÆ÷  
- * @author run
+ * å…·ä½“è¿­ä»£å™¨
  *
+ * @author run
  */
 public class PancakeHouseIterator implements Iterator {
 	ArrayList<MenuItem> menuItems;
-	int position = 0;	//¼ÇÂ¼µ±Ç°±éÀúµÄÎ»ÖÃ
- 
+	int position = 0;    //è®°å½•å½“å‰éå†çš„ä½ç½®
+
 	public PancakeHouseIterator(ArrayList<MenuItem> menuItems) {
 		this.menuItems = menuItems;
 	}
- 
+
 	/**
-	 * ·µ»ØÊı×éµÄÏÂÒ»Ïî
-	 * @return 
-	 * @author wg
-	 * @date 2016Äê11ÔÂ30ÈÕ ÏÂÎç11:39:51
-	 * @see behavior.iterator.example_v2.Iterator#next()
+	 * è¿”å›æ•°ç»„çš„ä¸‹ä¸€é¡¹
 	 */
+	@Override
 	public MenuItem next() {
 		MenuItem menuItem = null;
 		if (hasNext()) {
@@ -29,15 +26,12 @@ public class PancakeHouseIterator implements Iterator {
 		}
 		return menuItem;
 	}
- 
+
 	/**
-	 * ¼ì²éÊÇ·ñÒÑ¾­È¡µÃÁËÊı×éÄÚµÄËùÓĞÔªËØ£¬ Èç¹û»¹ÓĞÔªËØ±éÀú£¬ Ôò·µ»Øtrue
-	 * @return 
-	 * @author wg
-	 * @date 2016Äê11ÔÂ30ÈÕ ÏÂÎç11:37:10
-	 * @see behavior.iterator.example_v2.Iterator#hasNext()
+	 * æ£€æŸ¥æ˜¯å¦å·²ç»å–å¾—äº†æ•°ç»„å†…çš„æ‰€æœ‰å…ƒç´ ï¼Œ å¦‚æœè¿˜æœ‰å…ƒç´ éå†ï¼Œ åˆ™è¿”å›true
 	 */
+	@Override
 	public boolean hasNext() {
-		return !(position == menuItems.size());
+		return position != menuItems.size();
 	}
 }
