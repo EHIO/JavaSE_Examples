@@ -6,9 +6,9 @@ import java.util.Stack;
 public class CompositeIterator implements Iterator<MenuComponent> {
 
 	Stack stack = new Stack();
-	
+
 	/**
-	 * °ÑÎÒÃÇÒª±éÀúµÄ¶¥²ã×éºÏµÄµü´úÆ÷´«Èë£¬ °ÑËüÑ¹Èë×µÕ»¶¥²¿
+	 * æŠŠæˆ‘ä»¬è¦éå†çš„é¡¶å±‚ç»„åˆçš„è¿­ä»£å™¨ä¼ å…¥ï¼Œ æŠŠå®ƒå‹å…¥æ¤æ ˆé¡¶éƒ¨
 	 */
 	public CompositeIterator(Iterator iterator) {
 		stack.push(iterator);
@@ -17,16 +17,16 @@ public class CompositeIterator implements Iterator<MenuComponent> {
 	@Override
 	public boolean hasNext() {
 		/*
-		 * ¼ì²é¶ÑÕ»ÊÇ·ñÎª¿Õ£¬ Îª¿Õ£¬ ±íÊ¾Ã»ÓĞÏÂÒ»¸öÔªËØ£»
-		 * ·ñÔòÎÒÃÇ¾Í´Ó¶ÑÕ»µÄ¶¥²ãÈ¡³öµü´úÆ÷£¬¿´¿´ÊÇ·ñ»¹ÓĞÏÂÒ»¸öÔªËØ
-		 * Èç¹ûËüÃ»ÓĞÔªËØ£¬ ¾Í½«Ëüµ¯³ö¶ÑÕ»£¬ È»ºóµİ¹éµ÷ÓÃhasNext()
+		 * æ£€æŸ¥å †æ ˆæ˜¯å¦ä¸ºç©ºï¼Œ ä¸ºç©ºï¼Œ è¡¨ç¤ºæ²¡æœ‰ä¸‹ä¸€ä¸ªå…ƒç´ ï¼›
+		 * å¦åˆ™æˆ‘ä»¬å°±ä»å †æ ˆçš„é¡¶å±‚å–å‡ºè¿­ä»£å™¨ï¼Œçœ‹çœ‹æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€ä¸ªå…ƒç´ 
+		 * å¦‚æœå®ƒæ²¡æœ‰å…ƒç´ ï¼Œ å°±å°†å®ƒå¼¹å‡ºå †æ ˆï¼Œ ç„¶åé€’å½’è°ƒç”¨hasNext()
 		 */
 		if (stack.empty()) {
 			return false;
 		} else {
 			Iterator iterator = (Iterator) stack.peek();
 			if (!iterator.hasNext()) {
-//				ÒÆ³ı¶ÑÕ»¶¥²¿µÄ¶ÔÏó£¬²¢×÷Îª´Ëº¯ÊıµÄÖµ·µ»Ø¸Ã¶ÔÏó¡£
+//				ç§»é™¤å †æ ˆé¡¶éƒ¨çš„å¯¹è±¡ï¼Œå¹¶ä½œä¸ºæ­¤å‡½æ•°çš„å€¼è¿”å›è¯¥å¯¹è±¡ã€‚
 				stack.pop();
 				return hasNext();
 			} else {
@@ -38,7 +38,7 @@ public class CompositeIterator implements Iterator<MenuComponent> {
 	@Override
 	public MenuComponent next() {
 		if (hasNext()) {
-			//²é¿´¶ÑÕ»¶¥²¿µÄ¶ÔÏó£¬µ«²»´Ó¶ÑÕ»ÖĞÒÆ³ıËü¡£
+			//æŸ¥çœ‹å †æ ˆé¡¶éƒ¨çš„å¯¹è±¡ï¼Œä½†ä¸ä»å †æ ˆä¸­ç§»é™¤å®ƒã€‚
 			Iterator iterator = (Iterator) stack.peek();
 			MenuComponent component = (MenuComponent) iterator.next();
 			if (component instanceof Menu) {

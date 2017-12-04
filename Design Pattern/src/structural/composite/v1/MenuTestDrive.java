@@ -2,23 +2,23 @@ package structural.composite.v1;
 
 public class MenuTestDrive {
 	public static void main(String[] args) {
-		MenuComponent pancakeHouseMenu = new Menu("¼å±ıÎİ²Ëµ¥", "Ôç²Í");
-		MenuComponent dinerMenu = new Menu("²ÍÌü²Ëµ¥", "Îç²Í");
-		MenuComponent dessertMenu = new Menu("Ìğµã²Ëµ¥", "Ìğµã!");
+		MenuComponent pancakeHouseMenu = new Menu("ç…é¥¼å±‹èœå•", "æ—©é¤");
+		MenuComponent dinerMenu = new Menu("é¤å…èœå•", "åˆé¤");
+		MenuComponent dessertMenu = new Menu("ç”œç‚¹èœå•", "ç”œç‚¹!");
 
-//		´´½¨Ò»¸ö×î¶¥²ãµÄ²Ëµ¥		
-		MenuComponent allMenus = new Menu("ËùÓĞ²Ëµ¥", "ËùÓĞ²Ëµ¥×é¼ş");
-		
+//		åˆ›å»ºä¸€ä¸ªæœ€é¡¶å±‚çš„èœå•
+		MenuComponent allMenus = new Menu("æ‰€æœ‰èœå•", "æ‰€æœ‰èœå•ç»„ä»¶");
+
 		allMenus.add(pancakeHouseMenu);
 		allMenus.add(dinerMenu);
-		
-		dinerMenu.add(new MenuItem("ËØÊ³BLT", "(Fakin)Åà¸ùÉú²ËºÍÎ÷ºìÊÁÔÚÈ«Âó", true, 2.99));
-		dinerMenu.add(new MenuItem("ÈÈ¹·", "Ò»¸öÈÈ¹·,saurkraut½ò½òÀÖµÀ,Ñó´Ğ,ÉÏÃæ¼ÓÄÌÀÒ", false, 3.05));
-		
+
+		dinerMenu.add(new MenuItem("ç´ é£ŸBLT", "(Fakin)åŸ¹æ ¹ç”Ÿèœå’Œè¥¿çº¢æŸ¿åœ¨å…¨éº¦", true, 2.99));
+		dinerMenu.add(new MenuItem("çƒ­ç‹—", "ä¸€ä¸ªçƒ­ç‹—,saurkrautæ´¥æ´¥ä¹é“,æ´‹è‘±,ä¸Šé¢åŠ å¥¶é…ª", false, 3.05));
+
 		dinerMenu.add(dessertMenu);
-		dessertMenu.add(new MenuItem("Æ»¹ûÅÉ", "Æ»¹ûÅÉ·è·èñ²ñ²µÄµØ¿Ç,¼ÓÉÏÏã²İ±ùä¿ÁÜ", true, 1.59));
-		
-		
+		dessertMenu.add(new MenuItem("è‹¹æœæ´¾", "è‹¹æœæ´¾ç–¯ç–¯ç™«ç™«çš„åœ°å£³,åŠ ä¸Šé¦™è‰å†°æ·‡æ·‹", true, 1.59));
+
+
 		Waitress waitress = new Waitress(allMenus);
 		waitress.printMenu();
 	}

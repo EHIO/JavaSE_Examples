@@ -1,15 +1,15 @@
 package structural.composite.v1;
 
 /**
- * ²Ëµ¥Ïî
+ * èœå•é¡¹
  * @author run
  *
  */
 public class MenuItem extends MenuComponent {
-	String name; // Ãû³Æ
-	String description; // ĞğÊö
-	boolean vegetarian; // ÊÇ·ñÎªËØÊ³µÄ±ê¼Ç
-	double price; // ¼Û¸ñ
+	String name; // åç§°
+	String description; // å™è¿°
+	boolean vegetarian; // æ˜¯å¦ä¸ºç´ é£Ÿçš„æ ‡è®°
+	double price; // ä»·æ ¼
 
 	public MenuItem(String name, String description, boolean vegetarian, double price) {
 		this.name = name;
@@ -17,7 +17,7 @@ public class MenuItem extends MenuComponent {
 		this.vegetarian = vegetarian;
 		this.price = price;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -29,12 +29,12 @@ public class MenuItem extends MenuComponent {
 	public double getPrice() {
 		return price;
 	}
-	
+
 
 	public boolean isVegetarian() {
 		return vegetarian;
 	}
-	
+
 	public void print() {
 		System.out.print("  " + getName());
 		if (isVegetarian()) {
