@@ -1,7 +1,5 @@
 package structural.proxy.dynamicproxy;
 
-import java.util.Properties;
-
 public class Client {
 	public static void main(String[] args) throws Exception {
 		Tank t = new Tank();
