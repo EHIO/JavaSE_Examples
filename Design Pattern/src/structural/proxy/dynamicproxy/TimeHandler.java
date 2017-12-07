@@ -2,6 +2,9 @@ package structural.proxy.dynamicproxy;
 
 import java.lang.reflect.Method;
 
+/**
+ * 时间处理器
+ */
 public class TimeHandler implements InvocationHandler {
 
     private Object target;
@@ -15,7 +18,6 @@ public class TimeHandler implements InvocationHandler {
     public void invoke(Object o, Method m) {
         long start = System.currentTimeMillis();
         System.out.println("starttime:" + start);
-        System.out.println(o.getClass().getName());
         try {
             m.invoke(target);
         } catch (Exception e) {
@@ -23,6 +25,14 @@ public class TimeHandler implements InvocationHandler {
         }
         long end = System.currentTimeMillis();
         System.out.println("time:" + (end - start));
+    }
+
+    public static void preRequest() {
+        System.out.println("请求前的操作...");
+    }
+
+    public static void afterRequest() {
+        System.out.println("请求后的操作");
     }
 
 }

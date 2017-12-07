@@ -19,18 +19,5 @@ public class ProxyTest {
 
         // 代理类的名字
         System.out.println(userDaoProxy.getClass().getName());
-
-        // 其实主要实现是这样的
-        /**
-         * public class $proxy0 implements UserDao {
-         *    public void save(User user) {
-         //先得到要执行方法
-         Method m = getMethod();
-         *   	   //然后把自身传给 InvocationHandler的invoke方法
-         *       invoke(this,m,user);
-         *       //public Object invoke(Object proxy, Method method, Object[] args)
-         *    }
-         * }
-         */
     }
 }

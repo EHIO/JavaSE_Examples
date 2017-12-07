@@ -23,7 +23,6 @@ public class LogInterceptor implements InvocationHandler {
         return null;
     }
 
-    // -------------getter setter-----------------------------------
     public Object getTarget() {
         return target;
     }

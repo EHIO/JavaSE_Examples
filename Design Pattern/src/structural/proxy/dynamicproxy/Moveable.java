@@ -1,5 +1,11 @@
 package structural.proxy.dynamicproxy;
 
+/**
+ * 移动接口
+ */
 public interface Moveable {
-    void move();
+	/**
+	 * 移动
+	 */
+	void move();
 }
