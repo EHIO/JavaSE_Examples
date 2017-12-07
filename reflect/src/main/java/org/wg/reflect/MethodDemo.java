@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-public class ReflectDemo4 {
+public class MethodDemo {
 
 	@Test
 	public void getMethodDemo_3() throws Exception {
@@ -15,8 +15,8 @@ public class ReflectDemo4 {
 		Method method = clazz.getMethod("paramMethod", String.class, int.class);
 
 		Object obj = clazz.newInstance();
-
-		method.invoke(obj, "小强", 89);
+		// 返回方法的返回结果
+		Object o = method.invoke(obj, "小强", 89);
 	}
 
 	@Test

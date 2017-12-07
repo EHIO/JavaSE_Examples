@@ -19,7 +19,7 @@ package org.wg.reflect;
 
 import org.junit.Test;
 
-public class ReflectDemo {
+public class ClassDemo {
 
 	/*
 	 * 方式三：

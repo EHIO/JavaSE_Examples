@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 
-public class ReflectDemo3 {
+public class FieldDemo {
 
 	/*
 	 * 获取字节码文件中的字段。

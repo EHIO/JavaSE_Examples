@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 
-public class ReflectDemo2 {
+public class ConstructorDemo {
 
 	@Test
 	public void createNewObject_2() throws Exception {

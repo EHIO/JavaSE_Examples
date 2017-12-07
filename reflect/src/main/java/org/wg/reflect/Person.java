@@ -30,9 +30,9 @@ public class Person {
 		System.out.println(" method run ");
 	}
 
-	public void paramMethod(String str, int num) {
+	public String paramMethod(String str, int num) {
 		System.out.println("paramMethod run....." + str + ":" + num);
-
+		return str + "	" + num;
 	}
 
 	public static void staticMethod() {
