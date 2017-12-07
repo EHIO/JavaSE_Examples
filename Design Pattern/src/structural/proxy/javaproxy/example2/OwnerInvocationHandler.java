@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * 所有人
+ * 顾客只可以修改自己的信息， 但不能对自己进行评分;
  */
 public class OwnerInvocationHandler implements InvocationHandler {
 	/**

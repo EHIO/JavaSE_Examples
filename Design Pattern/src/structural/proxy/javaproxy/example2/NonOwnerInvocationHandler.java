@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * 非所有人
+ * 顾客可以对其他顾客进行评分， 但不能修改他人信息
  */
 public class NonOwnerInvocationHandler implements InvocationHandler {
 	/**
