@@ -15,6 +15,7 @@ class ImageComponent extends JComponent {
         this.icon = icon;
     }
 
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         int w = icon.getIconWidth();
