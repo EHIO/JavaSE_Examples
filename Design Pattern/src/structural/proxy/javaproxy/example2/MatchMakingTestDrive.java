@@ -4,73 +4,70 @@ import java.lang.reflect.Proxy;
 import java.util.HashMap;
 
 public class MatchMakingTestDrive {
-	HashMap<String, PersonBean> datingDB = new HashMap<>();
+    HashMap<String, PersonBean> datingDB = new HashMap<>();
 
-	public static void main(String[] args) {
-		MatchMakingTestDrive test = new MatchMakingTestDrive();
-		test.drive();
-	}
+    public static void main(String[] args) {
+        MatchMakingTestDrive test = new MatchMakingTestDrive();
+        test.drive();
+    }
 
-	public MatchMakingTestDrive() {
-		initializeDatabase();
-	}
+    public MatchMakingTestDrive() {
+        initializeDatabase();
+    }
 
-	public void drive() {
-		PersonBean joe = getPersonFromDatabase("旺财");
-		PersonBean ownerProxy = getOwnerProxy(joe);
-		System.out.println("名字：" + ownerProxy.getName());
-		ownerProxy.setInterests("保龄球");
-		System.out.println("从所有者代理中设置的兴趣");
-		try {
-			ownerProxy.setHotOrNotRating(10);
-		} catch (Exception e) {
-			System.out.println("无法从所有者代理设置评级");
-		}
-		System.out.println("等级评定： " + ownerProxy.getHotOrNotRating());
+    public void drive() {
+        PersonBean joe = getPersonFromDatabase("旺财");
+        PersonBean ownerProxy = getOwnerProxy(joe);
+        System.out.println("名字：" + ownerProxy.getName());
+        ownerProxy.setInterests("保龄球");
+        System.out.println("从所有者代理中设置的兴趣");
+        try {
+            // 无法对自己进行评级
+            ownerProxy.setHotOrNotRating(10);
+        } catch (Exception e) {
+            System.out.println("无法从所有者代理设置评级");
+        }
+        System.out.println("等级评定： " + ownerProxy.getHotOrNotRating());
+        System.err.println("***********************分阶线***********************");
+        PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
+        System.out.println("名字: " + nonOwnerProxy.getName());
+        try {
+            // 无法修改别人的信息
+            nonOwnerProxy.setInterests("保龄球");
+        } catch (Exception e) {
+            System.out.println("无法从非所有者代理设置信息");
+        }
+        // 可以对别人进行评级
+        nonOwnerProxy.setHotOrNotRating(3);
+        System.out.println("由非所有者代理设置的评级");
+        System.out.println("等级评定: " + nonOwnerProxy.getHotOrNotRating());
+    }
 
-		PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
-		System.out.println("名字: " + nonOwnerProxy.getName());
-		try {
-			nonOwnerProxy.setInterests("保龄球");
-		} catch (Exception e) {
-			System.out.println("无法从所有者代理设置评级");
-		}
-		nonOwnerProxy.setHotOrNotRating(3);
-		System.out.println("由非所有者代理设置的评级");
-		System.out.println("等级评定: " + nonOwnerProxy.getHotOrNotRating());
-	}
+    PersonBean getOwnerProxy(PersonBean person) {
 
-	PersonBean getOwnerProxy(PersonBean person) {
+        return (PersonBean) Proxy.newProxyInstance(
+                person.getClass().getClassLoader(),
+                person.getClass().getInterfaces(),
+                new OwnerInvocationHandler(person));
+    }
 
-		return (PersonBean) Proxy.newProxyInstance(
-				person.getClass().getClassLoader(),
-				person.getClass().getInterfaces(),
-				new OwnerInvocationHandler(person));
-	}
+    PersonBean getNonOwnerProxy(PersonBean person) {
 
-	PersonBean getNonOwnerProxy(PersonBean person) {
+        return (PersonBean) Proxy.newProxyInstance(
+                person.getClass().getClassLoader(),
+                person.getClass().getInterfaces(),
+                new NonOwnerInvocationHandler(person));
+    }
 
-		return (PersonBean) Proxy.newProxyInstance(
-				person.getClass().getClassLoader(),
-				person.getClass().getInterfaces(),
-				new NonOwnerInvocationHandler(person));
-	}
+    PersonBean getPersonFromDatabase(String name) {
+        return datingDB.get(name);
+    }
 
-	PersonBean getPersonFromDatabase(String name) {
-		return datingDB.get(name);
-	}
-
-	void initializeDatabase() {
-		PersonBean joe = new PersonBeanImpl();
-		joe.setName("旺财");
-		joe.setInterests("车, 电脑, 音乐");
-		joe.setHotOrNotRating(7);
-		datingDB.put(joe.getName(), joe);
-
-		PersonBean kelly = new PersonBeanImpl();
-		kelly.setName("小强");
-		kelly.setInterests("网上购物, 电影, 音乐");
-		kelly.setHotOrNotRating(6);
-		datingDB.put(kelly.getName(), kelly);
-	}
+    void initializeDatabase() {
+        PersonBean joe = new PersonBeanImpl();
+        joe.setName("旺财");
+        joe.setInterests("车");
+        joe.setHotOrNotRating(7);
+        datingDB.put(joe.getName(), joe);
+    }
 }
