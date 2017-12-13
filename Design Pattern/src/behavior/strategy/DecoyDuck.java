@@ -5,16 +5,16 @@ import behavior.strategy.quack.MuteQuack;
 
 /**
  * 诱饵鸭
- * @author wg
  *
+ * @author wg
  */
 public class DecoyDuck extends Duck {
-	public DecoyDuck() {
-	   flyBehavior = new FlyNotWay();
-	   quackBehavior = new MuteQuack();
-	}
+    public DecoyDuck() {
+        flyBehavior = new FlyNotWay();
+        quackBehavior = new MuteQuack();
+    }
 
-	@Override
-	public void display() {
-	}
+    @Override
+    public void display() {
+    }
 }

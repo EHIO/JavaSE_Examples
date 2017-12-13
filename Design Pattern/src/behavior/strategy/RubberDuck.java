@@ -6,7 +6,7 @@ import behavior.strategy.quack.Squeak;
 /**
  * 橡皮鸭
  *
- * @author Administrator
+ * @author wg
  */
 public class RubberDuck extends Duck {
 

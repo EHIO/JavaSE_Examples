@@ -5,7 +5,7 @@ import behavior.strategy.quack.Squeak;
 
 /**
  * 红头鸭
-
+ *
  * @author wg
  */
 public class RedheadDuck extends Duck {

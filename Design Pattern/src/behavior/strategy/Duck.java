@@ -6,7 +6,7 @@ import behavior.strategy.quack.QuackBehavior;
 /**
  * 鸭子类
  *
- * @author Administrator
+ * @author wg
  */
 public abstract class Duck {
 
@@ -31,13 +31,6 @@ public abstract class Duck {
      */
     public void performQuack() {
         quackBehavior.quack();
-    }
-
-    /**
-     * 游泳
-     */
-    public void swim() {
-
     }
 
     public void setFlyBehavior(FlyBehavior flyBehavior) {
