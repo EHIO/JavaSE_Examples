@@ -2,6 +2,8 @@ package behavior.observer.weatherobservable;
 
 /**
  * 显示组件
+ *
+ * @author wg
  */
 public interface DisplayElement {
     /**

@@ -36,6 +36,6 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println("当前情况: " + temperature + "F 度 和 " + humidity + "% 湿度");
+        System.out.println("当前情况： " + temperature + "华氏度(℉) 和 " + humidity + "%湿度");
     }
 }

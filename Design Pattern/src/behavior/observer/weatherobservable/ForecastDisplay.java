@@ -9,6 +9,10 @@ import java.util.Observer;
  * @author wg
  */
 public class ForecastDisplay implements Observer, DisplayElement {
+
+    /**
+     * 当前气压
+     */
     private float currentPressure = 29.92f;
     private float lastPressure;
 
@@ -28,13 +32,13 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.print("预报: ");
+        System.out.print("天气预报：");
         if (currentPressure > lastPressure) {
             System.out.println("天气改善!");
         } else if (currentPressure == lastPressure) {
-            System.out.println("天气不变");
+            System.out.println("天气维持不变");
         } else if (currentPressure < lastPressure) {
-            System.out.println("小心凉爽、多雨的天气");
+            System.out.println("凉爽、多雨的天气");
         }
     }
 }

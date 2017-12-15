@@ -9,8 +9,16 @@ import java.util.Observer;
  * @author wg
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
+
     Observable observable;
+
+    /**
+     * 温度
+     */
     private float temperature;
+    /**
+     * 湿度
+     */
     private float humidity;
 
     public CurrentConditionsDisplay(Observable observable) {
@@ -30,6 +38,6 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println("当前情况: " + temperature + "F 度 和 " + humidity + "% 湿度");
+        System.out.println("当前情况： " + temperature + "华氏度(℉) 和 " + humidity + "%湿度");
     }
 }

@@ -40,6 +40,6 @@ public class StatisticsDisplay implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println("平均值/最大/最小 温度 = " + (tempSum / numReadings));
+        System.out.println("气象统计：平均值/最大/最小, 温度 = " + (tempSum / numReadings));
     }
 }
