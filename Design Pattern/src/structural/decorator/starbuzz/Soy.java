@@ -9,13 +9,14 @@ public class Soy extends CondimentDecorator {
     Beverage beverage;
 
     public Soy(Beverage beverage) {
+        description = "豆浆";
         this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
 
-        return beverage.getDescription() + " ,豆浆";
+        return beverage.getDescription() + " , " + description;
     }
 
     @Override
