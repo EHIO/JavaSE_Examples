@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 低咖啡因, 被装饰的组件
+ *
+ * @author wg
  */
 public class Decaf extends Beverage {
     public Decaf() {

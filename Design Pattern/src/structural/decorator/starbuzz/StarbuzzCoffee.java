@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 星吧茲咖啡店
+ *
+ * @author wg
  */
 public class StarbuzzCoffee {
     public static void main(String[] args) {

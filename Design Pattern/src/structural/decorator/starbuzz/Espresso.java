@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 浓缩咖啡, 被装饰的组件
+ *
+ * @author wg
  */
 public class Espresso extends Beverage {
     public Espresso() {

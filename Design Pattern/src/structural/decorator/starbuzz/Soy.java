@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 豆浆，具体的装饰者类
+ *
+ * @author wg
  */
 public class Soy extends CondimentDecorator {
     Beverage beverage;

@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 饮料
+ *
+ * @author wg
  */
 public abstract class Beverage {
     String description = "未知饮料";

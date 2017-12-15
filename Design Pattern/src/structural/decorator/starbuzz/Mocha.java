@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 摩卡，具体的装饰者
+ *
+ * @author wg
  */
 public class Mocha extends CondimentDecorator {
     Beverage beverage;

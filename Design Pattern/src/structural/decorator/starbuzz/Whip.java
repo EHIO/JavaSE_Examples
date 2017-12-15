@@ -2,6 +2,8 @@ package structural.decorator.starbuzz;
 
 /**
  * 奶泡，具体的装饰者类
+ *
+ * @author wg
  */
 public class Whip extends CondimentDecorator {
     Beverage beverage;
