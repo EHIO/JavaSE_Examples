@@ -5,5 +5,5 @@ package creational.factory.factory_method.example_1;
  */
 public abstract class Creator {
 
-    protected abstract Product factoryMethod();
+    public abstract Product factoryMethod();
 }
