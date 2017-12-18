@@ -1,7 +1,7 @@
 package creational.factory.factory_method.example_1;
 
 /**
- * Created by run on 2017/11/5.
+ * @author wg
  */
 public class FactoryMethodTest {
 

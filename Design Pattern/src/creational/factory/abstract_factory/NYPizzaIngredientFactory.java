@@ -2,44 +2,46 @@ package creational.factory.abstract_factory;
 
 /**
  * 纽约风味原料工厂，生產製作紐約風味的比薩原料
+ *
+ * @author wg
  */
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 
-	@Override
-	public Dough createDough() {
+    @Override
+    public Dough createDough() {
 
-		return new ThinCrustDough();
-	}
+        return new ThinCrustDough();
+    }
 
-	@Override
-	public Sauce createSauce() {
+    @Override
+    public Sauce createSauce() {
 
-		return new MarinaraSauce();
-	}
+        return new MarinaraSauce();
+    }
 
-	@Override
-	public Cheese createCheese() {
+    @Override
+    public Cheese createCheese() {
 
-		return new ReggianoCheese();
-	}
+        return new ReggianoCheese();
+    }
 
-	@Override
-	public Veggies[] createVeggies() {
+    @Override
+    public Veggies[] createVeggies() {
 
-		Veggies[] veggies = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
-		return veggies;
-	}
+        Veggies[] veggies = {new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
+        return veggies;
+    }
 
-	@Override
-	public Pepperoni createPepperoni() {
+    @Override
+    public Pepperoni createPepperoni() {
 
-		return new SlicedPepperoni();
-	}
+        return new SlicedPepperoni();
+    }
 
-	@Override
-	public Clams createClam() {
+    @Override
+    public Clams createClam() {
 
-		return new FreshClams();
-	}
+        return new FreshClams();
+    }
 
 }
