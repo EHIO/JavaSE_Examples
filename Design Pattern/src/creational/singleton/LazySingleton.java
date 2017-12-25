@@ -4,6 +4,8 @@ package creational.singleton;
  * 懒汉式
  * 类加载进来，没有对象，只有调用了getInstance方法时，才会创建对象。
  * 延迟加载形式。
+ *
+ * @author wg
  */
 public class LazySingleton {
 

@@ -2,6 +2,8 @@ package creational.singleton;
 
 /**
  * 饿汉式
+ *
+ * @author wg
  */
 public class HungrySingleton {
 
