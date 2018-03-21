@@ -4,7 +4,8 @@ package org.wg.exception;
  * 虚拟机栈和本地方法栈溢出异常测试
  * VM args : -Xss128k
  * 减少栈的内容为128k
- *  @author rum
+ *
+ * @author run
  */
 public class JavaVMStackSOP {
 
