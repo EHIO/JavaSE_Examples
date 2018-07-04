@@ -1,7 +1,7 @@
 package behavior.state.gumballstate;
 
 /**
- * 投币状态
+ * 未投币状态
  */
 public class NoQuarterState implements State {
     GumballMachine gumballMachine;
@@ -12,7 +12,7 @@ public class NoQuarterState implements State {
 
     @Override
     public void insertQuarter() {
-        System.out.println("已投币......");
+        System.out.println("投入币了......");
         gumballMachine.setState(gumballMachine.getHasQuarterState());
     }
 
