@@ -1,7 +1,7 @@
 package org.wg.concurrency.thread;//: concurrency/BasicThreads.java
 // The most basic use of the Thread class.
 
-import org.wg.LiftOff;
+import org.wg.concurrency.LiftOff;
 
 public class BasicThreads {
     public static void main(String[] args) {

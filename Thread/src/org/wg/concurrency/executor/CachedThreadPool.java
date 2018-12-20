@@ -1,6 +1,6 @@
 package org.wg.concurrency.executor;//: concurrency/CachedThreadPool.java
 
-import org.wg.LiftOff;
+import org.wg.concurrency.LiftOff;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

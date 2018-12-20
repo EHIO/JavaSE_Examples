@@ -1,7 +1,7 @@
 package org.wg.concurrency.thread;//: concurrency/MoreBasicThreads.java
 // Adding more threads.
 
-import org.wg.LiftOff;
+import org.wg.concurrency.LiftOff;
 
 public class MoreBasicThreads {
     public static void main(String[] args) {

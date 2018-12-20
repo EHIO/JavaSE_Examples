@@ -1,4 +1,4 @@
-package org.wg;
+package org.wg.concurrency;
 // Demonstration of the Runnable interface.
 
 public class LiftOff implements Runnable {

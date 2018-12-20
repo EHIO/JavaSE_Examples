@@ -1,8 +1,6 @@
 package org.wg.concurrency;//: concurrency/SleepingTask.java
 // Calling sleep() to pause for a while.
 
-import org.wg.LiftOff;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,6 @@
 package org.wg.concurrency.runnable;
 
-import org.wg.LiftOff;
+import org.wg.concurrency.LiftOff;
 
 public class MainThread {
     public static void main(String[] args) {
