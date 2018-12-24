@@ -5,10 +5,12 @@ import org.wg.concurrency.LiftOff;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 任务会顺序一个接着一个的执行完成
+ */
 public class SingleThreadExecutor {
     public static void main(String[] args) {
-        ExecutorService exec =
-                Executors.newSingleThreadExecutor();
+        ExecutorService exec = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 5; i++)
             exec.execute(new LiftOff());
         exec.shutdown();

@@ -18,13 +18,13 @@ class TaskWithResult implements Callable<String> {
 public class CallableDemo {
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        ArrayList<Future<String>> results =
-                new ArrayList<Future<String>>();
+        ArrayList<Future<String>> results = new ArrayList<Future<String>>();
         for (int i = 0; i < 10; i++)
             results.add(exec.submit(new TaskWithResult(i)));
         for (Future<String> fs : results)
             try {
                 // get() blocks until completion:
+                // get() 会阻塞直至完成
                 System.out.println(fs.get());
             } catch (InterruptedException e) {
                 System.out.println(e);
