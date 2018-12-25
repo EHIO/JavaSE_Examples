@@ -3,13 +3,14 @@ package org.wg.concurrency.safe;//: concurrency/EvenGenerator.java
 
 import static net.mindview.util.Print.print;
 
+/**
+ * 演示不正确的访问共享资源
+ */
 public class EvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
 
     public int next() {
-        System.out.println(Thread.currentThread().getName() + "..." + currentEvenValue);
         ++currentEvenValue; // Danger point here!
-//        System.out.println(Thread.currentThread().getName() + "..." + currentEvenValue);
         ++currentEvenValue;
         return currentEvenValue;
     }

@@ -29,6 +29,9 @@ class DaemonSpawn implements Runnable {
     }
 }
 
+/**
+ * 由后台线程创建的线程都将被设置为后台线程
+ */
 public class Daemons {
     public static void main(String[] args) throws Exception {
         Thread d = new Thread(new Daemon());

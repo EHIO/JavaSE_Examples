@@ -12,7 +12,6 @@ SynchronizedEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
 
     public synchronized int next() {
-        print(Thread.currentThread().getName() + "..." + currentEvenValue);
         ++currentEvenValue;
         Thread.yield(); // Cause failure faster
         ++currentEvenValue;

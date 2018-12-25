@@ -5,7 +5,7 @@ package org.wg.concurrency.safe;//: concurrency/MutexEvenGenerator.java
 import java.util.concurrent.locks.*;
 
 /**
- * 显示锁解决安全性问题
+ * 显示锁Lock解决安全性问题
  */
 public class MutexEvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;

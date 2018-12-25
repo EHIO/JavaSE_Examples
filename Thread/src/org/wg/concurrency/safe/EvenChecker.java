@@ -2,6 +2,9 @@ package org.wg.concurrency.safe;//: concurrency/EvenChecker.java
 
 import java.util.concurrent.*;
 
+/**
+ * 演示不正确的访问共享资源
+ */
 public class EvenChecker implements Runnable {
     private IntGenerator generator;
     private final int id;

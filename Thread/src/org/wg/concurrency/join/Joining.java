@@ -1,4 +1,4 @@
-package org.wg.concurrency;//: concurrency/Joining.java
+package org.wg.concurrency.join;//: concurrency/Joining.java
 // Understanding join().
 
 import static net.mindview.util.Print.print;

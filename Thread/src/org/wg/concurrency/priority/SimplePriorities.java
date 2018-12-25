@@ -1,9 +1,12 @@
-package org.wg.concurrency;//: concurrency/SimplePriorities.java
+package org.wg.concurrency.priority;//: concurrency/SimplePriorities.java
 // Shows the use of thread priorities.
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 优先级
+ */
 public class SimplePriorities implements Runnable {
     private int countDown = 5;
     private volatile double d; // No optimization
@@ -33,11 +36,10 @@ public class SimplePriorities implements Runnable {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < 5; i++)
-            exec.execute(
-                    new SimplePriorities(Thread.MIN_PRIORITY));
-        exec.execute(
-                new SimplePriorities(Thread.MAX_PRIORITY));
+        for (int i = 0; i < 5; i++) {
+            exec.execute(new SimplePriorities(Thread.MIN_PRIORITY));
+        }
+        exec.execute(new SimplePriorities(Thread.MAX_PRIORITY));
         exec.shutdown();
     }
 } /* Output: (70% match)
