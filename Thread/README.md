@@ -17,8 +17,8 @@
             * MutexEvenGenerator 显式锁解决安全性问题
         * atomic 原子性
         * atomicclass 原子类
-        * SyncObject 其他对象上同步
-        * 
+        * critical 临界区
+        * threadlocal 线程本地存储
         * 
 + thread： 我的code
     + create包 创建线程的方式

@@ -1,4 +1,4 @@
-package org.wg.concurrency;//: concurrency/ThreadLocalVariableHolder.java
+package org.wg.concurrency.threadlocal;//: concurrency/ThreadLocalVariableHolder.java
 // Automatically giving each thread its own storage.
 
 import java.util.concurrent.*;
@@ -47,7 +47,7 @@ public class ThreadLocalVariableHolder {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++)
             exec.execute(new Accessor(i));
-        TimeUnit.SECONDS.sleep(3);  // Run for a while
+        TimeUnit.SECONDS.sleep(1);  // Run for a while
         exec.shutdownNow();         // All Accessors will quit
     }
 } /* Output: (Sample)

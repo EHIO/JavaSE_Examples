@@ -21,6 +21,7 @@ public class AtomicIntegerTest implements Runnable {
     }
 
     public static void main(String[] args) {
+        // 5秒后中止
         new Timer().schedule(new TimerTask() {
             public void run() {
                 System.err.println("Aborting");

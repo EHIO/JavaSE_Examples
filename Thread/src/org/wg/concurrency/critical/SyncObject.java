@@ -1,8 +1,11 @@
-package org.wg.concurrency;//: concurrency/SyncObject.java
+package org.wg.concurrency.critical;//: concurrency/SyncObject.java
 // Synchronizing on another object.
 
 import static net.mindview.util.Print.*;
 
+/**
+ * 在其它对象上进行同步
+ */
 class DualSynch {
     private Object syncObject = new Object();
 

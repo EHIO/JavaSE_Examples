@@ -35,10 +35,8 @@ class CircularSet {
 
 public class SerialNumberChecker {
     private static final int SIZE = 10;
-    private static CircularSet serials =
-            new CircularSet(1000);
-    private static ExecutorService exec =
-            Executors.newCachedThreadPool();
+    private static CircularSet serials = new CircularSet(1000);
+    private static ExecutorService exec = Executors.newCachedThreadPool();
 
     static class SerialChecker implements Runnable {
         public void run() {
