@@ -19,6 +19,10 @@
         * atomicclass 原子类
         * critical 临界区
         * threadlocal 线程本地存储
+    * 终结任务 
+        * interrupt 中断
+    * 线程间的协作
+        * cooperate 协作
         * 
 + thread： 我的code
     + create包 创建线程的方式
