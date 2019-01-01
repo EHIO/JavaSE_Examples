@@ -1,1 +1,1 @@
-# projects_javase
+# JavaSE Examples
