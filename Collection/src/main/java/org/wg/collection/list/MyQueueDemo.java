@@ -1,4 +1,4 @@
-package org.wg.collection.list.linkedlist.test;
+package org.wg.collection.list;
 
 /*
  * 请使用LinkedList来模拟一个堆栈或者队列数据结构。
@@ -11,14 +11,35 @@ package org.wg.collection.list.linkedlist.test;
  */
 
 
-public class LinkedTest {
+import java.util.LinkedList;
+
+class MyQueue {
+    private LinkedList link;
+
+    public MyQueue() {
+        link = new LinkedList();
+    }
+
+    public void myAdd(Object obj) {
+        link.addLast(obj);
+    }
+
+    public Object myGet() {
+        return link.removeFirst();
+    }
+
+    public boolean isNull() {
+        return link.isEmpty();
+    }
+}
+
+public class MyQueueDemo {
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-
-        DuiLie dl = new DuiLie();
+        MyQueue dl = new MyQueue();
 
         dl.myAdd("abc1");
         dl.myAdd("abc2");
@@ -28,8 +49,6 @@ public class LinkedTest {
         while (!dl.isNull()) {
             System.out.println(dl.myGet());
         }
-
-
     }
 
 }

@@ -70,9 +70,9 @@ public class PokerDemo {
         }
 
         // 看牌(遍历TreeSet集合，获取编号，到HashMap集合找对应的牌)
-        lookPoker("风清扬", fengQingYang, hm);
-        lookPoker("林青霞", linQingXia, hm);
-        lookPoker("刘意", liuYi, hm);
+        lookPoker("孔子", fengQingYang, hm);
+        lookPoker("老子", linQingXia, hm);
+        lookPoker("孙子", liuYi, hm);
         lookPoker("底牌", diPai, hm);
     }
 
