@@ -34,7 +34,7 @@ class Student2 {
     }
 }
 
-public class TreeSetTest3 {
+public class TreeSetDemo2 {
     public static void main(String[] args) {
         TreeSet<Student2> ts = new TreeSet<>(new Comparator<Student2>() {
             @Override

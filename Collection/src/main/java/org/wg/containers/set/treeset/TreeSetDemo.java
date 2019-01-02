@@ -2,7 +2,9 @@ package org.wg.containers.set.treeset;
 
 import java.util.TreeSet;
 
-
+/**
+ *
+ */
 class Student implements Comparable<Student> {
     private String name;
     private int age;
@@ -42,7 +44,7 @@ class Student implements Comparable<Student> {
 }
 
 
-public class TreeSetTest {
+public class TreeSetDemo {
     public static void main(String[] args) {
         TreeSet<Student> ts = new TreeSet<Student>();
 

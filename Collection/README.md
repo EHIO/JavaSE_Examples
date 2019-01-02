@@ -11,4 +11,4 @@
             MapEntry
             
         * 覆盖hashCode  
-        CountedString 遵守指导的
+        CountedString

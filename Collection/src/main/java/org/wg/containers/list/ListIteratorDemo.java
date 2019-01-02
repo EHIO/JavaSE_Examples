@@ -12,19 +12,17 @@ public class ListIteratorDemo {
         list.add("world");
         list.add("java");
 
-        // ListIterator listIterator()
         ListIterator lit = list.listIterator();
+        while (lit.hasNext()) {
+            String s = (String) lit.next();
+            System.out.println(s);
+        }
+
+        System.out.println("-----------------");
+        // 从后住前遍历
         while (lit.hasPrevious()) {
             String s = (String) lit.previous();
             System.out.println(s);
         }
-        System.out.println("-----------------");
-
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            String s = (String) it.next();
-            System.out.println(s);
-        }
-        System.out.println("-----------------");
     }
 }
