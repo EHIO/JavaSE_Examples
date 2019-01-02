@@ -1,11 +1,8 @@
-package org.wg.collection.set.treeset.test;
+package org.wg.collection.set.treeset;
 
 import java.util.TreeSet;
 
 
-/*
- * �����밴�������ĳ�������
- */
 public class TreeSetTest2 {
     public static void main(String[] args) {
         // �������϶���

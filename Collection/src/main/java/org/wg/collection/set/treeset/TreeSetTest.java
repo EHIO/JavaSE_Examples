@@ -1,22 +1,51 @@
-package org.wg.collection.set.treeset.test;
+package org.wg.collection.set.treeset;
 
 import java.util.TreeSet;
 
 
-/*
- * TreeSet�洢�Զ�����󲢱�֤�����Ψһ��
- * 
- * A:��û�и���������ô����
- * 		��Ȼ���򣬰��������С��������
- * B:Ԫ��ʲô�����Ψһ��Ҳû������
- * 		��Ա����ֵ����ͬ��Ϊͬһ��Ԫ��
- */
+class Student implements Comparable<Student> {
+    private String name;
+    private int age;
+
+    public Student() {
+        super();
+    }
+
+    public Student(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public int compareTo(Student s) {
+        int num = this.age - s.age;
+        int num2 = num == 0 ? this.name.compareTo(s.name) : num;
+        return num2;
+    }
+}
+
+
 public class TreeSetTest {
     public static void main(String[] args) {
-        // �������϶���
         TreeSet<Student> ts = new TreeSet<Student>();
 
-        // ����Ԫ��
         Student s1 = new Student("linqingxia", 27);
         Student s2 = new Student("zhangguorong", 29);
         Student s3 = new Student("wanglihong", 23);
@@ -25,7 +54,6 @@ public class TreeSetTest {
         Student s6 = new Student("wuqilong", 40);
         Student s7 = new Student("fengqingy", 22);
 
-        // ���Ԫ��
         ts.add(s1);
         ts.add(s2);
         ts.add(s3);
@@ -34,7 +62,6 @@ public class TreeSetTest {
         ts.add(s6);
         ts.add(s7);
 
-        // ����
         for (Student s : ts) {
             System.out.println(s.getName() + "---" + s.getAge());
         }

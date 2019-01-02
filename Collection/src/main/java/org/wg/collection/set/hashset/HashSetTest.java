@@ -1,4 +1,4 @@
-package org.wg.collection.set.hashset.test;
+package org.wg.collection.set.hashset;
 
 import java.util.HashSet;
 
@@ -11,7 +11,7 @@ import java.util.HashSet;
  * 		如果你认为对象的成员变量值相同即为同一个对象的话，你就应该重写这两个方法。
  * 		如何重写呢?不同担心，自动生成即可。
  */
-public class HashSetTest2 {
+public class HashSetTest {
     public static void main(String[] args) {
         // 创建集合对象
         HashSet<Dog> hs = new HashSet<Dog>();

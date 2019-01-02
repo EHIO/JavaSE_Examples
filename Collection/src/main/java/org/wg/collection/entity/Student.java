@@ -1,6 +1,6 @@
 package org.wg.collection.entity;
 
-import org.wg.collection.set.treeset.test.Person;
+import org.wg.collection.set.treeset.Person;
 
 public class Student extends Person {
 

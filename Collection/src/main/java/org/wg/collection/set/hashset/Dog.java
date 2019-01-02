@@ -1,20 +1,21 @@
-package org.wg.collection.set.hashset.test;
+package org.wg.collection.set.hashset;
 
-/**
- * @author Administrator
- */
-public class Student {
+public class Dog {
     private String name;
     private int age;
+    private String color;
+    private char sex;
 
-    public Student() {
+    public Dog() {
         super();
     }
 
-    public Student(String name, int age) {
+    public Dog(String name, int age, String color, char sex) {
         super();
         this.name = name;
         this.age = age;
+        this.color = color;
+        this.sex = sex;
     }
 
     public String getName() {
@@ -33,12 +34,30 @@ public class Student {
         this.age = age;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + age;
+        result = prime * result + ((color == null) ? 0 : color.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + sex;
         return result;
     }
 
@@ -50,47 +69,22 @@ public class Student {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Student other = (Student) obj;
+        Dog other = (Dog) obj;
         if (age != other.age)
+            return false;
+        if (color == null) {
+            if (other.color != null)
+                return false;
+        } else if (!color.equals(other.color))
             return false;
         if (name == null) {
             if (other.name != null)
                 return false;
         } else if (!name.equals(other.name))
             return false;
+        if (sex != other.sex)
+            return false;
         return true;
     }
-/*
-     @Override
-	 public int hashCode() {
-	 // return 0;
-	 // ��Ϊ��Ա����ֵӰ���˹�ϣֵ���������ǰѳ�Ա����ֵ��Ӽ���
-	 // return this.name.hashCode() + this.age;
-	 // ������
-	 // s1:name.hashCode()=40,age=30
-	 // s2:name.hashCode()=20,age=50
-	 // �����ܵ�����,���ǿ��԰����ǳ���һЩ����
-	 return this.name.hashCode() + this.age * 15;
-	 }
-	
-	 @Override
-	 public boolean equals(Object obj) {
-	 // System.out.println(this + "---" + obj);
-	 if (this == obj) {
-	 return true;
-	 }
-	
-	 if (!(obj instanceof Student)) {
-	 return false;
-	 }
-	
-	 Student s = (Student) obj;
-	 return this.name.equals(s.name) && this.age == s.age;
-	 }
-	
-	 @Override
-	 public String toString() {
-	 return "Student [name=" + name + ", age=" + age + "]";
-	 }
-*/
+
 }

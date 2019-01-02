@@ -2,7 +2,7 @@ package org.wg.collection.comparator;
 
 import java.util.Comparator;
 
-import org.wg.collection.set.treeset.test.Person;
+import org.wg.collection.set.treeset.Person;
 
 /**
  * 创建了一个根据Person类的name进行排序的比较器。

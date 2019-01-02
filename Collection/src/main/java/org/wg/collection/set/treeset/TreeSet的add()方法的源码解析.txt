@@ -72,5 +72,5 @@ class TreeSet implements Set {
     }
 }
 
-ÕæÕýµÄ±È½ÏÊÇÒÀÀµÓÚÔªËØµÄcompareTo()·½·¨£¬¶øÕâ¸ö·½·¨ÊÇ¶¨ÒåÔÚ ComparableÀïÃæµÄ¡£
-ËùÒÔ£¬ÄãÒªÏëÖØÐ´¸Ã·½·¨£¬¾Í±ØÐëÊÇÏÈ Comparable½Ó¿Ú¡£Õâ¸ö½Ó¿Ú±íÊ¾µÄ¾ÍÊÇ×ÔÈ»ÅÅÐò¡£
+çœŸæ­£çš„æ¯”è¾ƒæ˜¯ä¾èµ–äºŽå…ƒç´ çš„compareTo()æ–¹æ³•ï¼Œè€Œè¿™ä¸ªæ–¹æ³•æ˜¯å®šä¹‰åœ¨ Comparableé‡Œé¢çš„ã€‚
+æ‰€ä»¥ï¼Œä½ è¦æƒ³é‡å†™è¯¥æ–¹æ³•ï¼Œå°±å¿…é¡»æ˜¯å…ˆ ComparableæŽ¥å£ã€‚è¿™ä¸ªæŽ¥å£è¡¨ç¤ºçš„å°±æ˜¯è‡ªç„¶æŽ’åºã€‚
