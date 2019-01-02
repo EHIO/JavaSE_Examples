@@ -1,10 +1,10 @@
 package generic;
 
 import org.junit.Test;
-import org.wg.collection.entity.Animal;
-import org.wg.collection.entity.Cat;
-import org.wg.collection.entity.Dog;
-import org.wg.collection.entity.Student;
+import org.wg.containers.entity.Animal;
+import org.wg.containers.entity.Cat;
+import org.wg.containers.entity.Dog;
+import org.wg.containers.entity.Student;
 
 import java.util.ArrayList;
 import java.util.Collection;

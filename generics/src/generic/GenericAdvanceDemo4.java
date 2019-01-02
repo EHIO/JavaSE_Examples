@@ -1,7 +1,7 @@
 package generic;
 
-import org.wg.collection.set.treeset.test.Person;
-import org.wg.collection.entity.Student;
+import org.wg.containers.set.treeset.test.Person;
+import org.wg.containers.entity.Student;
 
 import java.util.Comparator;
 import java.util.Iterator;
