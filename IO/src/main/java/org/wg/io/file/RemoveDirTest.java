@@ -1,4 +1,4 @@
-package org.wg.io.file.test;
+package org.wg.io.file;
 
 import java.io.File;
 
@@ -14,9 +14,7 @@ public class RemoveDirTest {
     }
 
     public static void removeDir(File dir) {
-
         File[] files = dir.listFiles();
-
         for (File file : files) {
             if (file.isDirectory()) {
                 removeDir(file);
@@ -26,5 +24,4 @@ public class RemoveDirTest {
         }
         System.out.println(dir + ":" + dir.delete());
     }
-
 }
