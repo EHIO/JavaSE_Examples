@@ -1,5 +1,7 @@
 package org.wg.thread.method;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 守护线程
  */
@@ -12,7 +14,7 @@ public class DaemonDemo {
 			try {
 				while (true) {
 					System.out.println("hello world!");
-					Thread.sleep(100);
+					TimeUnit.MILLISECONDS.sleep(100);
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -27,6 +29,6 @@ public class DaemonDemo {
 		t.setDaemon(true);
 		t.start();
 
-		Thread.sleep(2000);
+		TimeUnit.SECONDS.sleep(1);
 	}
 }

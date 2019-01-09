@@ -1,5 +1,7 @@
 package org.wg.thread.method;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * join()方法的演示
  */
@@ -28,7 +30,7 @@ public class JoinMethodDemo {
 			System.out.println(Thread.currentThread().getName() + " 运行开始");
 			for (int i = 0; i < 5; i++) {
 				try {
-					Thread.sleep((int) Math.random() * 10);
+					TimeUnit.MILLISECONDS.sleep(200);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
