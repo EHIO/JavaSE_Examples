@@ -1,4 +1,4 @@
-package regex.test;
+package test;
 
 import java.util.TreeSet;
 
